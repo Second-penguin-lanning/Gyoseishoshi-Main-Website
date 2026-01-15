@@ -3,32 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>セコンドペンギン企画 | 外国人雇用・油絵資産・Web作成</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <title>徳永良雄 行政書士事務所 | 中小企業・外国人支援・相続</title>
     <style>
+        /* --- CSS Variables --- */
         :root {
-            --main-blue: #005bac;
-            --accent-green: #006400;
-            --sky-blue: #e0f4ff;
-            --text-color: #333;
+            --main-color: #5D9CEC; /* 水色：誠実、知性 */
+            --accent-color: #A03C3C; /* えんじ色：情熱、重要 */
+            --bg-color: #FDFBF7; /* 薄いクリーム色：親しみ、安心 */
+            --text-color: #333333;
             --white: #ffffff;
+            --gray: #f4f4f4;
         }
 
-        * {
+        /* --- Base Styles --- */
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
             line-height: 1.8;
-            color: var(--text-color);
-            background-color: var(--sky-blue);
-            overflow-x: hidden;
         }
 
-        /* アニメーション用クラス */
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--main-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+        }
+
+        /* --- Animation --- */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -40,315 +93,42 @@
             transform: translateY(0);
         }
 
-        /* Header */
+        /* --- Header --- */
         header {
-            background: var(--white);
-            padding: 15px 5%; /* 高さを少し調整 */
+            background-color: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        /* ロゴ周りのスタイル修正 */
         .logo {
-            display: flex;       /* 画像と文字を横並びにする */
-            align-items: center; /* 垂直方向の中央揃え */
-            gap: 10px;           /* 画像と文字の間隔 */
+            font-size: 1.2rem;
             font-weight: bold;
-            font-size: 1.5rem;
-            color: var(--main-blue);
-            text-decoration: none; /* リンクにした場合の下線消去 */
+            color: var(--main-color);
         }
 
-        /* ロゴ画像のサイズ指定 */
-        .logo img {
-            height: 40px; /* ヘッダーに収まる高さに設定 */
-            width: auto;  /* 横幅は比率を維持 */
+        nav ul {
+            display: flex;
+            gap: 20px;
         }
 
         nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            margin-left: 20px;
             font-size: 0.9rem;
             font-weight: bold;
         }
+        
+        nav a:hover {
+            color: var(--main-color);
+        }
 
-        /* Hero Section */
+        /* --- Hero Section --- */
         .hero {
-            height: 80vh;
-            /* 背景画像を「未来・ネットワーク・光」のイメージに変更 */
-            background: linear-gradient(rgba(0,91,172,0.6), rgba(0,91,172,0.4)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 5%;
-            color: white; /* 背景が暗くなったので文字色を白系に調整 */
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            color: var(--main-blue);
-            margin-bottom: 20px;
-            background: rgba(255,255,255,0.9); /* 透過度を下げて視認性アップ */
-            padding: 15px 30px;
-            border-radius: 5px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin-bottom: 30px;
-            font-weight: bold;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* 白文字の視認性確保 */
-            color: white; /* ここを白に変更 */
-        }
-        
-        /* サブテキスト用のスタイル上書き */
-        .hero .sub-text {
-            font-size: 1rem;
-            color: #f0f0f0 !important; /* 薄いグレーに変更 */
-            font-weight: normal;
-        }
-
-        /* Section Commons */
-        section {
-            padding: 100px 10%;
-            background: var(--white);
-            margin: 20px 0;
-        }
-
-        h2 {
-            text-align: center;
-            color: var(--main-blue);
-            margin-bottom: 50px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background: var(--accent-green);
-        }
-
-        /* Grid System */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--sky-blue);
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 5px solid var(--main-blue);
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--main-blue);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: 0.3s;
-            margin-top: 20px;
-            font-weight: bold;
-            border: 2px solid var(--main-blue);
-        }
-
-        .btn:hover {
-            background: var(--accent-green);
-            border-color: var(--accent-green);
-            transform: scale(1.05);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--main-blue);
-            color: var(--main-blue);
-        }
-        
-        .btn-outline:hover {
-            background: var(--main-blue);
-            color: white;
-        }
-
-        /* Table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table th, table td {
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
-
-        table th {
-            width: 30%;
-            color: var(--main-blue);
-        }
-
-        /* Footer Area Link */
-        .transition-area {
-            background: var(--accent-green);
-            color: white;
-            text-align: center;
-            padding: 40px;
-        }
-
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
-            header { flex-direction: column; }
-            .logo { margin-bottom: 15px; } /* スマホ時の余白 */
-            nav { margin-top: 0; }
-            nav a { margin: 0 10px; font-size: 0.8rem; }
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <a href="#" class="logo">
-        <img src="logo.png" alt="セコンドペンギン企画 ロゴ">
-        <span>セコンドペンギン企画</span>
-    </a>
-    <nav>
-        <a href="#business">企業様</a>
-        <a href="#foreign">Foreigner</a>
-        <a href="#art">油絵</a>
-        <a href="#company">会社概要</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <div class="fade-in">
-        <h1>架け橋となり、価値を紡ぐ。</h1>
-        <p>企業の外国人雇用、外国人の日本就業/生活支援、<br>個人の油絵の100年資産、皆様のホームページ作成</p>
-        <p class="sub-text">法務の専門性とクリエイティブな視点で、あなたの「挑戦」を伴走支援します。</p>
-        <a href="#contact" class="btn">お問合せはこちら</a>
-    </div>
-</section>
-
-<section id="business" class="fade-in">
-    <h2>企業様向けサポート</h2>
-    <p style="text-align: center; margin-bottom: 40px;">法務の専門家、採用の即戦力、定着の伴奏者の面から貴社の外国人雇用をトータルでバックアップします。</p>
-    <div class="grid">
-        <div class="card">
-            <h3>1. 事前相談・リスク確認</h3>
-            <p>外国人雇用に関する不安や法的リスクを、雇用前にクリアにします。</p>
-        </div>
-        <div class="card">
-            <h3>2. 特定技能・入管対応</h3>
-            <p>煩雑な受入れ支援手続きや入管への申請をスムーズに代行します。</p>
-        </div>
-        <div class="card">
-            <h3>3. トラブル予防サポート</h3>
-            <p>在留資格や雇用に関するトラブルを未然に防ぐ体制を構築します。</p>
-        </div>
-    </div>
-    <div style="text-align: center; margin-top: 40px;">
-        <a href="#" class="btn">問合せ・相談する</a>
-    </div>
-</section>
-
-<section id="foreign" style="background-color: var(--sky-blue);" class="fade-in">
-    <div style="background: white; padding: 50px; border-radius: 20px; text-align: center;">
-        <h2>For Foreigners</h2>
-        <p>Visa and consulting life in Japan. We support your career and daily life.</p>
-        <a href="#" class="btn btn-outline">Visit our specialized site ↗</a>
-    </div>
-</section>
-
-<section id="art" class="fade-in">
-    <h2>油絵の100年資産</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
-        <div style="flex: 1; min-width: 300px;">
-            <p>現在、油絵の技能評価制度を進めています。あなたの作品に100年続く価値の証明を。<br>現在、<strong>登録作品を募集中</strong>です。</p>
-            <a href="#" class="btn">詳細・作品登録はこちら</a>
-        </div>
-        <div style="flex: 1; min-width: 300px; background: #eee; height: 200px; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
-            <span style="color: #888;">[ 油絵イメージ画像 ]</span>
-        </div>
-    </div>
-</section>
-
-<section id="web" style="background-color: #f9f9f9;" class="fade-in">
-    <h2>ホームページ作成</h2>
-    <p style="text-align: center;">セコンドペンギン企画では、本サイトのような「シンプル・モダン・伝わる」Webサイト制作を承ります。個人事業主様から中小企業様まで、最適なプランをご提案します。</p>
-</section>
-
-<section id="company" class="fade-in">
-    <h2>会社概要</h2>
-    <table>
-        <tr><th>屋号</th><td>セコンドペンギン企画</td></tr>
-        <tr><th>設立年月日</th><td>2024年6月13日</td></tr>
-        <tr><th>事務所</th><td>神戸市</td></tr>
-        <tr><th>業務エリア</th><td>全国</td></tr>
-        <tr><th>所在地</th><td>神戸ファッションマート（アクセスは下記ボタンより）</td></tr>
-    </table>
-    <div style="text-align: center; margin-top: 30px;">
-        <a href="#" class="btn btn-outline">アクセス詳細</a>
-        <a href="#" class="btn" style="margin-left: 10px;">お問合せ</a>
-    </div>
-</section>
-
-<section id="qa" class="fade-in">
-    <h2>Q＆A</h2>
-    <div class="card" style="margin-bottom: 10px;">
-        <p><strong>Q. 全国対応は可能ですか？</strong><br>A. はい、オンライン相談を含め全国の企業様・個人様に対応しております。</p>
-    </div>
-</section>
-
-<div class="transition-area">
-    <p>あなたの「次の一歩」を支えるセコンドペンギン。</p>
-    <a href="#" class="btn" style="background: white; color: var(--accent-green);">個人事業 セコンドペンギン企画について</a>
-</div>
-
-<footer>
-    <p>&copy; 2024 Second Penguin Kikaku. All Rights Reserved.</p>
-</footer>
-
-<script>
-    // スクロール連動アニメーション
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(section => {
-        observer.observe(section);
-    });
-</script>
-
-</body>
-</html>
+            background: linear-gradient(rgba(93, 156, 236, 0.7), rgba(93, 156, 236, 0.5)), url('
