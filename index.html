@@ -23,6 +23,7 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
     margin: 0;
     padding: 0;
+    padding-top: 120px;
     background: var(--bg-light);
     color: var(--text-main);
     line-height: 1.8;
@@ -32,8 +33,13 @@ body {
 header {
     background: var(--primary);
     color: white;
-    padding: 3rem 1rem;
+    padding: 1.2rem 1rem;
     text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 header h1 {
     margin: 0;
@@ -307,7 +313,9 @@ footer p {
 .cta-section .btn-white:hover {
     background: #f5f5f5;
 }
-
+section {
+    scroll-margin-top: 140px;
+}
 </style>
 
 </head>
@@ -319,7 +327,7 @@ footer p {
 </header>
 
 <nav>
-    <a href="#about">事務所概要</a>
+    <a href="#about">代表から</a>
     <a href="#services">サービス</a>
     <a href="#pricing">料金プラン</a>
     <a href="#testimonials">お客様の声</a>
@@ -330,7 +338,7 @@ footer p {
     <div class="container" style="padding:0;">
         <h2>「どこに相談したらいいかわからない」<br>そんな段階からでも、お気軽にご連絡下さい。</h2>
         <p>神戸の行政書士・徳永良雄が誠意をもってご対応いたします。</p>
-        <a href="tel:070-9192-2524" class="btn">☎ 070-9192-2524</a>
+        <a href="#contact" class="btn">お問い合わせはこちら</a>
     </div>
 </section>
 
