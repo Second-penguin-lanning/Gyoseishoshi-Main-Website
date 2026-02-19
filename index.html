@@ -245,6 +245,68 @@ footer p {
     margin-top: 1rem;
     color: var(--text-sub);
 }
+/* --- Section Accent Background --- */
+.bg-light-section {
+    background: var(--bg-light);
+    padding: 5rem 0;
+}
+
+.bg-accent-section {
+    background: linear-gradient(135deg, #eef3f8, #e3edf7);
+    padding: 5rem 0;
+}
+
+/* セクション内のcontainer余白リセット */
+.bg-light-section .container,
+.bg-accent-section .container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* お客様の声デザイン強化 */
+.testimonial-item {
+    background: white;
+    padding: 2rem;
+    border-left: 6px solid var(--accent);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.testimonial-name {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* CTA帯 */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary), #145a86);
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.cta-section h2 {
+    color: white;
+}
+
+.cta-section .btn-white {
+    background: white;
+    color: var(--primary);
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 1.5rem;
+    transition: 0.3s;
+}
+
+.cta-section .btn-white:hover {
+    background: #f5f5f5;
+}
 
 </style>
 
@@ -272,10 +334,9 @@ footer p {
     </div>
 </section>
 
-<div class="container">
-
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="bg-light-section">
+    <div class="container">
         <h2>代表者プロフィール</h2>
         <div class="profile-container">
             <div class="profile-main">
@@ -313,10 +374,12 @@ footer p {
                 </ul>
             </div>
         </div>
-    </section>
+       </div>
+</section>
 
     <!-- Services Section -->
-    <section id="services">
+   <section id="services" class="bg-accent-section">
+    <div class="container">
         <h2>サービス紹介</h2>
         <p>豊富な経験と専門知識を活かし、お客様のニーズに合わせた最適なサービスを提供いたします [1]。</p>
         <div class="grid">
@@ -333,10 +396,12 @@ footer p {
                 <p>遺言書の作成、相続手続き、遺産分割協議書の作成をサポート。自動車登録や法人設立支援、契約書作成も承ります [3]。</p>
             </div>
         </div>
+  </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing">
+    <section id="pricing" class="bg-light-section">
+    <div class="container">
         <h2>料金プラン</h2>
         <p>明確な料金体系で安心してご依頼いただけます。初回相談は無料です [3]。</p>
         <div class="grid">
@@ -372,10 +437,12 @@ footer p {
             </div>
         </div>
         <p><small>※料金は案件の内容により変動する場合がございます [3]。</small></p>
+       </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials">
+    <section id="testimonials" class="bg-accent-section">
+    <div class="container">
         <h2>お客様の声</h2>
         <div class="testimonial-item">
             <p>「当ホテルでは外国人スタッフの採用を積極的に進めており、継続的にお世話になっております。複雑な入管手続きも迅速かつ正確で、スムーズに優秀な人材を確保できています」</p>
@@ -385,10 +452,18 @@ footer p {
             <p>「太陽光発電事業の立ち上げに伴い、電気工事業の許認可でお世話になりました。必要書類の準備から行政機関との折衝まで、全てを丁寧にサポートしていただきました」</p>
             <span class="testimonial-name">◇◇電気興業株式会社 様 [4]</span>
         </div>
+ </div>
     </section>
 
-    <!-- Contact & Access -->
-    <section id="contact">
+ <section class="cta-section">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>初回相談無料。神戸の行政書士が直接対応いたします。</p>
+    <a href="tel:070-9192-2524" class="btn-white">今すぐ電話する</a>
+</section>
+
+   <!-- Contact & Access -->
+    <section id="contact" class="bg-light-section">
+    <div class="container">
         <h2>事務所情報・お問い合わせ</h2>
         <table class="info-table">
             <tr>
@@ -454,7 +529,7 @@ footer p {
         </p>
     </form>
 </div>
-
+</div>
     </section>
 
     <!-- Links Section -->
