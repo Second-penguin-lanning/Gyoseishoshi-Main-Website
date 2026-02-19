@@ -33,7 +33,7 @@ body {
 header {
     background: var(--primary);
     color: white;
-    padding: 1rem 2rem;
+    padding: 1rem 1.2rem;   /* ← 余白を少し縮める */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,18 +41,29 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    box-sizing: border-box; /* ← はみ出し防止（重要） */
     z-index: 1000;
 }
 
 .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-weight: 700;
     font-size: 1.1rem;
     letter-spacing: 1px;
 }
 
+.header-logo img {
+    height: 32px;
+    width: auto;
+}
+
+
 .header-nav {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;   /* ← 少し狭める */
+    flex-wrap: wrap;
 }
 
 .header-nav a {
@@ -191,10 +202,17 @@ footer p {
 
 /* Responsive */
 @media (max-width: 768px){
+
     .profile-container {
         flex-direction: column;
     }
+
+    .header-logo img {
+        height: 24px;
+    }
+
 }
+
 /* Contact Form */
 .contact-form {
     background: white;
@@ -319,9 +337,12 @@ section {
 <body>
 
 <header>
-    <div class="header-logo">
-        德永行政書士事務所
-    </div>
+   <div class="header-logo">
+    <img src="セコンドペンギンロゴ.png" alt="セコンドペンギンロゴ">
+    <img src="行政書士マーク.png" alt="行政書士マーク">
+    <span>德永 行政書士事務所</span>
+</div>
+
     <nav class="header-nav">
         <a href="#about">代表から</a>
         <a href="#services">サービス</a>
