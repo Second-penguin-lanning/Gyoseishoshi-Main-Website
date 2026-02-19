@@ -23,50 +23,47 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
     margin: 0;
     padding: 0;
-    padding-top: 120px;
+    padding-top: 90px;
     background: var(--bg-light);
     color: var(--text-main);
     line-height: 1.8;
 }
 
-/* Header */
+/* Header (Logo + Navigation unified) */
 header {
     background: var(--primary);
     color: white;
-    padding: 1.2rem 1rem;
-    text-align: center;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
 }
-header h1 {
-    margin: 0;
+
+.header-logo {
     font-weight: 700;
+    font-size: 1.1rem;
     letter-spacing: 1px;
 }
-header p {
-    margin-top: 0.5rem;
-    opacity: 0.85;
+
+.header-nav {
+    display: flex;
+    gap: 2rem;
 }
 
-/* Navigation */
-nav {
-    background: white;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    padding: 1rem;
-    border-bottom: 1px solid var(--border);
-    font-weight: 600;
-}
-nav a {
+.header-nav a {
     text-decoration: none;
-    color: var(--primary);
+    color: white;
+    font-weight: 600;
     font-size: 0.95rem;
+    transition: 0.3s;
 }
-nav a:hover {
+
+.header-nav a:hover {
     color: var(--accent);
 }
 
@@ -322,17 +319,17 @@ section {
 <body>
 
 <header>
-    <h1>行政書士法人 サポートオフィス</h1>
-    <p>法人設立・許認可申請・ビザ申請の専門家</p>
+    <div class="header-logo">
+        德永行政書士事務所
+    </div>
+    <nav class="header-nav">
+        <a href="#about">代表から</a>
+        <a href="#services">サービス</a>
+        <a href="#pricing">料金プラン</a>
+        <a href="#testimonials">お客様の声</a>
+        <a href="#contact">お問い合わせ</a>
+    </nav>
 </header>
-
-<nav>
-    <a href="#about">代表から</a>
-    <a href="#services">サービス</a>
-    <a href="#pricing">料金プラン</a>
-    <a href="#testimonials">お客様の声</a>
-    <a href="#contact">お問い合わせ</a>
-</nav>
 
 <section class="hero">
     <div class="container" style="padding:0;">
