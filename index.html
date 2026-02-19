@@ -157,6 +157,58 @@ h2::after {
 }
 
 /* Profile */
+/* --- Compact Profile Layout --- */
+.profile-container {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.profile-photo img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.profile-main h3 {
+    margin-top: 0;
+}
+
+.profile-main p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+.profile-compact-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+.profile-compact-list ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+@media (max-width: 768px){
+    .profile-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .profile-compact-list {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-photo {
+        margin: 0 auto;
+    }
+}
+
 .profile-container {
     display: flex;
     flex-wrap: wrap;
@@ -338,7 +390,7 @@ section {
 
 <header>
    <div class="header-logo">
-    <img src="セコンドペンギンロゴ.png" alt="セコンドペンギンロゴ">
+    <img src="logo_SP2.png" alt="logo_SP2">
     <img src="行政書士マーク.png" alt="行政書士マーク">
     <span>德永 行政書士事務所</span>
 </div>
@@ -363,43 +415,53 @@ section {
     <!-- About Section -->
     <section id="about" class="bg-light-section">
     <div class="container">
-        <h2>代表者プロフィール</h2>
-        <div class="profile-container">
-            <div class="profile-main">
-                <h3>德永 良雄 (Yoshio Tokunaga)</h3>
-                <p><strong>行政書士 / 代表</strong></p>
-                <p>国家公務員として31年間勤務。ふるさとの神戸で行政書士の活動をはじめて1年余りとなります。これまで、許認可申請、在留資格認定申請、相続に関するご相談などお受けしてきました [1]。</p>
-                <p>「専門的なことを、できるだけわかりやすく」を心がけ、相談してよかったと思っていただける対応を大切にしています。「ご相談者様と共に歩むサポート」を行います [1]。</p>
-                
-                <div style="margin-top: 2rem; padding: 1rem; border: 1px dashed #ccc; border-radius: 5px;">
-                    <p style="margin:0; font-size: 0.9rem; color: var(--text-light);">
-                        ※外国籍の方個人事業で外国人雇用/支援などの事業（セコンドペンギン企画）も行っています。ご関心のある方はお問い合わせください [2]。
-                    </p>
-                </div>
-            </div>
-            <div class="profile-sub">
-                <h4>資格</h4>
+        <h2>代表から</h2>
+       <div class="profile-container">
+
+    <!-- 写真 -->
+    <div class="profile-photo">
+        <img src="Myfoto.png" alt="德永良雄プロフィール写真">
+    </div>
+
+    <!-- プロフィール本文 -->
+    <div class="profile-main">
+        <h3>德永 良雄 (Yoshio Tokunaga)</h3>
+        <p><strong>行政書士 / 代表</strong></p>
+
+        <p>
+        国家公務員として31年間勤務後、神戸にて開業。
+        許認可申請・在留資格申請・相続業務を中心に対応。
+        「専門的なことを、できるだけわかりやすく」を信条に、
+        ご相談者様と共に歩むサポートを行っています。
+        </p>
+
+        <div class="profile-compact-list">
+            <div>
+                <strong>資格</strong>
                 <ul>
-                    <li>行政書士</li>
-                    <li>申請取次行政書士</li>
-                    <li>日本語教師 (養成講座修了)</li>
-                    <li>英語 (ビジネスレベル) [1]</li>
-                </ul>
-                <h4>経歴</h4>
-                <p><strong>【公務員時代】</strong></p>
-                <ul>
-                    <li>ダム事業の計画・実施</li>
-                    <li>駐車場整備に関する許認可</li>
-                    <li>在インドネシア日本大使館勤務</li>
-                    <li>防災専門家としてインドネシア・フィリピン勤務 [1]</li>
-                </ul>
-                <p><strong>【退職後】</strong></p>
-                <ul>
+                    <li>行政書士 / 申請取次</li>
                     <li>日本語教師</li>
-                    <li>登録支援機関勤務 [1]</li>
+                    <li>英語（ビジネスレベル）</li>
+                </ul>
+            </div>
+
+            <div>
+                <strong>主な経歴</strong>
+                <ul>
+                    <li>ダム・許認可行政</li>
+                    <li>在インドネシア日本大使館</li>
+                    <li>防災専門家（海外勤務）</li>
+                    <li>登録支援機関勤務</li>
                 </ul>
             </div>
         </div>
+
+        <p style="font-size:0.85rem; margin-top:1rem; color:var(--text-sub);">
+        ※外国人雇用・支援事業（セコンドペンギン企画）も運営。
+        </p>
+    </div>
+
+</div>
        </div>
 </section>
 
