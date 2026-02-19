@@ -3,186 +3,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JR Buie | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>行政書士法人 サポートオフィス | 徳永良雄行政書士事務所</title>
     <style>
-        /* 全体のスタイル設定 */
         :root {
-            --bg-color: #f8f9fa;
-            --text-color: #1a1a1a;
-            --accent-color: #555;
-            --card-bg: #ffffff;
+            --primary: #003366;
+            --secondary: #f0f4f8;
+            --accent: #d35400;
+            --text-dark: #333;
+            --text-light: #555;
+            --white: #ffffff;
+            --border: #e1e8ed;
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: #fdfdfd;
         }
 
-        /* コンテナ */
-        .container {
-            max-width: 800px;
-            width: 90%;
-            padding: 60px 20px;
-        }
-
-        /* ヘッダー部分 */
+        /* Header */
         header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 2.5rem 1rem;
             text-align: center;
-            margin-bottom: 60px;
         }
+        header h1 { margin: 0; font-size: 1.8rem; letter-spacing: 1px; }
+        header p { margin: 0.5rem 0 0; opacity: 0.9; font-size: 1rem; }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
+        /* Navigation */
+        nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0.8rem;
         }
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            margin: 0.3rem 1rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        nav a:hover { text-decoration: underline; }
 
-        header p {
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #003366 0%, #005bb5 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+        .hero h2 { font-size: 1.8rem; margin-bottom: 1.5rem; line-height: 1.5; border: none; }
+        .hero p { font-size: 1.1rem; margin-bottom: 2rem; }
+        .hero .btn {
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
             font-size: 1.1rem;
-            color: var(--accent-color);
+            transition: background 0.3s;
         }
+        .hero .btn:hover { background: #e67e22; }
 
-        /* 自己紹介セクション */
-        .about {
-            margin-bottom: 50px;
+        .container { max-width: 1100px; margin: auto; padding: 3rem 1.5rem; }
+
+        section { margin-bottom: 5rem; }
+        h2 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            border-left: 6px solid var(--primary);
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+        }
+        h3 { color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-top: 2rem; }
+
+        /* Profile */
+        .profile-container { display: flex; gap: 3rem; flex-wrap: wrap; }
+        .profile-main { flex: 1; min-width: 300px; }
+        .profile-sub { flex: 1; min-width: 300px; background: var(--secondary); padding: 1.5rem; border-radius: 8px; }
+        .profile-sub ul { padding-left: 1.2rem; }
+        .profile-sub li { margin-bottom: 0.5rem; }
+
+        /* Services & Pricing Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .price-tag { color: var(--accent); font-size: 1.4rem; font-weight: bold; display: block; margin: 1rem 0; }
+        .card ul { padding-left: 1.2rem; font-size: 0.95rem; color: var(--text-light); }
+
+        /* Testimonials */
+        .testimonial-item {
+            background: #fff;
+            border-right: 4px solid var(--primary);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        .testimonial-name { font-weight: bold; display: block; margin-top: 1rem; color: var(--primary); }
+
+        /* Info Table */
+        .info-table { width: 100%; border-collapse: collapse; margin-top: 1rem; background: white; }
+        .info-table th, .info-table td { padding: 1rem; border: 1px solid var(--border); text-align: left; }
+        .info-table th { background: #f9f9f9; width: 25%; color: var(--primary); }
+
+        /* Links Section */
+        .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+        .link-group h4 { margin-bottom: 0.8rem; color: var(--primary); font-size: 1rem; }
+        .link-group ul { list-style: none; padding: 0; }
+        .link-group li { margin-bottom: 0.4rem; }
+        .link-group a { text-decoration: none; color: #0066cc; font-size: 0.9rem; }
+        .link-group a:hover { text-decoration: underline; }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: #ccc;
+            padding: 3rem 1rem;
             text-align: center;
+            font-size: 0.9rem;
         }
-
-        /* プロジェクト/リンクのグリッド (Readdy風) */
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
+        footer p { margin: 0.5rem 0; }
+        .footer-contacts { margin-bottom: 1.5rem; color: white; }
 
         @media (max-width: 600px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* カードのスタイル */
-        .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border: 1px solid #eee;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-
-        .card h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.2rem;
-        }
-
-        .card p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        /* 特徴的な大きなカード (フルサイズ) */
-        .card.full {
-            grid-column: 1 / -1;
-            background-color: #1a1a1a;
-            color: white;
-        }
-
-        .card.full p {
-            color: #ccc;
-        }
-
-        /* ソーシャルアイコン */
-        .social-links {
-            margin-top: 50px;
-            text-align: center;
-        }
-
-        .social-links a {
-            color: var(--text-color);
-            font-size: 1.5rem;
-            margin: 0 15px;
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-
-        .social-links a:hover {
-            opacity: 0.6;
-        }
-
-        footer {
-            margin-top: 100px;
-            padding-bottom: 40px;
-            font-size: 0.8rem;
-            color: #999;
+            header h1 { font-size: 1.4rem; }
+            .hero h2 { font-size: 1.4rem; }
+            .info-table th, .info-table td { display: block; width: 100%; box-sizing: border-box; }
+            .info-table th { border-bottom: none; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>JR Buie</h1>
-            <p>Design Technologist & Creative Coder</p>
-        </header>
+<header>
+    <h1>行政書士法人 サポートオフィス</h1>
+    <p>法人設立・許認可申請・ビザ申請の専門家</p>
+</header>
 
-        <div class="grid">
-            <a href="#" class="card full">
-                <h3>Featured Work</h3>
-                <p>最新のプロジェクトや制作物の詳細はこちらからご覧いただけます。</p>
-            </a>
+<nav>
+    <a href="#about">事務所概要</a>
+    <a href="#services">サービス</a>
+    <a href="#pricing">料金プラン</a>
+    <a href="#testimonials">お客様の声</a>
+    <a href="#contact">お問い合わせ</a>
+</nav>
 
-            <a href="#" class="card">
-                <h3>Projects</h3>
-                <p>開発したアプリやツールのアーカイブ</p>
-            </a>
-
-            <a href="#" class="card">
-                <h3>Writing</h3>
-                <p>技術的なブログや日々の思考</p>
-            </a>
-
-            <a href="#" class="card">
-                <h3>Photography</h3>
-                <p>趣味で撮影している写真のギャラリー</p>
-            </a>
-
-            <a href="mailto:your-email@example.com" class="card">
-                <h3>Contact</h3>
-                <p>お仕事の依頼やお問い合わせはこちら</p>
-            </a>
-        </div>
-
-        <div class="social-links">
-            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-
-        <footer>
-            &copy; 2024 JR Buie. Built with Simplicity.
-        </footer>
+<section class="hero">
+    <div class="container" style="padding:0;">
+        <h2>「どこに相談したらいいかわからない」<br>そんな段階からでも、お気軽にご連絡下さい。</h2>
+        <p>神戸の行政書士・徳永良雄が誠意をもってご対応いたします。</p>
+        <a href="tel:070-9192-2524" class="btn">☎ 070-9192-2524</a>
     </div>
+</section>
+
+<div class="container">
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>代表者プロフィール</h2>
+        <div class="profile-container">
+            <div class="profile-main">
+                <h3>德永 良雄 (Yoshio Tokunaga)</h3>
+                <p><strong>行政書士 / 代表</strong></p>
+                <p>国家公務員として31年間勤務。ふるさとの神戸で行政書士の活動をはじめて1年余りとなります。これまで、許認可申請、在留資格認定申請、相続に関するご相談などお受けしてきました [1]。</p>
+                <p>「専門的なことを、できるだけわかりやすく」を心がけ、相談してよかったと思っていただける対応を大切にしています。「ご相談者様と共に歩むサポート」を行います [1]。</p>
+                
+                <div style="margin-top: 2rem; padding: 1rem; border: 1px dashed #ccc; border-radius: 5px;">
+                    <p style="margin:0; font-size: 0.9rem; color: var(--text-light);">
+                        ※外国籍の方個人事業で外国人雇用/支援などの事業（セコンドペンギン企画）も行っています。ご関心のある方はお問い合わせください [2]。
+                    </p>
+                </div>
+            </div>
+            <div class="profile-sub">
+                <h4>資格</h4>
+                <ul>
+                    <li>行政書士</li>
+                    <li>申請取次行政書士</li>
+                    <li>日本語教師 (養成講座修了)</li>
+                    <li>英語 (ビジネスレベル) [1]</li>
+                </ul>
+                <h4>経歴</h4>
+                <p><strong>【公務員時代】</strong></p>
+                <ul>
+                    <li>ダム事業の計画・実施</li>
+                    <li>駐車場整備に関する許認可</li>
+                    <li>在インドネシア日本大使館勤務</li>
+                    <li>防災専門家としてインドネシア・フィリピン勤務 [1]</li>
+                </ul>
+                <p><strong>【退職後】</strong></p>
+                <ul>
+                    <li>日本語教師</li>
+                    <li>登録支援機関勤務 [1]</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>サービス紹介</h2>
+        <p>豊富な経験と専門知識を活かし、お客様のニーズに合わせた最適なサービスを提供いたします [1]。</p>
+        <div class="grid">
+            <div class="card">
+                <h3>在留資格・ビザ申請</h3>
+                <p>外国人の在留資格認定、変更、更新などの入管手続きを専門的にサポート。就労ビザから永住申請まで幅広く対応いたします [1]。</p>
+            </div>
+            <div class="card">
+                <h3>許認可申請</h3>
+                <p>建設業許可、飲食店営業許可、古物商許可など、各種許認可申請を専門的にサポート。複雑な手続きもお任せください [1]。</p>
+            </div>
+            <div class="card">
+                <h3>相続・遺言・その他</h3>
+                <p>遺言書の作成、相続手続き、遺産分割協議書の作成をサポート。自動車登録や法人設立支援、契約書作成も承ります [3]。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <h2>料金プラン</h2>
+        <p>明確な料金体系で安心してご依頼いただけます。初回相談は無料です [3]。</p>
+        <div class="grid">
+            <div class="card">
+                <h3>在留資格・ビザ</h3>
+                <span class="price-tag">30,000円〜</span>
+                <ul>
+                    <li>在留資格認定証明書交付申請</li>
+                    <li>在留資格変更許可申請</li>
+                    <li>在留期間更新許可申請</li>
+                    <li>永住許可 / 帰化許可サポート [3]</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>許認可申請</h3>
+                <span class="price-tag">50,000円〜</span>
+                <ul>
+                    <li>建設業許可申請</li>
+                    <li>産業廃棄物処理業許可</li>
+                    <li>飲食店営業 / 古物商許可</li>
+                    <li>各種営業許可申請 [3]</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>相続・遺言</h3>
+                <span class="price-tag">35,000円〜</span>
+                <ul>
+                    <li>遺言書作成サポート</li>
+                    <li>相続人調査 / 相続関係説明図作成</li>
+                    <li>遺産分割協議書作成</li>
+                    <li>相続手続き代行 [3]</li>
+                </ul>
+            </div>
+        </div>
+        <p><small>※料金は案件の内容により変動する場合がございます [3]。</small></p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>お客様の声</h2>
+        <div class="testimonial-item">
+            <p>「当ホテルでは外国人スタッフの採用を積極的に進めており、継続的にお世話になっております。複雑な入管手続きも迅速かつ正確で、スムーズに優秀な人材を確保できています」</p>
+            <span class="testimonial-name">株式会社〇〇ホテル 様 [3]</span>
+        </div>
+        <div class="testimonial-item">
+            <p>「太陽光発電事業の立ち上げに伴い、電気工事業の許認可でお世話になりました。必要書類の準備から行政機関との折衝まで、全てを丁寧にサポートしていただきました」</p>
+            <span class="testimonial-name">◇◇電気興業株式会社 様 [4]</span>
+        </div>
+    </section>
+
+    <!-- Contact & Access -->
+    <section id="contact">
+        <h2>事務所情報・お問い合わせ</h2>
+        <table class="info-table">
+            <tr>
+                <th>事務所名</th>
+                <td>德永良雄行政書士事務所 (行政書士法人 サポートオフィス) [2]</td>
+            </tr>
+            <tr>
+                <th>所在地</th>
+                <td>〒658-0032 兵庫県神戸市東灘区向洋町中6-9 神戸ファッションマート 4N-07-01 [2, 4]</td>
+            </tr>
+            <tr>
+                <th>電話番号</th>
+                <td>070-9192-2524 (受付: 平日 8:30〜17:00) [2, 4]</td>
+            </tr>
+            <tr>
+                <th>メール</th>
+                <td>info@tokunaga-gyosei.jp (24時間受付) [2, 4]</td>
+            </tr>
+            <tr>
+                <th>営業時間</th>
+                <td>平日 8:30〜17:00 / 土曜 9:00〜15:00 (事前予約制) <br>※日曜・祝日 休業。緊急時は時間外対応可 [2, 4]</td>
+            </tr>
+            <tr>
+                <th>開業・登録</th>
+                <td>2024年12月開業 / 日本行政書士連合会 第24303656号 [2]</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Links Section -->
+    <section id="links">
+        <h2>関係リンク</h2>
+        <div class="links-grid">
+            <div class="link-group">
+                <h4>行政書士会</h4>
+                <ul>
+                    <li><a href="#">兵庫県行政書士会</a></li>
+                    <li><a href="#">日本行政書士会連合会</a></li>
+                </ul>
+            </div>
+            <div class="link-group">
+                <h4>建設業・許認可</h4>
+                <ul>
+                    <li><a href="#">JAC (日本建設業連合会)</a></li>
+                    <li><a href="#">国土交通省 (建設業許可)</a></li>
+                    <li><a href="#">警察庁 (古物商・車庫証明)</a></li>
+                </ul>
+            </div>
+            <div class="link-group">
+                <h4>補助金・支援</h4>
+                <ul>
+                    <li><a href="#">ミラサポplus</a></li>
+                    <li><a href="#">J-Net21 (中小機構)</a></li>
+                    <li><a href="#">中小企業庁</a></li>
+                </ul>
+            </div>
+            <div class="link-group">
+                <h4>行政機関</h4>
+                <ul>
+                    <li><a href="#">法務局 (登記・供託)</a></li>
+                    <li><a href="#">出入国在留管理庁 (ビザ)</a></li>
+                </ul>
+            </div>
+        </div>
+        <p style="font-size: 0.8rem; color: #888; margin-top: 1.5rem;">※最新の情報については、各機関の公式サイトをご確認ください [5]。</p>
+    </section>
+
+</div>
+
+<footer>
+    <div class="footer-contacts">
+        <p>電話: 070-9192-2524 | メール: info@tokunaga-gyosei.jp</p>
+    </div>
+    <p>信頼と実績の行政書士事務所として、お客様のビジネスを全力でサポートいたします [5]。</p>
+    <p>&copy; 2024 行政書士法人 サポートオフィス. All rights reserved. [5]</p>
+</footer>
 
 </body>
 </html>
