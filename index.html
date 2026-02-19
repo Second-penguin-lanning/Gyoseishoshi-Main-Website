@@ -160,7 +160,7 @@ h2::after {
 /* --- Compact Profile Layout --- */
 .profile-container {
     display: grid;
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 1fr 220px;  /* ← 写真を右側へ */
     gap: 2rem;
     align-items: start;
 }
@@ -456,9 +456,13 @@ section {
             </div>
         </div>
 
-        <p style="font-size:0.85rem; margin-top:1rem; color:var(--text-sub);">
-        ※外国人雇用・支援事業（セコンドペンギン企画）も運営。
-        </p>
+       <p style="font-size:0.85rem; margin-top:1rem; color:var(--text-sub);">
+※外国人雇用・支援事業
+<a href="https://second-penguin-lanning.github.io/SP-Main-Website/" target="_blank" style="color:var(--primary); font-weight:600; text-decoration:none;">
+セコンドペンギン企画
+</a>
+も運営。
+</p>
     </div>
 
 </div>
