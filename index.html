@@ -405,7 +405,55 @@ section {
     font-size: 0.8rem;
     color: var(--text-sub);
 }
+/* ===============================
+   Hamburger Menu (Mobile)
+================================= */
 
+/* ハンバーガーボタン */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* スマホ時 */
+@media (max-width: 768px){
+
+    .header-nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: var(--primary);
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none;
+        padding: 1rem 0;
+    }
+
+    .header-nav a {
+        padding: 1rem 0;
+        display: block;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .header-nav.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
 </style>
 
 </head>
@@ -417,7 +465,12 @@ section {
     <img src="行政書士マーク.png" alt="行政書士マーク">
     <span>德永 行政書士事務所</span>
 </div>
-
+   <!-- ハンバーガー -->
+   <div class="hamburger" onclick="toggleMenu()">
+       <span></span>
+       <span></span>
+       <span></span>
+   </div>
     <nav class="header-nav">
         <a href="#about">代表から</a>
         <a href="#services">サービス</a>
@@ -459,8 +512,8 @@ section {
                 <strong>資格</strong>
                 <ul>
                     <li>行政書士 / 申請取次</li>
-                    <li>日本語教師</li>
                     <li>英語（ビジネスレベル）</li>
+                    <li>日本語教師</li>
                 </ul>
             </div>
 
@@ -470,8 +523,6 @@ section {
                     <li>ダム・許認可行政</li>
                     <li>在インドネシア日本大使館</li>
                     <li>防災専門家（海外勤務）</li>
-　　　　　　　　　 <li>日本語教師（海外勤務）</li>
-                    <li>登録支援機関勤務</li>
                 </ul>
             </div>
         </div>
@@ -717,6 +768,10 @@ section {
     <p>信頼と実績の行政書士事務所として、お客様のビジネスを全力でサポートいたします [5]。</p>
     <p>&copy; 2024 行政書士法人 サポートオフィス. All rights reserved. [5]</p>
 </footer>
-
+<script>
+function toggleMenu() {
+    document.querySelector(".header-nav").classList.toggle("active");
+}
+</script>
 </body>
 </html>
