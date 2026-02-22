@@ -374,37 +374,50 @@ section {
     scroll-margin-top: 100px;
 }
 /* --- Second Penguin Highlight --- */
+/* --- Second Penguin Highlight (Improved) --- */
 .second-penguin-box {
-    margin-top: 1.5rem;
-    padding: 1.2rem;
-    background: linear-gradient(135deg, #eef3f8, #e3edf7);
-    border-left: 5px solid var(--accent);
-    border-radius: 10px;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--accent), #ffb84d);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .sp-title {
     font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
 }
 
 .sp-link {
     display: inline-block;
-    font-weight: 700;
+    background: white;
     color: var(--primary);
+    font-weight: 700;
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
     text-decoration: none;
-    font-size: 1rem;
-    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+    transition: 0.3s;
 }
 
 .sp-link:hover {
-    text-decoration: underline;
-    color: var(--accent);
+    background: var(--primary);
+    color: white;
 }
 
 .sp-note {
-    font-size: 0.8rem;
-    color: var(--text-sub);
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+/* PCでは2行固定 */
+@media (min-width: 769px){
+    .second-penguin-box {
+        max-width: 520px;
+    }
 }
 /* ハンバーガー */
 .hamburger {
@@ -551,14 +564,20 @@ footer a:hover {
             </div>
         </div>
 
-      <div class="second-penguin-box">
-    <p class="sp-title">外国人雇用・支援事業</p>
+     <div class="second-penguin-box">
+    <div class="sp-title">
+        外国人雇用・支援事業のご案内
+    </div>
+
     <a href="https://second-penguin-lanning.github.io/SP-Main-Website/" 
        target="_blank" 
        class="sp-link">
-       ▶ セコンドペンギン企画 公式サイトはこちら
+       セコンドペンギン企画 公式サイトを見る
     </a>
-    <p class="sp-note">※別サイト（Second Penguin Planning）へ移動します</p>
+
+    <div class="sp-note">
+        ※外国人雇用・生活支援専門サイト（別ページ）
+    </div>
 </div>
     </div>
  <!-- 写真 -->
@@ -574,19 +593,19 @@ footer a:hover {
    <section id="services" class="bg-accent-section">
     <div class="container">
         <h2>サービス紹介</h2>
-        <p>豊富な経験と専門知識を活かし、お客様のニーズに合わせた最適なサービスを提供いたします [1]。</p>
+        <p>豊富な経験と専門知識を活かし、お客様のニーズに合わせた最適なサービスを提供いたします。</p>
         <div class="grid">
             <div class="card">
                 <h3>在留資格・ビザ申請</h3>
-                <p>外国人の在留資格認定、変更、更新などの入管手続きを専門的にサポート。就労ビザから永住申請まで幅広く対応いたします [1]。</p>
+                <p>外国人の在留資格認定、変更、更新などの入管手続きを専門的にサポート。就労ビザから永住申請まで幅広く対応いたします。</p>
             </div>
             <div class="card">
                 <h3>許認可申請</h3>
-                <p>建設業許可、飲食店営業許可、古物商許可など、各種許認可申請を専門的にサポート。複雑な手続きもお任せください [1]。</p>
+                <p>建設業許可、飲食店営業許可、古物商許可など、各種許認可申請を専門的にサポート。複雑な手続きもお任せください。</p>
             </div>
             <div class="card">
                 <h3>相続・遺言・その他</h3>
-                <p>遺言書の作成、相続手続き、遺産分割協議書の作成をサポート。自動車登録や法人設立支援、契約書作成も承ります [3]。</p>
+                <p>遺言書の作成、相続手続き、遺産分割協議書の作成をサポート。自動車登録や法人設立支援、契約書作成も承ります。</p>
             </div>
         </div>
   </div>
@@ -596,7 +615,7 @@ footer a:hover {
     <section id="pricing" class="bg-light-section">
     <div class="container">
         <h2>料金プラン</h2>
-        <p>明確な料金体系で安心してご依頼いただけます。初回相談は無料です [3]。</p>
+        <p>明確な料金体系で安心してご依頼いただけます。初回相談は無料です。</p>
         <div class="grid">
             <div class="card">
                 <h3>在留資格・ビザ</h3>
@@ -605,7 +624,7 @@ footer a:hover {
                     <li>在留資格認定証明書交付申請</li>
                     <li>在留資格変更許可申請</li>
                     <li>在留期間更新許可申請</li>
-                    <li>永住許可 / 帰化許可サポート [3]</li>
+                    <li>永住許可 / 帰化許可サポート</li>
                 </ul>
             </div>
             <div class="card">
@@ -615,7 +634,7 @@ footer a:hover {
                     <li>建設業許可申請</li>
                     <li>産業廃棄物処理業許可</li>
                     <li>飲食店営業 / 古物商許可</li>
-                    <li>各種営業許可申請 [3]</li>
+                    <li>各種営業許可申請</li>
                 </ul>
             </div>
             <div class="card">
@@ -625,11 +644,11 @@ footer a:hover {
                     <li>遺言書作成サポート</li>
                     <li>相続人調査 / 相続関係説明図作成</li>
                     <li>遺産分割協議書作成</li>
-                    <li>相続手続き代行 [3]</li>
+                    <li>相続手続き代行</li>
                 </ul>
             </div>
         </div>
-        <p><small>※料金は案件の内容により変動する場合がございます [3]。</small></p>
+        <p><small>※料金は案件の内容により変動する場合がございます。</small></p>
        </div>
     </section>
 
@@ -639,11 +658,11 @@ footer a:hover {
         <h2>お客様の声</h2>
         <div class="testimonial-item">
             <p>「当ホテルでは外国人スタッフの採用を積極的に進めており、継続的にお世話になっております。複雑な入管手続きも迅速かつ正確で、スムーズに優秀な人材を確保できています」</p>
-            <span class="testimonial-name">株式会社〇〇ホテル 様 [3]</span>
+            <span class="testimonial-name">株式会社〇〇ホテル 様</span>
         </div>
         <div class="testimonial-item">
             <p>「太陽光発電事業の立ち上げに伴い、電気工事業の許認可でお世話になりました。必要書類の準備から行政機関との折衝まで、全てを丁寧にサポートしていただきました」</p>
-            <span class="testimonial-name">◇◇電気興業株式会社 様 [4]</span>
+            <span class="testimonial-name">◇◇電気興業株式会社 様</span>
         </div>
  </div>
     </section>
