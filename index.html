@@ -407,7 +407,8 @@ section {
 /* ホバー時 */
 .sp-link:hover {
     background: #c7def0;
-}}/* ハンバーガー */
+}
+/* ハンバーガー */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -811,9 +812,18 @@ footer a:hover {
 const hamburger = document.getElementById("hamburger");
 const nav = document.getElementById("nav");
 
+// ハンバーガークリック
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     nav.classList.toggle("show");
+});
+
+// メニューリンクをクリックしたら閉じる
+document.querySelectorAll("#nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        nav.classList.remove("show");
+    });
 });
 </script>
 </body>
