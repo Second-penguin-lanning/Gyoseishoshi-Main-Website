@@ -1,439 +1,99 @@
 <!DOCTYPE html>
 <html lang="tl">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<meta name="description" content="Para sa aplikasyon ng Specified Skilled Worker visa para sa mga Pilipino, pagkuha ng status of residence, at advisory contracts para sa mga unyon, kumonsulta sa aming dalubhasang Administrative Scrivener na tumutugon sa buong bansa. Nagbibigay kami ng kabuuang suporta para sa mga kumpanya, kumpanyang nagmomonitor, at mga indibidwal.">
-<link rel="canonical" href="https://tokunaga-gyosei.jp/tl">
-<link rel="icon" type="image/png" sizes="32x32" href="gyosei_logo_192.png">
-<link rel="apple-touch-icon" sizes="192x192" href="gyosei_logo_192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="gyosei_logo_512.png">
-<link rel="manifest" href="manifest.json">
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "LegalService",
- "name": "Tokunaga Administrative Scrivener Office",
- "url": "https://tokunaga-gyosei.jp",
- "areaServed": "Japan",
- "serviceType": "Specified Skilled Worker Visa Application Support"
-}
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Administrative Scrivener Support Office | Yoshio Tokunaga Administrative Scrivener Office</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--primary:#1f2f3a;--accent:#b89b5e;--bg-light:#f3f4f5;--text-main:#1a1a1a;--text-sub:#555;--white:#ffffff;--border:#e2e4e7;}
-body{margin:0;padding:90px 0 0 0;font-family:'Noto Sans JP',sans-serif;line-height:1.8;background:var(--bg-light);color:var(--text-main);}
-header{position:fixed;top:0;left:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;width:100%;padding:1rem 1.2rem;box-sizing:border-box;background:var(--primary);color:white;}
-.header-logo{display:flex;align-items:center;gap:15px;font-size:1.1rem;font-weight:700;letter-spacing:1px;}
-.header-logo img{height:32px;width:auto;}
-.header-nav{display:flex;gap:1.5rem;flex-wrap:wrap;}
-.header-nav a{font-size:0.95rem;font-weight:600;text-decoration:none;color:white;transition:0.3s;}
-.header-nav a:hover{color:var(--accent);}
-.header-nav a.business-link{display:flex;align-items:center;gap:4px;font-size:0.75rem;font-weight:400;opacity:0.6;}
-.header-nav a.business-link:hover{opacity:1;color:var(--accent);}
-.lang-switch{display:flex;gap:6px;margin-left:15px;}
-.lang-btn{padding:4px 10px;border:1px solid rgba(255,255,255,0.6);border-radius:4px;font-size:12px;color:white;background:transparent;cursor:pointer;transition:0.3s;}
-.lang-btn.active{border-color:var(--accent);background:var(--accent);}
-.lang-btn:hover{background:var(--accent);}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
-.hamburger span{width:25px;height:3px;background:white;transition:0.3s;}
-.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
-.hamburger.active span:nth-child(2){opacity:0;}
-.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);}
-.hero{padding:5rem 1rem;background:linear-gradient(135deg,#1f2f3a,#2f3f4c);color:white;}
-.hero-inner{display:flex;align-items:stretch;gap:3rem;max-width:1200px;margin:auto;}
-.hero-left{flex:2;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
-.hero-left h2{margin-bottom:1.5rem;font-size:1.8rem;line-height:1.6;}
-.hero-left p{font-size:1.05rem;opacity:0.9;}
-.hero h1{margin-bottom:1rem;font-size:2rem;line-height:1.5;}
-.hero-sub{margin-bottom:1.8rem;font-size:1.1rem;opacity:0.95;}
-.hero-badge{display:inline-block;margin:15px 0;padding:8px 18px;border-radius:50px;font-size:0.95rem;font-weight:bold;color:#000;background:#f4b400;}
-.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
-.hero-buttons a{display:inline-block;min-width:240px;padding:0.9rem 2rem;border-radius:30px;font-weight:600;text-align:center;text-decoration:none;transition:0.3s;}
-.hero-notice{max-width:700px;margin:1.5rem auto 0;padding:0.8rem 1.2rem;border:1px solid #dcdfe3;border-radius:8px;font-size:0.9rem;text-align:left;color:#444;background:#f0f1f3;}
-.hero-notice strong{font-weight:600;}
-.one-stop-support-strong{max-width:1000px;margin:4rem auto;padding:3rem;border-radius:12px;color:#fff;background:linear-gradient(135deg,#1f2f3a,#2c3e50);}
-.one-stop-support-strong h2{margin-bottom:1.5rem;font-size:1.8rem;line-height:1.5;}
-.one-stop-support-strong p{margin-bottom:1rem;line-height:1.9;}
-.one-stop-support-strong .highlight{font-size:1.1rem;font-weight:bold;color:#ffd966;}
-.cta-white{display:inline-block;margin-top:1.5rem;padding:0.9rem 1.6rem;border-radius:30px;font-weight:bold;text-decoration:none;color:#1f2f3a;background:#fff;}
-.hero-content{flex:1;text-align:left;}
-.hero-news-box{width:360px;padding:25px;border-radius:10px;box-shadow:0 20px 40px rgba(0,0,0,0.08);background:#ffffff;}
-.hero-news-box h3{margin-bottom:15px;padding-left:10px;border-left:4px solid #c40000;font-size:18px;}
-.hero-news-box ul{margin:0;padding:0;list-style:none;}
-.hero-news-box li{margin-bottom:12px;font-size:14px;line-height:1.5;}
-.hero-news-box .date{display:block;margin-bottom:4px;font-size:12px;color:#888;}
-.hero-tags{display:flex;gap:10px;margin-bottom:15px;flex-wrap:wrap;}
-.hero-tags span{padding:6px 14px;border-radius:20px;box-shadow:0 3px 8px rgba(0,0,0,0.15);font-size:13px;font-weight:600;letter-spacing:0.5px;}
-.tag-gyosei{color:#fff;background:#1f2f3a;}
-.tag-support{color:#fff;background:#c9a227;}
-.btn-primary{border:2px solid var(--accent);color:white;background:var(--accent);}
-.btn-primary:hover{border-color:#a8894a;background:#a8894a;}
-.btn-outline{border:2px solid white;color:white;background:transparent;}
-.btn-outline:hover{color:var(--primary);background:white;}
-.cta-button{display:inline-block;padding:14px 28px;border-radius:50px;font-size:1.1rem;font-weight:bold;text-decoration:none;color:#fff;background:#d32f2f;transition:0.3s;}
-.cta-button:hover{transform:scale(1.05);background:#b71c1c;}
-.quick-response{margin-top:10px;font-size:0.9rem;color:#555;}
-.language-switch{margin-top:1.5rem;font-size:0.9rem;opacity:0.8;}
-.language-switch a{text-decoration:underline;color:white;}
-.container{max-width:1100px;margin:auto;padding:2.5rem 1.5rem;}
-section{margin-bottom:4rem;scroll-margin-top:100px;}
-h2{position:relative;margin-bottom:2rem;font-size:1.6rem;text-align:center;}
-h2::after{content:"";display:block;width:60px;height:3px;margin:0.7rem auto 0;background:var(--accent);}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;}
-.card{padding:2rem;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04);background:white;transition:0.3s;}
-.card:hover{transform:translateY(-6px);}
-.card h3{margin-top:0;}
-.info-box{height:100%;padding:2rem;border-left:5px solid var(--accent);border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.08);color:var(--text-main);background:white;}
-.info-box h3{margin-top:0;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--accent);font-size:1.2rem;}
-.info-box a{display:block;padding:0.5rem 0;font-weight:600;text-decoration:none;color:var(--primary);transition:0.3s;}
-.info-box a:hover{color:var(--accent);}
-.pricing-note{margin-bottom:30px;font-weight:bold;text-align:center;color:#333;}
-.price-tag{font-size:1.5rem;font-weight:bold;color:var(--accent);}
-.testimonial-item{margin-bottom:2rem;padding:2rem;border-left:4px solid var(--accent);border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.05);background:white;}
-.testimonial-name{display:block;margin-top:1rem;font-weight:600;color:var(--primary);}
-.profile-container{display:grid;grid-template-columns:1fr 220px;gap:2rem;align-items:start;}
-.profile-photo img{width:100%;max-width:200px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,0.08);}
-.profile-main h3{margin-top:0;}
-.profile-main p{margin:0.5rem 0;line-height:1.6;}
-.profile-compact-list{display:grid;grid-template-columns:1fr 1fr;gap:1rem 2rem;margin-top:1rem;font-size:0.95rem;}
-.profile-compact-list ul{margin:0;padding-left:1.2rem;}
-.second-penguin-box{margin-top:2rem;padding:1.2rem 1.5rem;border:1px solid #f3e2b8;border-radius:8px;text-align:left;background:#fff9e8;}
-.sp-text{margin-bottom:0.8rem;font-size:1rem;font-weight:600;color:#333;}
-.sp-link{display:inline-block;padding:0.5rem 1.4rem;border-radius:20px;font-size:0.95rem;font-weight:600;text-decoration:none;color:#1a4f7a;background:#d9eaf7;transition:0.3s;}
-.sp-link:hover{background:#c7def0;}
-.office-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;margin-top:2rem;}
-.office-info{margin:0;padding:0;list-style:none;}
-.office-info li{margin-bottom:1.2rem;line-height:1.6;}
-.office-right img{width:100%;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);transition:0.3s;}
-.office-right img:hover{transform:scale(1.02);}
-.map-note{margin-top:0.8rem;font-size:0.85rem;color:var(--text-sub);}
-.info-table{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;background:white;}
-.info-table th,.info-table td{padding:1rem;border-bottom:1px solid var(--border);}
-.info-table th{width:30%;text-align:left;background:#f8fafc;}
-.cta-section{padding:4rem 1rem;text-align:center;color:white;background:linear-gradient(135deg,#1f2f3a,#2f3f4c);}
-.cta-section h2{color:white;}
-.cta-section .btn-white{display:inline-block;margin-top:1.5rem;padding:1rem 2.5rem;border-radius:30px;font-weight:700;text-decoration:none;color:var(--primary);background:white;transition:0.3s;}
-.cta-section .btn-white:hover{background:#f5f5f5;}
-.contact-form{margin-top:2rem;padding:2rem;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.04);background:white;}
-.contact-form .form-group{margin-bottom:1.5rem;}
-.contact-form label{display:block;margin-bottom:0.5rem;font-weight:600;}
-.contact-form input,.contact-form textarea{width:100%;padding:0.8rem;border:1px solid var(--border);border-radius:6px;font-size:1rem;}
-.contact-form textarea{min-height:150px;resize:vertical;}
-.contact-form button{padding:0.9rem 2rem;border:none;border-radius:30px;font-weight:600;color:white;background:var(--accent);cursor:pointer;transition:0.3s;}
-.contact-form button:hover{background:#ffb84d;}
-.privacy-note{margin-top:1rem;font-size:0.85rem;color:var(--text-sub);}
-.sns-fixed{position:fixed;right:25px;bottom:25px;z-index:1500;display:flex;flex-direction:column;gap:12px;}
-.sns-btn-wide{display:flex;justify-content:center;align-items:center;gap:10px;min-width:210px;padding:14px 20px;border-radius:40px;box-shadow:0 10px 25px rgba(0,0,0,0.25);font-size:15px;font-weight:600;text-decoration:none;color:#fff;transition:0.3s;}
-.sns-btn-wide i{font-size:20px;}
-.sns-btn-wide:hover{opacity:0.95;transform:translateY(-3px);}
-.line-btn{background:#06C755;}
-.facebook-btn{background-color:#1877f2;}
-.back-to-top{position:fixed;right:25px;bottom:170px;z-index:1500;padding:12px 16px;border-radius:30px;box-shadow:0 6px 15px rgba(0,0,0,0.2);font-size:14px;text-decoration:none;color:white;background:var(--primary);transition:0.3s;}
-.back-to-top:hover{background:var(--accent);}
-.floating-cta{position:static;margin-top:20px;}
-.floating-cta a{font-weight:bold;text-decoration:none;color:#fff;}
-footer{padding:3rem 1rem;text-align:center;color:white;background:var(--primary);}
-footer p{margin:0.5rem 0;opacity:0.85;}
-footer a{font-weight:600;text-decoration:underline;color:white;}
-footer a:hover{color:var(--accent);}
-.bg-light-section,.bg-accent-section{padding:3rem 0;}
-@media (max-width:900px){
-.hero{flex-direction:column;}
-.hero-news-box{width:100%;}
-}
-@media (max-width:768px){
-.hero-inner{flex-direction:column;text-align:center;}
-.hero-left{text-align:center;}
-.office-wrapper{grid-template-columns:1fr;}
-.profile-container{grid-template-columns:1fr;text-align:center;}
-.profile-photo{margin:0 auto;}
-.profile-compact-list{grid-template-columns:1fr;}
-.header-logo img{height:24px;}
-.hamburger{display:flex;}
-.header-nav{position:absolute;top:70px;right:0;display:none;flex-direction:column;width:220px;padding:1rem;box-shadow:0 10px 20px rgba(0,0,0,0.1);background:var(--primary);}
-.header-nav.show{display:flex;}
-.header-nav a{padding:0.8rem 0;border-bottom:1px solid rgba(255,255,255,0.2);}
-.sns-fixed{right:15px;bottom:15px;}
-}
-@media (max-width:480px){
-.sns-btn-wide{min-width:160px;padding:10px 14px;font-size:13px;}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalubhasa sa Philippine SSW Visa | Tokunaga Office</title>
+    <meta name="description" content="Nationwide support para sa aplikasyon ng SSW visa ng mga Pilipino, pagpapalit ng status, at Registered Support Organization services.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="canonical" href="https://tokunaga-gyosei.jp/tl/">
+    <link rel="icon" type="image/png" sizes="32x32" href="../gyosei_logo_192.png">
+    <link rel="alternate" hreflang="ja" href="https://second-penguin-planning.github.io/test/">
+    <link rel="alternate" hreflang="en" href="https://second-penguin-planning.github.io/test/en/">
+    <link rel="alternate" hreflang="tl" href="https://second-penguin-planning.github.io/test/tl/">
+    
 </head>
 <body>
-<link rel="alternate" hreflang="ja" href="https://tokunaga-gyosei.jp/">
-<link rel="alternate" hreflang="en" href="https://tokunaga-gyosei.jp/en/">
-<link rel="alternate" hreflang="tl" href="https://tokunaga-gyosei.jp/tl/">
-<link rel="alternate" hreflang="x-default" href="https://tokunaga-gyosei.jp/">
-<header>
-<div class="header-logo">
-<img src="gyosei_logo_192.png" alt="Penguin Logo">
-<span>Yoshio Tokunaga Administrative Scrivener Office</span>
+    <header>
+        <div class="header-logo">
+            <img src="../gyosei_logo_192.png" alt="Logo">
+            <span>Tokunaga Yoshio Office</span>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+        <nav class="header-nav" id="nav">
+            <a href="#for-worker">Para sa mga Pilipino</a>
+            <a href="#pricing">Presyo</a>
+            <a href="#office">Opisina</a>
+            <a href="#contact">Kontak</a>
+        </nav>
+     <div class="lang-switch">
+    <a href="../index.html" class="lang-btn">JP</a>
+    <a href="../en/index.html" class="lang-btn">EN</a>
+    <a href="./index.html" class="lang-btn active">TL</a>
 </div>
-<div class="hamburger" id="hamburger">
-<span></span><span></span><span></span>
-</div>
-<nav class="header-nav" id="nav">
-<a href="#for-company" data-i18n="for_company">Para sa mga Kumpanya</a>
-<a href="#for-worker" data-i18n="for_worker">Para sa mga Pilipino</a>
-<a href="#pricing" data-i18n="pricing">Presyo</a>
-<a href="#office" data-i18n="office">Opisina</a>
-<a href="#contact" data-i18n="contact">Makipag-ugnayan</a>
-<a href="https://second-penguin-planning.github.io/member/" target="_blank" class="business-link">🔒 Para sa Trabaho</a>
-</header>
-<section class="hero">
-<div class="hero-inner">
-<div class="hero-left">
-<h1 data-i18n="hero_title">Dalubhasang Suporta sa Specified Skilled Worker para sa mga Pilipino | Administrative Scrivener na tumutugon sa buong bansa</h1>
-<p data-i18n="hero_sub">Pinagsamang suporta para sa aplikasyon ng Specified Skilled Worker at Status of Residence</p>
-<div class="hero-badge">Libre ang unang konsultasyon | Online na serbisyo sa buong bansa</div>
-<a href="#contact" class="cta-button" data-i18n="hero_cta">Mag-click dito para sa libreng konsultasyon</a>
-<div class="hero-notice">
-<strong>【Administrative Scrivener + One-stop support bilang Registered Support Organization】</strong><br>
-Ang serbisyo para sa pagsuporta sa pag-eempleyo ng mga dayuhan (Kasalukuyang nag-aaplay para sa Registered Support Organization - nakatakdang marehistro sa Marso 2026) ay gagawin sa
-<a href="http://second-penguin.com/" target="_blank" style="color:#1f2f3a; text-decoration:underline;">Second Penguin Planning</a>.
-</div>
-<p class="quick-response">Karaniwang sumasagot sa loob ng 24 oras</p>
-</div>
-<div class="hero-news-box">
-<div class="hero-tags">
-<span class="tag-gyosei">Gawain ng Administrative Scrivener</span>
-<span class="tag-support">Registered Support Org</span>
-</div>
-<h3>Balita</h3>
-<ul>
-<li>
-<span class="date">2026.03.01</span>
-Nai-update ang pinakabagong impormasyon tungkol sa aplikasyon ng Specified Skilled Worker visa.
-</li>
-<li>
-<span class="date">2026.02.20</span>
-Pinalakas ang konsultasyon sa status of residence para sa mga Pilipino.
-</li>
-<li>
-<span class="date">2026.02.05</span>
-Sinimulan na ang pagtanggap ng mga advisory contracts para sa mga unyon.
-</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="for-company" class="bg-light-section">
-<div class="container">
-<h2>Suporta para sa mga Kumpanya at Unyon</h2>
-<div class="grid">
-<div class="card"><h3>Advisory Contract para sa Unyon</h3><p>Patuloy na suporta mula sa Technical Intern Training patungo sa Specified Skilled Worker, pag-aayos ng sistema ng pagtanggap, at pagtugon sa mga audit. Available sa buong bansa.</p></div>
-<div class="card"><h3>Full Support sa Specified Skilled Worker</h3><p>Pinagsamang serbisyo mula sa Certificate of Eligibility, pagbabago, pag-renew, paggawa ng support plan, hanggang sa pakikipag-ugnayan sa Registered Support Organization.</p></div>
-<div class="card"><h3>Suporta sa Sending Agency sa Pilipinas</h3><p>Tulong sa mga pamamaraan sa Embahada ng Pilipinas at POEA, pagsusuri ng kontrata, at pakikipag-ayos.</p></div>
-</div>
-</div>
-</section>
-<section id="for-worker" class="bg-accent-section">
-<div class="container">
-<h2>Para sa lahat ng mga Pilipino</h2>
-<div class="grid">
-<div class="card"><h3>Para sa mga gustong magtrabaho sa Japan</h3><p>Suporta sa pagkuha ng Specified Skilled Worker visa. Maingat na tulong mula sa pagsusuri ng mga dokumento hanggang sa aplikasyon.</p></div>
-<div class="card"><h3>Pag-renew o Pagbabago ng Visa</h3><p>Suporta sa buong bansa para sa pagpapahaba ng pananatili (renewal) o pagpapalit ng visa dahil sa paglipat ng trabaho.</p></div>
-<div class="card"><h3>Konsultasyon (Available sa Ingles)</h3><p>Maaaring kumonsulta sa Ingles. Tumatanggap din kami ng online na interbyu.</p></div>
-</div>
-</div>
-</section>
-<section class="testimonials">
-<div class="container">
-<h2>Mga Boses ng Aming Kliyente</h2>
-<div class="testimonial-item">
-<p>"Naging kampante ako sa pagpaupa sa mga pamamaraan para sa Specified Skilled Worker ng mga Pilipino. Maingat ang kanilang serbisyo mula sa paggawa ng dokumento hanggang sa pakikipag-ugnayan sa Immigration, kaya malaking tulong ito sa aming kumpanya."</p>
-<span class="testimonial-name">(Kumpanya sa Manufacturing Industry)</span>
-</div>
-<div class="testimonial-item">
-<p>"Nag-aalala ako sa aplikasyon para sa pagpapalit ng status of residence, ngunit naging maayos at mabilis ang pagkuha ng permiso dahil sa kanilang mabilis na pag-aksyon."</p>
-<span class="testimonial-name">(Suporta sa aplikasyon ng indibidwal)</span>
-</div>
-</div>
-</section>
-<section class="one-stop-support-strong">
-<h2>Hindi lamang hanggang sa aplikasyon. Isang sistema na maaasahan mula sa pag-hire hanggang sa pananatili ng empleyado.</h2>
-<p>Bilang karagdagan sa gawain ng administrative scrivener, ang aming opisina ay nakarehistro rin bilang isang Registered Support Organization (Pangalan: Second Penguin Planning).</p>
-<p>Dahil dito, hindi lamang aplikasyon para sa status of residence ang aming serbisyo. Kaya rin naming gawin ang suporta sa kontrata ng trabaho, paggawa ng support plan, suporta sa pang-araw-araw na buhay, at pag-aayos ng sistema para sa mga kumpanya sa isang tuluy-tuloy na proseso.</p>
-<p class="highlight">Nakakamit namin ang isang one-stop system kung saan malinaw ang responsibilidad, nang hindi nahahati ang trabaho sa pagitan ng "administrative scrivener para sa aplikasyon" at "ibang kumpanya para sa suporta."</p>
-<p>Pinipili kami ng mga kumpanya na gustong ayusin ang pag-eempleyo ng mga dayuhan hindi bilang isang pansamantalang hakbang kundi bilang isang matibay na "sistema."</p>
-</section>
-<section id="pricing" class="pricing">
-<div class="container">
-<h2>Gabay sa mga Presyo (Dalubhasa sa Status of Residence)</h2>
-<p class="pricing-note">Lahat ay may paunang quotation at malinaw na bayarin. Ipapaliwanag nang maaga ang anumang karagdagang gastos.</p>
-<div class="grid">
-<div class="card">
-<h3>Aplikasyon para sa Certificate of Eligibility (COE)</h3>
-<p class="price-tag">Mula 110,000 yen</p>
-<ul><li>Para sa Specified Skilled Worker</li><li>Kumpletong paghahanda ng dokumento</li><li>Kasama ang pakikipag-ugnayan sa Immigration</li></ul>
-</div>
-<div class="card">
-<h3>Aplikasyon para sa Pagpapalit ng Status of Residence</h3>
-<p class="price-tag">Mula 88,000 yen</p>
-<ul><li>Mula Technical Intern patungong SSW, atbp.</li><li>Pagsasaayos ng mga kailangang dokumento</li><li>Proxy sa pagsusumite sa Immigration</li></ul>
-</div>
-<div class="card">
-<h3>Aplikasyon para sa Pagpapahaba ng Pananatili (Renewal)</h3>
-<p class="price-tag">Mula 55,000 yen</p>
-<ul><li>Kumpletong pamamaraan sa pag-renew</li><li>Suporta para sa kumpanya</li><li>Mabilis na pag-aksyon</li></ul>
-</div>
-<div class="card">
-<h3>Advisory Contract para sa Kumpanya o Unyon</h3>
-<p class="price-tag">Mula 33,000 yen kada buwan</p>
-<ul><li>Suporta sa pagtanggap ng SSW</li><li>Regular na konsultasyon</li><li>Suporta sa residency management</li></ul>
-</div>
-</div>
-</div>
-</section>
-<section id="about" class="bg-light-section">
-<div class="container">
-<h2>Mula sa Kinatawan</h2>
-<div class="profile-container">
-<div class="profile-main">
-<h3>Yoshio Tokunaga</h3>
-<p><strong>Administrative Scrivener / Kinatawan</strong></p>
-<p>Matapos magtrabaho bilang isang national public servant sa loob ng 31 taon, nagbukas ako ng opisina sa Kobe. Nakatuon ako sa mga aplikasyon para sa mga permit, status of residence, at mga usapin sa inheritance. Ang aking mithiin ay magbigay ng suporta kasama ang aking mga kliyente sa pamamagitan ng pagpapaliwanag ng mga "propesyonal na bagay sa pinakamadaling paraan."</p>
-<div class="profile-compact-list">
-<div><strong>Kwalipikasyon</strong><ul><li>Administrative Scrivener / Application Agent</li><li>Ingles (Business Level)</li><li>Guro ng Wikang Hapones</li></ul></div>
-<div><strong>Pangunahing Karanasan</strong><ul><li>Dam & Licensing Administration</li><li>Embahada ng Japan sa Indonesia</li><li>Eksperto sa Disaster Prevention (Trabaho sa ibang bansa)</li></ul></div>
-</div>
-<div class="second-penguin-box">
-<div class="sp-text">【Gabay】 Para sa negosyo ng foreign employment at life support, mag-click dito →</div>
-<a href="http://second-penguin.com/" target="_blank" class="sp-link">Opisyal na Website ng Second Penguin Planning</a>
-</div>
-</div>
-<div class="profile-photo"><img src="myfoto.png" alt="Yoshio Tokunaga Profile Photo"></div>
-</div>
-</div>
-</section>
-<section id="office" class="bg-light-section">
-<div class="container">
-<h2>Impormasyon ng Opisina</h2>
-<div class="office-wrapper">
-<div class="office-left">
-<ul class="office-info">
-<li><strong>Pangalan ng Opisina</strong><br>Yoshio Tokunaga Administrative Scrivener Office</li>
-<li><strong>Registration Number</strong><br>Japan Federation of Administrative Scrivener Associations No. 24303656</li>
-<li><strong>Numero ng Telepono</strong><br>070-9192-2524</li>
-<li><strong>Email</strong><br>info@tokunaga-gyosei.jp</li>
-<li><strong>Lokasyon</strong><br>〒658-0032<br>Hyogo-ken, Kobe-shi, Higashinada-ku, Koyocho-naka 6-9<br>Kobe Fashion Mart 4N-07-01</li>
-<li><strong>Oras ng Trabaho</strong><br>Lunes-Biyernes 8:30-17:00<br>Sabado 9:00-15:00 (By appointment)<br>※Sarado tuwing Linggo at Holiday</li>
-</ul>
-</div>
-<div class="office-right">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.457852107576!2d135.2678!3d34.6896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60008d669352e82b%3A0x63327d9237699e12!2z56We5oi444OV44Kh44OD44K344On44Oz44Oe44O844OI!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" width="100%" height="350" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-<p class="map-note">※Maaaring palakihin ang mapa at maghanap ng ruta</p>
-</div>
-</div>
-</div>
-</section>
-<section class="cta-section">
-<h2>Huwag mag-atubiling kumonsulta sa amin</h2>
-<p>Libre ang unang konsultasyon. Sasagot nang direkta ang isang Administrative Scrivener na may mayamang karanasan sa ibang bansa.</p>
-<a href="tel:070-9192-2524" class="btn-white">Tumawag na ngayon</a>
-</section>
-<section id="contact" class="bg-light-section">
-<div class="container">
-<h2>Makipag-ugnayan</h2>
-<div class="contact-form">
-<h3 style="margin-top:0;">Inquiry Form</h3>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeJPYhr5yeNR1IyZvTHCWVO5s_os7ff83NjhB02nPmMgARSmA/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Naglo-load…</iframe>
-<p class="privacy-note">※Karaniwan kaming sumasagot sa loob ng 1 araw ng trabaho.</p>
-</div>
-</div>
-</section>
-<section id="links" class="bg-light-section">
-<div class="container">
-<h2>Mga Kaugnay na Link</h2>
-<div class="grid">
-<div class="link-group"><h4>Administrative Scrivener Association</h4><ul><li><a href="#">Hyogo Administrative Scrivener Association</a></li><li><a href="#">Japan Fed. of Administrative Scrivener Assoc.</a></li></ul></div>
-<div class="link-group"><h4>Construction & Licensing</h4><ul><li><a href="#">JAC (Japan Fed. of Construction Contractors)</a></li><li><a href="#">MLIT (Construction Licensing)</a></li><li><a href="#">Police Agency (Antique Dealer/Parking)</a></li></ul></div>
-<div class="link-group"><h4>Subsidies & Support</h4><ul><li><a href="#">Mirasapo plus</a></li><li><a href="#">J-Net21 (SMRJ)</a></li><li><a href="#">Small and Medium Enterprise Agency</a></li></ul></div>
-<div class="link-group"><h4>Ahensya ng Gobyerno</h4><ul><li><a href="#">Legal Affairs Bureau (Registration)</a></li><li><a href="#">Immigration Services Agency (Visa)</a></li></ul></div>
-</div>
-<p style="font-size: 0.8rem; color: #888; margin-top: 1.5rem;">※Pakitingnan ang opisyal na website ng bawat ahensya para sa pinakabagong impormasyon.</p>
-</div>
-</section>
-<div class="sns-fixed">
-<a href="https://line.me/R/oaMessage/@556fihjp/" target="_blank" rel="noopener noreferrer" class="sns-btn-wide line-btn" aria-label="Libreng konsultasyon sa LINE">
-<i class="fab fa-line"></i> Libreng konsultasyon sa LINE
-</a>
-<a href="https://www.facebook.com/second.penguin/" target="_blank" class="sns-btn-wide facebook-btn" aria-label="Tingnan ang Facebook Page">
-<i class="fab fa-facebook-f"></i> Tingnan ang Facebook Page
-</a>
-</div>
-<a href="#" class="back-to-top">▲ TAAS</a>
-<a href="#contact" class="cta-white">Mag-apply para sa One-stop Consultation</a>
-<div class="floating-cta"><a href="#contact" class="cta-button" data-jp="無料相談はこちら" data-en="Free Consultation" data-tl="Libreng Konsultasyon">Libreng Konsultasyon</a></div>
-<footer>
-<div class="footer-contacts"><p>Telepono: 070-9192-2524 | Email: info@tokunaga-gyosei.jp</p></div>
-<p><a href="private.html" style="color:white; text-decoration:underline;">Privacy Policy</a></p>
-<p>Bilang isang opisina ng Administrative Scrivener na may tiwala at track record, buong puso naming susuportahan ang inyong negosyo.</p>
-<p>© 2024 Administrative Scrivener Support Office. All rights reserved.</p>
-<div style="margin-top:2rem; font-size:0.8rem; opacity:0.8;">
-<h4 style="margin-bottom:0.5rem;">Iba pang mga Gawain</h4>
-<p>Tumatanggap din kami ng aplikasyon para sa subsidies/grants, permit para sa solar power, permit sa construction, antique dealer license, suporta sa inheritance/will, atbp.</p>
-</div>
-</footer>
-<script>
-const hamburger = document.getElementById("hamburger");
-const nav = document.getElementById("nav");
-hamburger.addEventListener("click", () => {
-hamburger.classList.toggle("active");
-nav.classList.toggle("show");
-});
-const translations = {
-jp: {
-hero_title: "フィリピン人 特定技能 専門サポート 全国対応 行政書士",
-hero_sub: "特定技能・在留資格の申請を一括サポート",
-hero_cta: "無料相談はこちら",
-for_company: "企業様へ",
-for_worker: "フィリピン人の方へ",
-pricing: "料金",
-office: "事務所",
-contact: "お問い合わせ"
-},
-en: {
-hero_title: "Philippine Specified Skilled Worker Visa Support Nationwide",
-hero_sub: "Comprehensive support for visa and residence applications",
-hero_cta: "Free Consultation",
-for_company: "For Companies",
-for_worker: "For Filipino Workers",
-pricing: "Pricing",
-office: "Office",
-contact: "Contact"
-},
-tl: {
-hero_title: "Suporta sa Specified Skilled Worker Visa para sa mga Pilipino sa buong Japan",
-hero_sub: "Komprehensibong suporta para sa visa at residence application",
-hero_cta: "Libreng Konsultasyon",
-for_company: "Para sa mga Kumpanya",
-for_worker: "Para sa mga Pilipino",
-pricing: "Presyo",
-office: "Opisina",
-contact: "Makipag-ugnayan"
-}
-};
-function switchLang(lang) {
-document.querySelectorAll('[data-i18n]').forEach(el => {
-const key = el.getAttribute('data-i18n');
-if (translations[lang][key]) {
-el.innerHTML = translations[lang][key];
-}
-});
-document.querySelectorAll('.lang-btn').forEach(btn => {
-btn.classList.remove('active');
-if (btn.innerText.toLowerCase() === lang.toLowerCase()) {
-btn.classList.add('active');
-}
-});
-document.documentElement.lang = lang;
-}
-</script>
+    </header>
 
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
+                <div class="hero-left">
+                    <h1>Dalubhasa sa SSW Visa para sa mga Pilipino</h1>
+                    <p class="hero-sub">One-stop support para sa inyong visa at paninirahan sa Japan</p>
+                    <div class="hero-badge">Libreng Konsultasyon | Nationwide Online Support</div>
+                    <a href="#contact" class="cta-button">Libreng Konsultasyon Dito</a>
+                    <div class="hero-notice">
+                        Ang suporta sa pamumuhay (RSO) ay ibibigay ng 
+                        <a href="http://second-penguin.com/" target="_blank">Second Penguin Planning</a>.
+                    </div>
+                </div>
+                <div class="hero-news-box">
+                    <h3>Balita</h3>
+                    <ul>
+                        <li><span class="date">2026.03.01</span>Update sa impormasyon ng SSW Visa.</li>
+                        <li><span class="date">2026.02.20</span>Pinalakas na serbisyo para sa mga Pilipino.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="for-worker" class="bg-accent-section">
+            <div class="container">
+                <h2>Para sa mga Pilipino</h2>
+                <div class="grid">
+                    <div class="card"><h3>Gusto magtrabaho sa Japan?</h3><p>Suporta para makuha ang inyong Specified Skilled Worker (SSW) visa.</p></div>
+                    <div class="card"><h3>Visa Renewal / Pagpalit</h3><p>Tulong sa pag-renew ng visa o paglipat ng trabaho sa buong Japan.</p></div>
+                    <div class="card"><h3>Konsultasyon (English/JP)</h3><p>Maaaring mag-tanong sa English o Japanese online.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2>Presyo (Visa Services)</h2>
+                <p class="pricing-note">Malinaw at tapat na presyo para sa inyong kapanatagan.</p>
+                <div class="grid">
+                    <div class="card"><h3>Aplikasyon ng COE</h3><p class="price-tag">¥110,000〜</p></div>
+                    <div class="card"><h3>Pagpalit ng Status</h3><p class="price-tag">¥88,000〜</p></div>
+                    <div class="card"><h3>Pag-renew ng Visa</h3><p class="price-tag">¥55,000〜</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="sns-fixed">
+        <a href="https://line.me/..." class="sns-btn-wide line-btn"><i class="fab fa-line"></i> Libreng Konsultasyon</a>
+    </div>
+
+    <footer>
+        <p>© 2024 Tokunaga Administrative Scrivener Office. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/common.js"></script>
 </body>
 </html>
