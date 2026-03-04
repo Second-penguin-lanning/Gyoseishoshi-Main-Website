@@ -8,11 +8,13 @@
   --white: #ffffff;
   --border: #e2e4e7;
 }
+
 /* リセット・基本設定 (html, body, img) */
 html {
   scroll-padding-top: 80px;
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
   padding: 90px 0 0 0;
@@ -21,11 +23,13 @@ body {
   background: var(--bg-light);
   color: var(--text-main);
 }
+
 img {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
 }
+
 /* 共通パーツ (header, footer, .container, .cta-button) */
 header {
   position: fixed;
@@ -41,6 +45,7 @@ header {
   background: var(--primary);
   color: white;
 }
+
 .header-logo {
   display: flex;
   align-items: center;
@@ -48,13 +53,16 @@ header {
   font-size: 1.1rem;
   font-weight: 700;
 }
+
 .header-logo img {
   height: 32px;
 }
+
 .header-nav {
   display: flex;
   gap: 1.5rem;
 }
+
 .header-nav a {
   font-size: 0.95rem;
   font-weight: 600;
@@ -62,9 +70,11 @@ header {
   color: white;
   transition: 0.3s;
 }
+
 .header-nav a:hover {
   color: var(--accent);
 }
+
 .header-nav a.business-link {
   display: flex;
   align-items: center;
@@ -72,11 +82,13 @@ header {
   font-size: 0.75rem;
   opacity: 0.6;
 }
+
 .lang-switch {
   display: flex;
   gap: 6px;
   margin-left: 15px;
 }
+
 .lang-btn {
   padding: 4px 10px;
   border: 1px solid rgba(255,255,255,0.6);
@@ -85,22 +97,26 @@ header {
   color: white;
   text-decoration: none;
 }
+
 .lang-btn.active {
   background: var(--accent);
   border-color: var(--accent);
 }
+
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
 }
+
 .hamburger span {
   width: 25px;
   height: 3px;
   background: white;
   transition: 0.3s;
 }
+
 /* 三本線が×になるアニメーション */
 .hamburger.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
@@ -111,11 +127,13 @@ header {
 .hamburger.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
+
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 4rem 1.5rem;
 }
+
 .cta-button {
   display: inline-block;
   padding: 15px 45px;
@@ -128,10 +146,12 @@ header {
   transition: 0.3s;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
+
 .cta-button:hover {
   transform: translateY(-2px);
   filter: brightness(1.1);
 }
+
 .btn-white {
   display: inline-block;
   padding: 1rem 2rem;
@@ -142,48 +162,144 @@ header {
   font-weight: bold;
   margin-top: 1rem;
 }
+
 footer {
   background: var(--primary);
   color: white;
   text-align: center;
   padding: 3rem 1rem;
 }
+
 /* 各セクションの個別スタイル */
+
+/* --- ヒーローセクションの基本レイアウト --- */
 .hero {
   padding: 5rem 1rem;
   background: linear-gradient(135deg, #1f2f3a, #2f3f4c);
   color: white;
 }
+
 .hero-inner {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* 上揃えに変更 */
   gap: 3rem;
   max-width: 1200px;
   margin: auto;
 }
+
 .hero-left {
-  flex: 2;
-  text-align: center;
+  flex: 1.5; /* 左側を少し広く */
+  text-align: left; /* 左寄せに変更 */
 }
+
+/* タイトル周り */
 .hero h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
 }
-.hero-sub {
+
+.hero-subtext {
   font-size: 1.1rem;
-  margin-bottom: 1.8rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
 }
-.hero-badge, .hero-notice {
-  display: none;
+
+/* --- ターゲット別カードナビゲーション --- */
+.hero-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
+
+.nav-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 1.2rem 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: transform 0.2s;
+  border-left: 6px solid var(--accent);
+}
+
+.nav-card:hover {
+  transform: translateX(8px);
+  background: #fdfdfd;
+}
+
+.nav-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+.nav-main {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 2px 0;
+}
+
+.nav-sub {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-sub);
+}
+
+.nav-card i {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+/* --- メインお問い合わせボタン --- */
+.hero-cta {
+  margin-top: 2rem;
+}
+
+.cta-button-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 40px;
+  background: #c40000; /* お知らせの赤に合わせた目立つ色 */
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: 0.3s;
+  box-shadow: 0 4px 20px rgba(196, 0, 0, 0.3);
+}
+
+.cta-button-main:hover {
+  background: #e60000;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(196, 0, 0, 0.4);
+}
+
+.quick-response {
+  font-size: 0.85rem;
+  margin-top: 0.8rem;
+  opacity: 0.8;
+}
+
+/* --- 右側お知らせボックスの調整 --- */
 .hero-news-box {
   width: 360px;
   background: white;
   color: var(--text-main);
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  flex-shrink: 0; /* 幅を維持 */
 }
+
 .hero-news-box h3 {
   border-left: 4px solid #c40000;
   padding-left: 10px;
@@ -215,6 +331,8 @@ footer {
 }
 .tag-gyosei { background: var(--primary); }
 .tag-support { background: var(--accent); }
+
+/* その他セクション */
 h2 {
   text-align: center;
   margin-bottom: 3rem;
@@ -286,6 +404,7 @@ h2::after {
   text-align: center;
   padding: 4rem 1rem;
 }
+
 /* 固定要素 (.sns-fixed, .back-to-top) */
 .sns-fixed {
   position: fixed;
@@ -325,7 +444,25 @@ h2::after {
   text-decoration: none;
   z-index: 1000;
 }
+
 /* レスポンシブ設定 (@media) */
+@media (max-width: 850px) {
+  .hero-inner {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .hero-left {
+    text-align: center;
+  }
+  .nav-card {
+    text-align: left;
+  }
+  .hero-news-box {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
 @media (max-width: 768px) {
   header {
     padding: 0.5rem 1rem;
@@ -348,12 +485,6 @@ h2::after {
   }
   .hamburger {
     display: flex;
-  }
-  .hero-inner {
-    flex-direction: column;
-  }
-  .hero-news-box {
-    width: auto;
   }
   .office-wrapper, .profile-container {
     grid-template-columns: 1fr;
