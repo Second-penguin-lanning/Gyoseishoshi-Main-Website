@@ -1,362 +1,363 @@
 @charset "UTF-8";
 
-/* ==========================================================================
-   1. 変数定義 (:root)
-   ========================================================================== */
-:root {
-  --primary: #1f2f3a;
-  --accent: #b89b5e;
-  --bg-light: #f3f4f5;
-  --text-main: #1a1a1a;
-  --text-sub: #555;
-  --white: #ffffff;
-  --border: #e2e4e7;
-  --notice-red: #c40000;
+/* =========================
+   基本設定
+========================= */
+
+:root{
+--primary:#1f2f3a;
+--accent:#b89b5e;
+--bg-light:#f5f6f7;
+--text-main:#1a1a1a;
+--text-sub:#666;
+--white:#ffffff;
+--border:#e3e5e8;
 }
 
-/* ==========================================================================
-   2. 基本設定 (Base)
-   ========================================================================== */
-html {
-  scroll-padding-top: 80px;
-  scroll-behavior: smooth;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-body {
-  margin: 0;
-  padding: 90px 0 0 0; /* 固定ヘッダー分の余白 */
-  font-family: 'Noto Sans JP', sans-serif;
-  line-height: 1.8;
-  background: var(--bg-light);
-  color: var(--text-main);
-  -webkit-font-smoothing: antialiased;
+body{
+font-family:'Noto Sans JP',sans-serif;
+color:var(--text-main);
+line-height:1.7;
+background:white;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle;
+
+/* =========================
+   コンテナ
+========================= */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:80px 20px;
 }
 
-a {
-  text-decoration: none;
-  transition: 0.3s;
-  color: inherit;
+
+/* =========================
+   見出し
+========================= */
+
+h1{
+font-size:40px;
+font-weight:700;
+margin-bottom:20px;
 }
 
-/* ==========================================================================
-   3. 共通レイアウトパーツ (Layout)
-   ========================================================================== */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 4rem 1.5rem;
+h2{
+font-size:30px;
+margin-bottom:40px;
+text-align:center;
 }
 
-section {
-  overflow: hidden;
+h3{
+font-size:20px;
+margin-bottom:10px;
 }
 
-.bg-light-section { background: var(--white); }
-.bg-accent-section { background: var(--bg-light); }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+/* =========================
+   ヘッダー
+========================= */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+border-bottom:1px solid var(--border);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-/* 見出しスタイル */
-h2 {
-  text-align: center;
-  margin-bottom: 3rem;
-  font-size: 1.8rem;
+.header-logo{
+display:flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+color:var(--text-main);
 }
 
-h2::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: var(--accent);
-  margin: 10px auto;
+.header-logo img{
+height:40px;
 }
 
-/* カード基本デザイン */
-.card {
-  background: var(--white);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  height: 100%;
-  box-sizing: border-box;
+.office-name{
+font-weight:600;
+font-size:16px;
 }
 
-/* ==========================================================================
-   4. ヘッダー・ナビゲーション (Header)
-   ========================================================================== */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 1rem 1.2rem;
-  box-sizing: border-box;
-  background: var(--primary);
-  color: var(--white);
+
+/* =========================
+   ナビ
+========================= */
+
+.header-nav{
+display:flex;
+gap:25px;
 }
 
-.header-logo {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 1.1rem;
-  font-weight: 700;
+.header-nav a{
+text-decoration:none;
+color:var(--text-main);
+font-size:14px;
 }
 
-.header-logo img {
-  height: 32px;
+.header-nav a:hover{
+color:var(--accent);
 }
 
-.header-nav {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
+
+/* =========================
+   ヒーロー
+========================= */
+
+.hero{
+background:linear-gradient(120deg,#1f2f3a,#2e4555);
+color:white;
+padding:100px 20px;
 }
 
-.header-nav a {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--white);
+.hero-inner{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 420px;
+gap:40px;
+align-items:center;
 }
 
-.header-nav a:hover {
-  color: var(--accent);
+.hero-subtext{
+font-size:18px;
+margin-bottom:20px;
 }
 
-.header-nav a.business-link {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.75rem;
-  opacity: 0.6;
+.hero-badge{
+display:inline-block;
+background:var(--accent);
+padding:8px 15px;
+border-radius:20px;
+font-size:14px;
+margin-bottom:25px;
 }
 
-/* 言語切替ボタン */
-.lang-switch {
-  display: flex;
-  gap: 6px;
-  margin-left: 15px;
+.hero-cta{
+margin-top:20px;
 }
 
-.lang-btn {
-  padding: 4px 10px;
-  border: 1px solid rgba(255,255,255,0.6);
-  border-radius: 4px;
-  font-size: 12px;
-  color: var(--white);
+.cta-button-main{
+background:var(--accent);
+color:white;
+padding:15px 25px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
 }
 
-.lang-btn.active {
-  background: var(--accent);
-  border-color: var(--accent);
+.cta-button-main:hover{
+opacity:0.9;
 }
 
-/* ハンバーガーメニュー */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  z-index: 1100;
+
+/* =========================
+   ヒーロー右ニュース
+========================= */
+
+.hero-news-box{
+background:white;
+color:var(--text-main);
+padding:25px;
+border-radius:10px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: var(--white);
-  transition: 0.3s;
+.hero-news-box ul{
+list-style:none;
 }
 
-.hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-/* ==========================================================================
-   5. ヒーローセクション (Hero Section)
-   ========================================================================== */
-.hero {
-  padding: 5rem 1rem;
-  background: linear-gradient(135deg, #1f2f3a, #2f3f4c);
-  color: var(--white);
+.hero-news-box li{
+font-size:14px;
+margin-bottom:10px;
 }
 
-.hero-inner {
-  display: flex;
-  align-items: flex-start;
-  gap: 3rem;
-  max-width: 1200px;
-  margin: auto;
+.hero-news-box .date{
+color:var(--accent);
+margin-right:8px;
+font-weight:600;
 }
 
-.hero-left {
-  flex: 1.5;
-  text-align: left;
+
+/* =========================
+   セクション背景
+========================= */
+
+.bg-light-section{
+background:var(--bg-light);
 }
 
-.hero h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
+.bg-accent-section{
+background:#faf8f2;
 }
 
-.hero-subtext {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin-bottom: 2rem;
+
+/* =========================
+   グリッド
+========================= */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
 }
 
-/* ターゲット別カードナビ */
-.hero-navigation {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
+
+/* =========================
+   カード
+========================= */
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+border:1px solid var(--border);
+transition:all .25s;
 }
 
-.nav-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--white);
-  padding: 1.2rem 1.8rem;
-  border-radius: 8px;
-  color: var(--text-main);
-  border-left: 6px solid var(--accent);
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-.nav-card:hover {
-  transform: translateX(8px);
-  background: #fdfdfd;
+.card p{
+color:var(--text-sub);
+font-size:14px;
 }
 
-.nav-label {
-  display: block;
-  font-size: 0.7rem;
-  font-weight: bold;
-  color: var(--accent);
-  letter-spacing: 0.05em;
+
+/* =========================
+   料金
+========================= */
+
+.price-tag{
+font-size:24px;
+font-weight:700;
+color:var(--accent);
+margin:15px 0;
 }
 
-.nav-main {
-  display: block;
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin: 2px 0;
+
+/* =========================
+   プロフィール
+========================= */
+
+.profile-container{
+display:grid;
+grid-template-columns:1fr 300px;
+gap:40px;
+align-items:center;
 }
 
-.nav-sub {
-  display: block;
-  font-size: 0.85rem;
-  color: var(--text-sub);
+.profile-photo img{
+width:100%;
+border-radius:10px;
 }
 
-/* メインCTAボタン */
-.hero-cta {
-  margin-top: 2rem;
+
+/* =========================
+   事務所情報
+========================= */
+
+.office-wrapper{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
 }
 
-.cta-button-main {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 18px 40px;
-  background: var(--notice-red);
-  color: var(--white);
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 20px rgba(196, 0, 0, 0.3);
+.office-info{
+list-style:none;
 }
 
-.cta-button-main:hover {
-  background: #e60000;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(196, 0, 0, 0.4);
+.office-info li{
+margin-bottom:15px;
 }
 
-.quick-response {
-  font-size: 0.85rem;
-  margin-top: 0.8rem;
-  opacity: 0.8;
+
+/* =========================
+   フォーム
+========================= */
+
+.contact-form{
+max-width:700px;
+margin:auto;
 }
 
-/* ==========================================================================
-   6. その他コンポーネント
-   ========================================================================== */
-.office-name {
-  white-space: nowrap;
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border-radius:6px;
+border:1px solid var(--border);
 }
 
-.privacy-note {
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 15px;
+.submit-btn{
+background:var(--accent);
+color:white;
+border:none;
+padding:14px;
+width:100%;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
 }
 
-/* ==========================================================================
-   7. レスポンシブ (Mobile: 768px以下)
-   ========================================================================== */
-@media (max-width: 768px) {
-  /* ナビゲーション */
-  .header-nav {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: var(--primary);
-    flex-direction: column;
-    padding: 20px;
-    gap: 15px;
-  }
 
-  .header-nav.active {
-    display: flex;
-  }
+/* =========================
+   フッター
+========================= */
 
-  .hamburger {
-    display: flex;
-  }
+footer{
+text-align:center;
+padding:40px;
+background:#1f2f3a;
+color:white;
+font-size:14px;
+}
 
-  /* ヒーローエリア */
-  .hero-inner {
-    flex-direction: column;
-    gap: 2rem;
-  }
 
-  .hero h1 {
-    font-size: 1.7rem;
-  }
+/* =========================
+   レスポンシブ
+========================= */
 
-  .cta-button-main {
-    width: 100%;
-    justify-content: center;
-    font-size: 1.1rem;
-  }
+@media (max-width:900px){
 
-  /* 事務所名切り替え */
-  .office-name {
-    font-size: 0;
-  }
+.hero-inner{
+grid-template-columns:1fr;
+}
 
-  .office-name::after {
-    content: "徳永行政書士";
-    font-size: 14px;
-    font-weight: 700;
-  }
+.grid{
+grid-template-columns:1fr;
+}
+
+.profile-container{
+grid-template-columns:1fr;
+}
+
+.office-wrapper{
+grid-template-columns:1fr;
+}
+
+header{
+padding:15px 20px;
+}
+
 }
