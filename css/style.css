@@ -295,5 +295,22 @@ header {
   margin-top: 0.8rem;
   opacity: 0.8;
 }
+.office-name{
+    white-space: nowrap;
+}
 
+/* スマホ表示 */
+@media (max-width:768px){
+
+.office-name{
+    font-size:0;
+}
+
+.office-name::after{
+    content:"徳永行政書士";
+    font-size:14px;
+    font-weight:700;
+}
+
+}
 /* お知らせボックス */
