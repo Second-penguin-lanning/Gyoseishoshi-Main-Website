@@ -295,6 +295,9 @@ header {
   margin-top: 0.8rem;
   opacity: 0.8;
 }
+
+/* お知らせボックス */
+
 .office-name{
     white-space: nowrap;
 }
@@ -313,4 +316,8 @@ header {
 }
 
 }
-/* お知らせボックス */
+.privacy-note{
+font-size:13px;
+color:#666;
+margin-bottom:15px;
+}
