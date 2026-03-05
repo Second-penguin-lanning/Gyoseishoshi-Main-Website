@@ -8,6 +8,14 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="canonical" href="https://tokunaga-gyosei.jp/">
+    <link rel="icon" type="image/png" sizes="32x32" href="gyosei_logo_192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="gyosei_logo_192.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="alternate" hreflang="ja" href="https://second-penguin-planning.github.io/test/">
+    <link rel="alternate" hreflang="en" href="https://second-penguin-planning.github.io/test/en/">
+    <link rel="alternate" hreflang="tl" href="https://second-penguin-planning.github.io/test/tl/">
 
     <script type="application/ld+json">
     {
@@ -56,104 +64,134 @@
 
         /* --- 基本設定 --- */
         html { scroll-padding-top: 80px; scroll-behavior: smooth; }
-        body { margin: 0; padding: 90px 0 0 0; font-family: 'Noto Sans JP', sans-serif; line-height: 1.8; background: var(--bg-light); color: var(--text-main); }
+        body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; line-height: 1.8; background: var(--bg-light); color: var(--text-main); }
         img { max-width: 100%; height: auto; vertical-align: middle; }
-        a { text-decoration: none; transition: 0.3s; }
+        a { text-decoration: none; transition: 0.3s; color: inherit; }
 
         /* --- ヘッダー --- */
-        header { position: fixed; top: 0; left: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 1rem 1.2rem; box-sizing: border-box; background: var(--primary); color: white; }
-        .header-logo { display: flex; align-items: center; gap: 15px; font-size: 1.1rem; font-weight: 700; }
-        .header-logo img { height: 32px; }
-        .header-nav { display: flex; gap: 1.5rem; }
-        .header-nav a { font-size: 0.95rem; font-weight: 600; color: white; }
+        header { position: fixed; top: 0; left: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0.8rem 1.2rem; box-sizing: border-box; background: var(--primary); color: white; }
+        .header-logo { display: flex; align-items: center; gap: 12px; font-size: 1.1rem; font-weight: 700; }
+        .header-logo img { height: 35px; }
+        .header-nav { display: flex; gap: 1.2rem; align-items: center; }
+        .header-nav a { font-size: 0.9rem; font-weight: 600; color: white; }
         .header-nav a:hover { color: var(--accent); }
-        .header-nav a.business-link { font-size: 0.75rem; opacity: 0.6; }
-        .lang-switch { display: flex; gap: 6px; margin-left: 15px; }
-        .lang-btn { padding: 4px 10px; border: 1px solid rgba(255,255,255,0.6); border-radius: 4px; font-size: 12px; color: white; }
+        .header-nav a.business-link { font-size: 0.75rem; opacity: 0.7; }
+        
+        .lang-switch { display: flex; gap: 6px; margin-left: 10px; }
+        .lang-btn { padding: 3px 8px; border: 1px solid rgba(255,255,255,0.6); border-radius: 4px; font-size: 11px; color: white; }
         .lang-btn.active { background: var(--accent); border-color: var(--accent); }
-        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1100; }
         .hamburger span { width: 25px; height: 3px; background: white; transition: 0.3s; }
 
-        /* --- ヒーローセクション (改善版) --- */
-        .hero { padding: 5rem 1rem; background: linear-gradient(135deg, #1f2f3a, #2f3f4c); color: white; }
+        /* --- ヒーローセクション --- */
+        .hero { padding: 140px 1rem 5rem; background: linear-gradient(135deg, #1f2f3a, #2f3f4c); color: white; }
         .hero-inner { display: flex; align-items: flex-start; gap: 3rem; max-width: 1200px; margin: auto; }
         .hero-left { flex: 1.5; text-align: left; }
         .hero h1 { font-size: 2.2rem; margin: 0 0 0.5rem 0; line-height: 1.3; }
         .hero-subtext { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; }
+        
+        .hero-badge { display: inline-block; background: var(--accent); color: white; padding: 5px 15px; border-radius: 4px; font-weight: bold; margin-bottom: 1.5rem; }
 
-        /* 動線カード */
         .hero-navigation { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
         .nav-card { display: flex; align-items: center; justify-content: space-between; background: white; padding: 1.2rem 1.8rem; border-radius: 8px; color: var(--text-main); border-left: 6px solid var(--accent); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .nav-card:hover { transform: translateX(8px); background: #fdfdfd; }
+        .nav-card:hover { transform: translateX(8px); }
         .nav-label { display: block; font-size: 0.7rem; font-weight: bold; color: var(--accent); letter-spacing: 0.05em; }
         .nav-main { display: block; font-size: 1.25rem; font-weight: 700; margin: 2px 0; }
         .nav-sub { display: block; font-size: 0.85rem; color: var(--text-sub); }
         .nav-card i { color: var(--accent); font-size: 1.2rem; }
 
-        /* 問い合わせCTA */
         .hero-cta { margin-top: 2rem; }
         .cta-button-main { display: inline-flex; align-items: center; gap: 10px; padding: 18px 40px; background: var(--notice-red); color: white; border-radius: 50px; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 20px rgba(196, 0, 0, 0.3); }
         .cta-button-main:hover { background: #e60000; transform: translateY(-3px); }
         .quick-response { font-size: 0.85rem; margin-top: 0.8rem; opacity: 0.8; }
 
-        /* 右側お知らせ */
         .hero-news-box { width: 360px; background: white; color: var(--text-main); padding: 25px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); flex-shrink: 0; }
         .hero-news-box h3 { border-left: 4px solid var(--notice-red); padding-left: 10px; margin: 0 0 15px 0; font-size: 1.1rem; }
         .hero-news-box ul { list-style: none; padding: 0; margin: 0; }
         .hero-news-box li { font-size: 14px; margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
-        .hero-news-box li:last-child { border: none; }
         .hero-news-box .date { display: block; color: #888; font-size: 12px; }
         .hero-tags { display: flex; gap: 8px; margin-bottom: 15px; }
         .hero-tags span { padding: 4px 10px; border-radius: 4px; font-size: 11px; color: white; }
         .tag-gyosei { background: var(--primary); }
         .tag-support { background: var(--accent); }
 
+        .hero-notice { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; font-size: 0.9rem; margin-top: 20px; border: 1px dashed rgba(255,255,255,0.3); }
+
         /* --- 共通セクション --- */
-        .container { max-width: 1100px; margin: auto; padding: 4rem 1.5rem; }
-        h2 { text-align: center; margin-bottom: 3rem; font-size: 1.8rem; }
-        h2::after { content: ""; display: block; width: 50px; height: 3px; background: var(--accent); margin: 10px auto; }
+        .container { max-width: 1100px; margin: auto; padding: 5rem 1.5rem; }
+        h2 { text-align: center; margin-bottom: 3rem; font-size: 1.8rem; position: relative; padding-bottom: 15px; }
+        h2::after { content: ""; display: block; width: 50px; height: 3px; background: var(--accent); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .card { background: white; padding: 2.5rem 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card h3 { margin-top: 0; color: var(--primary); border-bottom: 1px solid var(--accent); padding-bottom: 10px; }
+        
         .bg-light-section { background: white; }
         .bg-accent-section { background: var(--bg-light); }
         
+        /* お客様の声 */
+        .testimonials { background: #fff; }
+        .testimonial-item { background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid var(--accent); }
+        .testimonial-name { display: block; text-align: right; font-weight: bold; color: var(--text-sub); margin-top: 10px; }
+
         /* 強みセクション */
-        .one-stop-support-strong { background: linear-gradient(135deg, #1f2f3a, #2c3e50); color: white; padding: 4rem 2rem; text-align: center; margin: 4rem auto; max-width: 1000px; border-radius: 12px; }
-        .one-stop-support-strong p.highlight { color: var(--accent); font-weight: bold; font-size: 1.1rem; }
+        .one-stop-support-strong { background: linear-gradient(135deg, #1f2f3a, #2c3e50); color: white; padding: 5rem 1.5rem; text-align: center; }
+        .one-stop-support-strong .highlight { color: var(--accent); font-weight: bold; font-size: 1.2rem; margin: 1.5rem 0; }
 
         /* 料金 */
-        .price-tag { font-size: 1.5rem; color: var(--accent); font-weight: bold; }
+        .price-tag { font-size: 1.8rem; color: var(--accent); font-weight: bold; margin: 10px 0; }
+        .pricing-note { text-align: center; margin-bottom: 2rem; color: var(--text-sub); }
 
-        /* プロフィール & 事務所 */
-        .profile-container { display: grid; grid-template-columns: 1fr 220px; gap: 2rem; }
-        .profile-photo img { border-radius: 12px; width: 100%; }
-        .office-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .office-info { list-style: none; padding: 0; }
-        .office-info li { margin-bottom: 1rem; }
+        /* プロフィール */
+        .profile-container { display: flex; gap: 3rem; align-items: center; background: white; padding: 3rem; border-radius: 12px; }
+        .profile-main { flex: 1; }
+        .profile-photo { flex-shrink: 0; width: 250px; }
+        .profile-photo img { border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        /* 事務所情報 */
+        .office-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .office-info { list-style: none; padding: 0; margin: 0; }
+        .office-info li { margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        .office-info strong { color: var(--primary); font-size: 1.1rem; }
 
         /* お問い合わせフォーム */
-        .contact-form { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .contact-form { max-width: 800px; margin: auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .contact-form label { display: block; margin-bottom: 8px; font-weight: bold; }
+        .contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; font-size: 1rem; }
+        .submit-btn { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 6px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background: #2c3e50; }
 
-        /* SNS & Back to Top */
+        /* フッター */
+        .site-footer { background: var(--primary); color: white; padding: 4rem 1.5rem 2rem; }
+        .footer-inner { max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 3rem; }
+        .footer-center ul { list-style: none; padding: 0; }
+        .footer-center li { margin-bottom: 10px; }
+        .footer-center a { color: rgba(255,255,255,0.8); }
+        .footer-bottom { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; }
+
+        /* 固定ボタン */
         .sns-fixed { position: fixed; right: 20px; bottom: 20px; z-index: 1000; display: flex; flex-direction: column; gap: 10px; }
-        .sns-btn-wide { padding: 10px 20px; border-radius: 30px; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-size: 0.9rem; }
+        .sns-btn-wide { padding: 12px 20px; border-radius: 30px; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-size: 0.9rem; }
         .line-btn { background: #06C755; }
         .facebook-btn { background: #1877f2; }
-        .back-to-top { position: fixed; right: 20px; bottom: 140px; background: var(--primary); color: white; padding: 12px; border-radius: 50%; z-index: 1000; font-size: 0.8rem; }
+        .back-to-top { position: fixed; right: 25px; bottom: 150px; background: var(--primary); color: white; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; z-index: 999; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
 
         /* --- レスポンシブ --- */
-        @media (max-width: 850px) {
-            .hero-inner { flex-direction: column; gap: 2rem; }
-            .hero-left { text-align: center; }
-            .nav-card { text-align: left; }
-            .hero-news-box { width: 100%; box-sizing: border-box; }
-            .office-wrapper, .profile-container { grid-template-columns: 1fr; }
+        @media (max-width: 992px) {
+            .hero-inner { flex-direction: column; }
+            .hero-news-box { width: 100%; }
+            .profile-container { flex-direction: column; text-align: center; padding: 2rem; }
+            .office-wrapper { grid-template-columns: 1fr; }
         }
+
         @media (max-width: 768px) {
             header { padding: 0.5rem 1rem; }
-            .header-nav { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--primary); flex-direction: column; padding: 1rem; text-align: center; }
-            .header-nav.show { display: flex; }
+            .header-nav { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--primary); flex-direction: column; padding: 2rem; }
+            .header-nav.active { display: flex; }
             .hamburger { display: flex; }
+            .hero h1 { font-size: 1.8rem; }
+            .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
         }
     </style>
 </head>
@@ -161,7 +199,7 @@
 
     <header>
         <div class="header-logo">
-            <img src="images/行政書士マーク.png" alt="行政書士ロゴ">
+            <img src="gyosei_logo_192.png" alt="徳永行政書士事務所 ロゴ">
             <span>德永 良雄 行政書士事務所</span>
         </div>
         <div class="hamburger" id="hamburger">
@@ -171,15 +209,15 @@
             <a href="#for-company">企業様へ</a>
             <a href="#for-worker">フィリピン人の方へ</a>
             <a href="#pricing">料金</a>
-            <a href="#about">代表プロフィール</a>
-            <a href="#office">アクセス</a>
+            <a href="#about">代表から</a>
+            <a href="#office">事務所情報</a>
             <a href="#contact">お問い合わせ</a>
             <a href="https://second-penguin-planning.github.io/member/" target="_blank" class="business-link">🔒 業務用</a>
         </nav>
         <div class="lang-switch">
             <a href="./index.html" class="lang-btn active">JP</a>
-            <a href="./en/" class="lang-btn">EN</a>
-            <a href="./tl/" class="lang-btn">TL</a>
+            <a href="./en/index.html" class="lang-btn">EN</a>
+            <a href="./tl/index.html" class="lang-btn">TL</a>
         </div>
     </header>
 
@@ -187,8 +225,9 @@
         <section class="hero">
             <div class="hero-inner">
                 <div class="hero-left">
-                    <h1>フィリピン人雇用支援 | 全国対応 | 一気通貫支援</h1>
-                    <p class="hero-subtext">特定技能ビザ申請から登録支援機関としてのサポートまで、フィリピン案件のプロが対応します。</p>
+                    <h1>フィリピン人特定技能ビザ申請専門｜全国対応の行政書士</h1>
+                    <p class="hero-subtext">特定技能・在留資格の申請を一括サポート。採用から定着まで、プロの視点で全面支援します。</p>
+                    <div class="hero-badge">初回相談 無料｜全国オンライン対応</div>
 
                     <div class="hero-navigation">
                         <a href="#for-company" class="nav-card">
@@ -199,7 +238,6 @@
                             </div>
                             <i class="fas fa-chevron-right"></i>
                         </a>
-
                         <a href="#for-worker" class="nav-card">
                             <div class="nav-content">
                                 <span class="nav-label">FOR WORKER</span>
@@ -211,10 +249,15 @@
                     </div>
 
                     <div class="hero-cta">
-                        <a href="#contact" class="cta-button-main">
-                            <i class="fas fa-envelope"></i> 無料相談・お問い合わせはこちら
-                        </a>
+                        <a href="#contact" class="cta-button-main"><i class="fas fa-envelope"></i> 無料相談はこちら</a>
                         <p class="quick-response">通常24時間以内にご返信します</p>
+                    </div>
+
+                    <div class="hero-notice">
+                        <strong>【行政書士＋登録支援機関 ワンストップ対応】</strong><br>
+                        外国人雇用支援事業（登録支援機関 申請中・2026年3月登録予定）は、
+                        <a href="http://second-penguin.com/" target="_blank" style="color:white; text-decoration:underline;">セコンドペンギン企画</a>
+                        にて対応予定です。
                     </div>
                 </div>
 
@@ -237,9 +280,18 @@
             <div class="container">
                 <h2>企業・組合様向けサポート</h2>
                 <div class="grid">
-                    <div class="card"><h3>組合顧問契約</h3><p>技能実習から特定技能移行、受入体制整備、監査対応まで継続サポート。全国対応可能。</p></div>
-                    <div class="card"><h3>特定技能フルサポート</h3><p>在留資格認定、変更、更新、支援計画作成、登録支援機関との連携まで一括対応。</p></div>
-                    <div class="card"><h3>フィリピン送出機関対応</h3><p>フィリピン大使館・DMW（旧POEA）関連手続き、契約書確認・調整支援。</p></div>
+                    <div class="card">
+                        <h3>組合顧問契約</h3>
+                        <p>技能実習から特定技能移行、受入体制整備、監査対応まで継続サポート。全国対応可能。</p>
+                    </div>
+                    <div class="card">
+                        <h3>特定技能フルサポート</h3>
+                        <p>在留資格認定、変更、更新、支援計画作成、登録支援機関との連携まで一括対応。</p>
+                    </div>
+                    <div class="card">
+                        <h3>フィリピン送出機関対応</h3>
+                        <p>フィリピン大使館・DMW（旧POEA）関連手続き、契約書確認・調整支援。</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -248,54 +300,97 @@
             <div class="container">
                 <h2>フィリピン人の皆様へ</h2>
                 <div class="grid">
-                    <div class="card"><h3>日本で働きたい方へ</h3><p>特定技能ビザ取得サポート. 必要書類の確認から申請まで丁寧に対応。</p></div>
-                    <div class="card"><h3>ビザ更新・変更</h3><p>在留期間更新、転職に伴う変更申請など全国対応。</p></div>
-                    <div class="card"><h3>相談対応（英語可）</h3><p>英語での相談可能。オンライン面談にも対応しています。</p></div>
+                    <div class="card">
+                        <h3>日本で働きたい方へ</h3>
+                        <p>特定技能ビザ取得サポート。必要書類の確認から申請まで丁寧に対応。</p>
+                    </div>
+                    <div class="card">
+                        <h3>ビザ更新・変更</h3>
+                        <p>在留期間更新、転職に伴う変更申請など全国対応。</p>
+                    </div>
+                    <div class="card">
+                        <h3>相談対応（英語可）</h3>
+                        <p>英語での相談可能。オンライン面談にも対応しています。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials bg-light-section">
+            <div class="container">
+                <h2>お客様の声</h2>
+                <div class="testimonial-item">
+                    <p>「フィリピン人特定技能の手続きを安心して任せることができました。書類作成から入管対応まで丁寧で、企業として非常に助かりました。」</p>
+                    <span class="testimonial-name">（製造業 企業様）</span>
+                </div>
+                <div class="testimonial-item">
+                    <p>「在留資格変更手続きで不安がありましたが、迅速な対応で無事許可を取得できました。」</p>
+                    <span class="testimonial-name">（本人申請サポート）</span>
                 </div>
             </div>
         </section>
 
         <section class="one-stop-support-strong">
             <div class="container">
-                <h2>採用から定着まで、すべて任せられる体制。</h2>
-                <p>当事務所は行政書士業務に加え、登録支援機関としての登録（セコンドペンギン企画）も行っております。</p>
-                <p class="highlight">「申請は行政書士」「支援は別会社」と分断されることなく、ワンストップで対応可能です。</p>
+                <h2>申請だけで終わらせない。採用から定着まで、すべて任せられる体制。</h2>
+                <p>当事務所は行政書士業務に加え、登録支援機関としての登録（名称：セコンドペンギン企画）も行っております。</p>
+                <p>そのため、在留資格申請だけでなく、雇用契約支援・支援計画作成・生活サポート・企業様の体制整備まで、一気通貫で対応可能です。</p>
+                <p class="highlight">「申請は行政書士」「支援は別会社」と分断されることなく、責任の所在が明確なワンストップ体制を実現しています。</p>
+                <p>外国人雇用を“点”ではなく“仕組み”として整えたい企業様に選ばれています。</p>
             </div>
         </section>
 
-        <section id="pricing" class="pricing container">
-            <h2>料金の目安</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>認定証明書交付申請</h3>
-                    <p class="price-tag">110,000円〜</p>
-                    <p>特定技能対応・書類作成一式</p>
-                </div>
-                <div class="card">
-                    <h3>在留資格変更許可</h3>
-                    <p class="price-tag">88,000円〜</p>
-                    <p>技能実習からの移行など</p>
-                </div>
-                <div class="card">
-                    <h3>企業・組合顧問</h3>
-                    <p class="price-tag">月額 33,000円〜</p>
-                    <p>受入体制の継続サポート</p>
+        <section id="pricing" class="pricing bg-accent-section">
+            <div class="container">
+                <h2>料金の目安（在留資格専門）</h2>
+                <p class="pricing-note">すべて事前見積・明朗会計。追加費用は事前にご説明します。</p>
+                <div class="grid">
+                    <div class="card">
+                        <h3>在留資格認定証明書交付申請</h3>
+                        <p class="price-tag">110,000円〜</p>
+                        <ul>
+                            <li>特定技能対応</li>
+                            <li>書類作成一式</li>
+                            <li>入管対応含む</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>在留資格変更許可申請</h3>
+                        <p class="price-tag">88,000円〜</p>
+                        <ul>
+                            <li>技能実習からの移行など</li>
+                            <li>複雑な案件にも対応</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>企業・組合顧問契約</h3>
+                        <p class="price-tag">月額 33,000円〜</p>
+                        <ul>
+                            <li>受入体制の継続サポート</li>
+                            <li>随時相談・監査対応支援</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="about" class="bg-light-section">
             <div class="container">
-                <h2>代表から</h2>
+                <h2>代表プロフィール</h2>
                 <div class="profile-container">
                     <div class="profile-main">
-                        <h3>德永 良雄 (Yoshio Tokunaga)</h3>
+                        <h3>德永 良雄（Yoshio Tokunaga）</h3>
                         <p><strong>行政書士 / 日本語教師</strong></p>
-                        <p>国家公務員として31年間勤務後、神戸にて開業。インドネシアでの勤務経験など、国際経験を活かして外国人雇用を支援しています。</p>
-                        <a href="http://second-penguin.com/" target="_blank" style="color:var(--accent); text-decoration:underline;">セコンドペンギン企画 公式サイト</a>
+                        <p>国家公務員として31年間勤務し、主に人事・総務・労務分野に従事しました。その後、神戸市にて行政書士事務所を開業。</p>
+                        <p>また、日本語教師として外国人教育にも携わっており、外国人材と企業双方の立場を理解した支援を行っています。</p>
+                        <p>インドネシアでの勤務経験など国際経験を活かし、現在は<strong>フィリピン人材の雇用支援・特定技能ビザ申請</strong>を中心に企業・監理団体・外国人本人をサポートしています。</p>
+                        <p>外国人雇用は制度・文化・生活支援など複合的な課題があります。当事務所では<strong>申請だけで終わらない継続支援</strong>を大切にしています。</p>
+                        <a href="http://second-penguin.com/" target="_blank" style="color:var(--accent); text-decoration:underline; font-weight: bold;">
+                            セコンドペンギン企画 公式サイト
+                        </a>
                     </div>
                     <div class="profile-photo">
-                        <img src="images/myfoto.png" alt="德永良雄">
+                        <img src="images/myfoto.png" alt="德永良雄 行政書士">
                     </div>
                 </div>
             </div>
@@ -303,5 +398,104 @@
 
         <section id="office" class="bg-accent-section">
             <div class="container">
-                <h2>事務所情報</h2>
-                <div class="office-wrapper
+                <h2>事務所情報・アクセス</h2>
+                <div class="office-wrapper">
+                    <div class="office-text">
+                        <ul class="office-info">
+                            <li><strong>事務所名</strong><br>德永良雄行政書士事務所</li>
+                            <li><strong>所在地</strong><br>〒658-0032 兵庫県神戸市東灘区向洋町中6-9<br>神戸ファッションマート 4N-07-01</li>
+                            <li><strong>電話</strong><br>070-9192-2524</li>
+                            <li><strong>メール</strong><br>info@tokunaga-gyosei.jp</li>
+                            <li><strong>対応エリア</strong><br>全国対応（オンライン相談可）</li>
+                        </ul>
+                    </div>
+                    <div class="office-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.247653284!2d135.2687586!3d34.68504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60008d3e913a4917%3A0xb7174092f6c9d74b!2z56We5oi444OV44Kh44OD44K344On44Oz44Oe44O844OIdA!5e0!3m2!1sja!2sjp!4v1700000000000" width="100%" height="350" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-light-section">
+            <div class="container">
+                <h2>お問い合わせ</h2>
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/xbdaevyb" method="POST">
+                        <label>お名前（必須）</label>
+                        <input type="text" name="name" required>
+
+                        <label>メールアドレス（必須）</label>
+                        <input type="email" name="email" required>
+
+                        <label>電話番号</label>
+                        <input type="tel" name="tel">
+
+                        <label>お問い合わせ種別</label>
+                        <select name="type">
+                            <option>企業の外国人雇用相談</option>
+                            <option>フィリピン人の就労相談</option>
+                            <option>特定技能ビザ申請</option>
+                            <option>在留資格変更・更新</option>
+                            <option>その他</option>
+                        </select>
+
+                        <label>お問い合わせ内容</label>
+                        <textarea name="message" rows="6" required></textarea>
+
+                        <button type="submit" class="submit-btn">送信する</button>
+                    </form>
+                    <p style="font-size:12px; margin-top:15px; text-align: center;">※通常24時間以内に返信いたします。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <h3>德永 良雄 行政書士事務所</h3>
+                <p>フィリピン人特定技能ビザ申請専門<br>全国対応</p>
+            </div>
+            <div class="footer-center">
+                <ul>
+                    <li><a href="#for-company">企業様向け</a></li>
+                    <li><a href="#for-worker">フィリピン人の方へ</a></li>
+                    <li><a href="#pricing">料金</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <p>〒658-0032 兵庫県神戸市東灘区向洋町中6-9<br>神戸ファッションマート4N-07-01</p>
+                <p>TEL：070-9192-2524</p>
+                <p>Email：info@tokunaga-gyosei.jp</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Tokunaga Administrative Scrivener Office</p>
+        </div>
+    </footer>
+
+    <div class="sns-fixed">
+        <a href="#" class="sns-btn-wide line-btn"><i class="fab fa-line"></i> LINE相談</a>
+        <a href="#" class="sns-btn-wide facebook-btn"><i class="fab fa-facebook"></i> Messenger</a>
+    </div>
+    <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+
+    <script>
+        // Hamburger Menu
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('nav');
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('open');
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.header-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
