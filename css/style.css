@@ -346,18 +346,19 @@ h2::after {
 }
 
 /* ボタン本体 */
-.sns-btn-wide {
-    padding: 8px 14px;
-    border-radius: 30px;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.8rem;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.18);
-    transition: 0.25s;
+.sns-btn-wide{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+
+padding:14px 20px;
+border-radius:8px;
+
+color:#fff;
+font-weight:600;
+text-decoration:none;
+font-size:15px;
 }
 /* Messenger */
 .messenger-btn{
@@ -374,14 +375,12 @@ h2::after {
     font-size: 16px;
 }
 
-/* LINE */
-.line-btn {
-    background: #06C755;
+.sns-btn-wide.line-btn{
+background:#06C755;
 }
 
-/* Facebook */
-.facebook-btn {
-    background: #1877f2;
+.sns-btn-wide.facebook-btn{
+background:#1877F2;
 }
 .facebook-btn { background: #1877f2; }
 
