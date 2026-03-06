@@ -359,7 +359,10 @@ h2::after {
     box-shadow: 0 3px 10px rgba(0,0,0,0.18);
     transition: 0.25s;
 }
-
+/* Messenger */
+.messenger-btn{
+    background:#0084FF;
+}
 /* hover */
 .sns-btn-wide:hover {
     transform: translateY(-2px);
