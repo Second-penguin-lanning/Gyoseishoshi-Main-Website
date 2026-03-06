@@ -331,37 +331,55 @@ h2::after {
     margin-top: 1rem;
 }
 
+/* ===============================
+   SNS固定ボタン（PC・スマホ最適化）
+================================ */
+
 .sns-fixed {
     position: fixed;
-    right: 20px;
+    right: 18px;
     bottom: 20px;
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
+/* ボタン本体 */
 .sns-btn-wide {
-    padding: 6px 12px;       /* 前回の案よりかなり小さくしました */
-    border-radius: 30px;     /* 角丸も少し控えめに */
+    padding: 8px 14px;
+    border-radius: 30px;
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    font-size: 0.8rem;      /* 文字サイズを小さく */
+    gap: 6px;
+    font-size: 0.8rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+    transition: 0.25s;
 }
 
-/* アイコン（もしimgタグなどがある場合）のサイズ制限 */
-.sns-btn-wide img, 
+/* hover */
+.sns-btn-wide:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* アイコン */
 .sns-btn-wide i {
-    width: 18px;
-    height: 18px;
+    font-size: 16px;
 }
 
-.line-btn { background: #06C755; }
+/* LINE */
+.line-btn {
+    background: #06C755;
+}
+
+/* Facebook */
+.facebook-btn {
+    background: #1877f2;
+}
 .facebook-btn { background: #1877f2; }
 
 .back-to-top {
@@ -370,7 +388,7 @@ h2::after {
     bottom: 160px;
     background: var(--primary);
     color: white;
-    padding: 10px 20px;    /* 上下10px、左右20pxで内側に余白を作る */
+    padding: 6px 12px;    /* 上下10px、左右20pxで内側に余白を作る */
     border-radius: 30px;   /* 十分に大きな値を指定することで両端が半円の楕円になります */
     text-decoration: none;
     z-index: 1001;
@@ -409,6 +427,21 @@ footer {
         flex-direction: column;
         padding: 1rem;
     }
+/* スマホ最適化 */
+@media (max-width: 768px) {
+
+    .sns-fixed {
+        right: 12px;
+        bottom: 15px;
+        gap: 6px;
+    }
+
+    .sns-btn-wide {
+        padding: 7px 12px;
+        font-size: 0.75rem;
+    }
+
+}
     .header-nav.show { display: flex; }
     .hamburger { display: flex; }
     .hero-inner { flex-direction: column; }
