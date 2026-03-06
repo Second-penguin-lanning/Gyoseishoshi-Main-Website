@@ -335,14 +335,14 @@ h2::after {
    SNS固定ボタン（PC・スマホ最適化）
 ================================ */
 
-.sns-fixed {
+.sns-fixed{
     position: fixed;
-    right: 18px;
+    right: 20px;
     bottom: 20px;
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 /* ボタン本体 */
@@ -388,7 +388,7 @@ h2::after {
 .back-to-top {
     position: fixed;
     right: 20px;
-    bottom: 160px;
+    bottom: 200px;
     background: var(--primary);
     color: white;
     padding: 6px 12px;    /* 上下10px、左右20pxで内側に余白を作る */
