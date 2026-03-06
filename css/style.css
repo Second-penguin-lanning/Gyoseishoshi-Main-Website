@@ -147,7 +147,11 @@ header {
     margin-bottom: 1.5rem;
 }
 /* 不要な要素（赤いボタンやサブの白いボタン等）を完全に消す */
-
+.hero-badge, 
+.btn-white,
+.hero-notice {
+    display: none !important;
+}
 .cta-button {
     display: inline-block;
     padding: 15px 45px;      /* 横幅を少し持たせる */
@@ -322,79 +326,51 @@ h2::after {
     background: white;
     color: var(--primary);
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 30px;
     font-weight: bold;
     margin-top: 1rem;
 }
 
-/* ===============================
-   SNS固定ボタン（PC・スマホ最適化）
-================================ */
-
-.sns-fixed{
+.sns-fixed {
     position: fixed;
     right: 20px;
     bottom: 20px;
     z-index: 9999;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
-/* ボタン本体 */
-
-/* Messenger */
-.messenger-btn{
-background:#1877F2;
-}
-.line-btn{
-background:#06C755;
-}
-
-/* Facebook */
-
-.facebook-btn{
-background:#3b5998;
-}
-/* hover */
-.sns-btn-wide:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
+.sns-btn-wide {
+    padding: 6px 12px;       /* 前回の案よりかなり小さくしました */
+    border-radius: 30px;     /* 角丸も少し控えめに */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 0.8rem;      /* 文字サイズを小さく */
 }
 
-/* アイコン */
+/* アイコン（もしimgタグなどがある場合）のサイズ制限 */
+.sns-btn-wide img, 
 .sns-btn-wide i {
-    font-size: 16px;
+    width: 18px;
+    height: 18px;
 }
 
-.sns-btn-wide{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:10px;
+.line-btn { background: #06C755; }
+.facebook-btn { background: #1877f2; }
 
-padding:14px 20px;
-border-radius:10px;
-
-color:#fff;
-font-weight:600;
-text-decoration:none;
-font-size:15px;
-
-box-shadow:0 4px 10px rgba(0,0,0,0.15);
-transition:0.2s;
-}
-
-.sns-btn-wide:hover{
-transform:translateY(-3px);
-}
 .back-to-top {
     position: fixed;
     right: 20px;
-    bottom: 220px;
+    bottom: 320px;
     background: var(--primary);
     color: white;
-    padding: 6px 12px;    /* 上下10px、左右20pxで内側に余白を作る */
+    padding: 10px 20px;    /* 上下10px、左右20pxで内側に余白を作る */
     border-radius: 30px;   /* 十分に大きな値を指定することで両端が半円の楕円になります */
     text-decoration: none;
     z-index: 1001;
@@ -420,52 +396,22 @@ footer {
     padding: 3rem 1rem;
 }
 
+/* レスポンシブ */
 @media (max-width: 768px) {
-
-header { padding:0.5rem 1rem; }
-
-.header-nav{
-display:none;
-position:absolute;
-top:70px;
-right:0;
-background:var(--primary);
-width:100%;
-flex-direction:column;
-padding:1rem;
-}
-
-.header-nav.show{
-display:flex;
-}
-
-.hamburger{
-display:flex;
-}
-
-/* SNSボタン */
-.sns-fixed{
-right:12px;
-bottom:15px;
-gap:6px;
-}
-
-.sns-btn-wide{
-padding:7px 12px;
-font-size:0.75rem;
-}
-
-.hero-inner{
-flex-direction:column;
-}
-
-.hero-news-box{
-width:auto;
-}
-
-.office-wrapper,
-.profile-container{
-grid-template-columns:1fr;
-}
-
+    header { padding: 0.5rem 1rem; }
+    .header-nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: var(--primary);
+        width: 100%;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .header-nav.show { display: flex; }
+    .hamburger { display: flex; }
+    .hero-inner { flex-direction: column; }
+    .hero-news-box { width: auto; }
+    .office-wrapper, .profile-container { grid-template-columns: 1fr; }
 }
