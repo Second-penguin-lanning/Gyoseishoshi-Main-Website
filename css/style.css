@@ -87,6 +87,11 @@ header {
     border-radius:20px;
     font-size:16px;
     cursor:pointer;
+    transition:.2s;
+}
+
+.lang-btn:hover{
+    background:#e5e7ea;
 }
 /* 言語ドロップダウン */
 
@@ -109,16 +114,6 @@ margin-left:15px;
     z-index:2000;
 }
 
-.lang-menu a{
-    display:block;
-    padding:10px 14px;
-    text-decoration:none;
-    color:#333;
-    font-size:14px;
-}
-.lang-menu.show{
-    display:block;
-}
 .lang-menu a:hover{
     background:#f3f4f5;
 }
@@ -133,7 +128,7 @@ margin-left:15px;
 }
 .lang-menu a{
     display:block;
-    padding:8px 10px;
+    padding:10px 14px;
     text-decoration:none;
     color:#333;
     font-size:14px;
@@ -452,7 +447,14 @@ footer {
         border-radius: 8px;   /* 少し丸く */
         box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* 浮かせる */
     }
+.lang-dropdown{
+    margin-left:8px;
+}
 
+.lang-btn{
+    padding:6px 8px;
+    font-size:14px;
+}
     .header-nav.show { 
         display: flex; 
     }
