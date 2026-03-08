@@ -4,7 +4,7 @@ html {
 
 
 :root {
-    --primary: #1f2f3a;
+    --primary: #1f2f3a;act
     --accent: #b89b5e;
     --bg-light: #f3f4f5;
     --text-main: #1a1a1a;
@@ -81,17 +81,23 @@ header {
 }
 
 .lang-btn{
-    background:#f3f4f5;
-    border:none;
-    padding:8px 12px;
+    background:white;
+    border:1px solid #1e73be;
+    color:#1e73be;
+    padding:6px 10px;
     border-radius:20px;
-    font-size:16px;
-    cursor:pointer;
-    transition:.2s;
+    font-size:13px;
+    text-decoration:none;
+}
+
+.lang-btn.active{
+    background:#1e73be;
+    border-color:#1e73be;
+    color:white;
 }
 
 .lang-btn:hover{
-    background:#e5e7ea;
+    opacity:0.85;
 }
 /* 言語ドロップダウン */
 
@@ -122,10 +128,7 @@ margin-left:15px;
 .lang-dropdown:hover .lang-menu{
     display:block;
 }
-.lang-btn.active {
-    background: var(--accent);
-    border-color: var(--accent);
-}
+
 .lang-menu a{
     display:block;
     padding:10px 14px;
