@@ -435,3 +435,47 @@ footer {
         grid-template-columns: 1fr; 
     }
 }
+/* 言語ドロップダウン */
+
+.lang-dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.lang-btn{
+    background:#f3f4f5;
+    border:none;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.lang-menu{
+    display:none;
+    position:absolute;
+    top:40px;
+    left:0;
+    background:#ffffff;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    padding:12px;
+    min-width:180px;
+}
+
+.lang-menu a{
+    display:block;
+    padding:6px 8px;
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+}
+
+.lang-menu a:hover{
+    background:#f3f4f5;
+    border-radius:6px;
+}
+
+.lang-dropdown:hover .lang-menu{
+    display:block;
+}
