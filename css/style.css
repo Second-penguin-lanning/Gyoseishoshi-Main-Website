@@ -88,7 +88,45 @@ header {
     font-size:16px;
     cursor:pointer;
 }
+/* 言語ドロップダウン */
 
+.lang-dropdown{
+    position: relative;
+    display: inline-block;
+margin-left:15px;
+}
+
+.lang-menu{
+    display:none;
+    position:absolute;
+    top:40px;
+    right:0;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.15);
+    padding:8px 0;
+    min-width:180px;
+    z-index:2000;
+}
+
+.lang-menu a{
+    display:block;
+    padding:10px 14px;
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+}
+.lang-menu.show{
+    display:block;
+}
+.lang-menu a:hover{
+    background:#f3f4f5;
+}
+
+/* ホバーで表示 */
+.lang-dropdown:hover .lang-menu{
+    display:block;
+}
 .lang-btn.active {
     background: var(--accent);
     border-color: var(--accent);
