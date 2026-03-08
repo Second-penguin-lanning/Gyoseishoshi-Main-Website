@@ -100,33 +100,46 @@ header {
     opacity:0.85;
 }
 /* 言語ドロップダウン */
-
-.lang-dropdown{
+.lang-dropdown {
     position: relative;
     display: inline-block;
-margin-left:15px;
+    margin-left: 15px;
+    /* ボタンの下部に少し遊び（パディング）を持たせることで判定を安定させる */
+    padding-bottom: 10px; 
+    margin-bottom: -10px;
 }
 
-.lang-menu{
-    display:none;
-    position:absolute;
-    top:40px;
-    right:0;
-    background:white;
-    border-radius:10px;
-    box-shadow:0 6px 20px rgba(0,0,0,0.15);
-    padding:8px 0;
-    min-width:180px;
-    z-index:2000;
+.lang-menu {
+    display: none;
+    position: absolute;
+    /* topの値を調整：ボタンのすぐ下に配置 */
+    top: 35px; 
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    padding: 8px 0;
+    min-width: 180px;
+    z-index: 2000;
 }
 
-.lang-menu a:hover{
-    background:#f3f4f5;
+/* ★重要：透明な「橋」を作る擬似要素 */
+.lang-menu::before {
+    content: "";
+    position: absolute;
+    top: -15px; /* メニューの上方向に透明なエリアを広げる */
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: transparent; /* 透明なので見えません */
 }
 
 /* ホバーで表示 */
-.lang-dropdown:hover .lang-menu{
-    display:block;
+.lang-dropdown:hover .lang-menu {
+    display: block;
+}
+.lang-menu a:hover{
+    background:#f3f4f5;
 }
 
 .lang-menu a{
