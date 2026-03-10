@@ -421,21 +421,30 @@ RESPONSIVE (スマホ用修正版)
     display: flex;
     flex-shrink: 0;
   }
-
-  /* ナビゲーション（開いた時） */
-  .header-nav {
-    display: none;
+.header-nav {
+    display: none; /* これで紫の文字が消えます */
     position: absolute;
     top: 70px;
-    right: 0;
-    width: 100%; /* 全幅にするか、お好みで調整 */
+    left: 0;
+    width: 100%;
     background: var(--primary);
     flex-direction: column;
     padding: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    border-radius: 0; /* スマホなら全幅が綺麗です */
+    z-index: 1001; /* 他の要素より上に表示 */
   }
-
+/* ハンバーガーメニューがクリックされて 'show' クラスがついた時だけ表示 */
+  .header-nav.show {
+    display: flex;
+  }
+  
+  /* 念のため、中のリンクの色を白に固定 */
+  .header-nav a {
+    color: white !important; 
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+}
   /* --- HEROエリアの修正 --- */
   .hero {
     padding: 3rem 1rem;
