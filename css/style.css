@@ -383,46 +383,52 @@ RESPONSIVE
 RESPONSIVE (スマホ用修正版)
 =============================== */
 
+/* ===============================
+RESPONSIVE (PC・スマホ両対応)
+=============================== */
+
 @media (max-width: 768px) {
   body {
-    padding-top: 70px; /* ヘッダーが少し低くなるのに合わせる */
-    overflow-x: hidden; /* 横揺れ防止 */
+    padding-top: 70px;
+    overflow-x: hidden;
   }
 
   header {
     padding: 0.5rem 0.8rem;
-    height: 70px; /* 高さを固定して安定させる */
+    height: 70px;
   }
 
   .header-logo {
-    font-size: 0.9rem; /* 文字を少し小さく */
+    font-size: 0.9rem;
     gap: 8px;
-    flex-shrink: 1; /* 押しつぶされてもOKにする */
+    flex-shrink: 1;
   }
 
   .header-logo img {
-    height: 26px; /* ロゴを少し小さく */
+    height: 26px;
   }
 
-  /* 言語スイッチを右端に寄せるための調整 */
+  /* 言語スイッチの調整 */
   .lang-dropdown {
-    margin-left: auto; /* ロゴとメニューの間に配置 */
+    margin-left: auto;
     margin-right: 10px;
     margin-bottom: 0;
   }
 
   .lang-menu {
-    right: -10px; /* 吹き出しが画面外に出ないように調整 */
+    right: -10px;
     min-width: 150px;
   }
 
-  /* ハンバーガーメニュー */
+  /* ハンバーガーメニューを表示 */
   .hamburger {
     display: flex;
     flex-shrink: 0;
   }
-.header-nav {
-    display: none; /* これで紫の文字が消えます */
+
+  /* スマホ用ナビゲーション（初期状態は隠す） */
+  .header-nav {
+    display: none; 
     position: absolute;
     top: 70px;
     left: 0;
@@ -430,30 +436,33 @@ RESPONSIVE (スマホ用修正版)
     background: var(--primary);
     flex-direction: column;
     padding: 20px;
-    z-index: 1001; /* 他の要素より上に表示 */
+    z-index: 1001;
+    gap: 0; /* スマホでは間隔を詰める */
   }
-/* ハンバーガーメニューがクリックされて 'show' クラスがついた時だけ表示 */
+
+  /* メニュー展開時 */
   .header-nav.show {
     display: flex;
   }
-  
-  /* 念のため、中のリンクの色を白に固定 */
+
   .header-nav a {
-    color: white !important; 
+    color: white !important;
     text-decoration: none;
     padding: 15px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
+    width: 100%;
+    box-sizing: border-box;
   }
-}
-  /* --- HEROエリアの修正 --- */
+
+  /* --- HEROエリアの修正（スマホ時のみ） --- */
   .hero {
     padding: 3rem 1rem;
   }
 
   .hero h1 {
-    font-size: 1.6rem; /* 2.4remからサイズダウン */
+    font-size: 1.6rem;
     line-height: 1.4;
-    word-break: break-all; /* 文字が切れないように途中で改行させる */
+    word-break: break-all;
   }
 
   .hero-sub {
@@ -461,22 +470,23 @@ RESPONSIVE (スマホ用修正版)
   }
 
   .cta-button {
-    padding: 14px 0; /* 左右の固定pxを消す */
-    width: 100%; /* ボタンを横幅いっぱいにする */
-    max-width: 300px; /* 広がりすぎないように制限 */
+    padding: 14px 0;
+    width: 100%;
+    max-width: 300px;
     text-align: center;
   }
 
-  /* --- レイアウトの修正 --- */
+  /* --- レイアウトの修正（スマホ時は1列にする） --- */
   .hero-inner,
   .office-wrapper,
   .profile-container {
     flex-direction: column;
     grid-template-columns: 1fr;
+    display: flex; /* gridからflexに変更して縦並びを確実に */
   }
 
   .hero-news-box {
     max-width: 100%;
     margin-top: 2rem;
   }
-}
+} /* <--- ここでスマホ専用設定を確実に閉じる */
