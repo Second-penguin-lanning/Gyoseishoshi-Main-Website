@@ -42,6 +42,21 @@ padding:1rem 1.2rem;
 box-sizing:border-box;
 background:var(--primary);
 color:white;
+
+/* これを追加 */
+position:fixed;
+}
+
+.header-nav{
+display:none;
+position:fixed;   /* absolute → fixed */
+top:70px;
+left:0;
+width:100%;
+background:var(--primary);
+flex-direction:column;
+padding:20px;
+z-index:1001;
 }
 
 .header-logo{
@@ -462,7 +477,6 @@ RESPONSIVE (PC・スマホ両対応)
   .hero h1 {
     font-size: 1.6rem;
     line-height: 1.4;
-    word-break: break-all;
   }
 
   .hero-sub {
