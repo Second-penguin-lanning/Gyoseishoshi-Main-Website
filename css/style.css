@@ -23,6 +23,16 @@ font-family:'Noto Sans JP',sans-serif;
 line-height:1.8;
 background:var(--bg-light);
 color:var(--text-main);
+overflow-x:hidden;
+}
+
+a{
+color:inherit;
+text-decoration:none;
+}
+
+a:visited{
+color:inherit;
 }
 
 /* ===============================
@@ -42,21 +52,6 @@ padding:1rem 1.2rem;
 box-sizing:border-box;
 background:var(--primary);
 color:white;
-
-/* これを追加 */
-position:fixed;
-}
-
-.header-nav{
-display:none;
-position:fixed;   /* absolute → fixed */
-top:70px;
-left:0;
-width:100%;
-background:var(--primary);
-flex-direction:column;
-padding:20px;
-z-index:1001;
 }
 
 .header-logo{
@@ -71,6 +66,10 @@ font-weight:700;
 height:32px;
 }
 
+/* ===============================
+NAVIGATION (PC)
+=============================== */
+
 .header-nav{
 display:flex;
 gap:1.5rem;
@@ -79,7 +78,6 @@ gap:1.5rem;
 .header-nav a{
 font-size:0.95rem;
 font-weight:600;
-text-decoration:none;
 color:white;
 transition:0.3s;
 }
@@ -89,20 +87,17 @@ color:var(--accent);
 }
 
 .header-nav a.business-link{
-display:flex;
-align-items:center;
-gap:4px;
 font-size:0.75rem;
 opacity:0.6;
 }
 
 /* ===============================
-LANGUAGE SWITCH
+LANGUAGE
 =============================== */
 
-.lang-switch{
-display:flex;
-gap:6px;
+.lang-dropdown{
+position:relative;
+display:inline-block;
 margin-left:15px;
 }
 
@@ -113,25 +108,7 @@ color:#1e73be;
 padding:6px 10px;
 border-radius:20px;
 font-size:13px;
-text-decoration:none;
-}
-
-.lang-btn.active{
-background:#1e73be;
-border-color:#1e73be;
-color:white;
-}
-
-.lang-btn:hover{
-opacity:0.85;
-}
-
-.lang-dropdown{
-position:relative;
-display:inline-block;
-margin-left:15px;
-padding-bottom:10px;
-margin-bottom:-10px;
+cursor:pointer;
 }
 
 .lang-menu{
@@ -147,16 +124,6 @@ min-width:180px;
 z-index:2000;
 }
 
-.lang-menu::before{
-content:"";
-position:absolute;
-top:-15px;
-left:0;
-width:100%;
-height:15px;
-background:transparent;
-}
-
 .lang-dropdown:hover .lang-menu{
 display:block;
 }
@@ -164,7 +131,6 @@ display:block;
 .lang-menu a{
 display:block;
 padding:10px 14px;
-text-decoration:none;
 color:#333;
 font-size:14px;
 }
@@ -239,7 +205,6 @@ display:inline-block;
 padding:16px 85px;
 background:var(--accent);
 color:white;
-text-decoration:none;
 border-radius:50px;
 font-weight:700;
 font-size:1.1rem;
@@ -252,29 +217,8 @@ transform:translateY(-2px);
 filter:brightness(1.1);
 }
 
-.hero-notice{
-max-width:700px;
-margin:1.5rem auto 0;
-padding:1rem;
-background:#f0f1f3;
-color:#444;
-border-radius:8px;
-font-size:0.9rem;
-text-align:left;
-}
-
-.hero-news-box{
-max-width:360px;
-width:100%;
-background:white;
-color:var(--text-main);
-padding:25px;
-border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-
 /* ===============================
-GRID / CARDS
+GRID / CARD
 =============================== */
 
 .container{
@@ -305,36 +249,6 @@ background:var(--bg-light);
 }
 
 /* ===============================
-PROFILE / OFFICE
-=============================== */
-
-.profile-container{
-display:grid;
-grid-template-columns:1fr 220px;
-gap:2rem;
-}
-
-.profile-photo img{
-width:100%;
-border-radius:12px;
-}
-
-.office-wrapper{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:2rem;
-}
-
-.office-info{
-list-style:none;
-padding:0;
-}
-
-.office-info li{
-margin-bottom:1rem;
-}
-
-/* ===============================
 SNS
 =============================== */
 
@@ -349,26 +263,15 @@ gap:12px;
 }
 
 .sns-btn-wide{
-padding:6px 12px;
+padding:8px 14px;
 border-radius:30px;
 color:white;
-text-decoration:none;
 font-weight:bold;
 display:flex;
 align-items:center;
 gap:8px;
 box-shadow:0 2px 8px rgba(0,0,0,0.15);
-font-size:0.8rem;
-}
-
-.sns-btn-wide img,
-.sns-btn-wide i{
-width:18px;
-height:18px;
-}
-
-.messenger-btn{
-background:#2d8cff;
+font-size:0.85rem;
 }
 
 .line-btn{
@@ -394,113 +297,86 @@ padding:3rem 1rem;
 RESPONSIVE
 =============================== */
 
-/* ===============================
-RESPONSIVE (スマホ用修正版)
-=============================== */
+@media (max-width:768px){
 
-/* ===============================
-RESPONSIVE (PC・スマホ両対応)
-=============================== */
+body{
+padding-top:70px;
+}
 
-@media (max-width: 768px) {
-  body {
-    padding-top: 70px;
-    overflow-x: hidden;
-  }
+/* ヘッダー */
 
-  header {
-    padding: 0.5rem 0.8rem;
-    height: 70px;
-  }
+header{
+height:70px;
+padding:0.5rem 0.8rem;
+}
 
-  .header-logo {
-    font-size: 0.9rem;
-    gap: 8px;
-    flex-shrink: 1;
-  }
+.header-logo{
+font-size:0.9rem;
+gap:8px;
+}
 
-  .header-logo img {
-    height: 26px;
-  }
+.header-logo img{
+height:26px;
+}
 
-  /* 言語スイッチの調整 */
-  .lang-dropdown {
-    margin-left: auto;
-    margin-right: 10px;
-    margin-bottom: 0;
-  }
+/* ハンバーガー表示 */
 
-  .lang-menu {
-    right: -10px;
-    min-width: 150px;
-  }
+.hamburger{
+display:flex;
+}
 
-  /* ハンバーガーメニューを表示 */
-  .hamburger {
-    display: flex;
-    flex-shrink: 0;
-  }
+/* スマホメニュー */
 
-  /* スマホ用ナビゲーション（初期状態は隠す） */
-  .header-nav {
-    display: none; 
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: var(--primary);
-    flex-direction: column;
-    padding: 20px;
-    z-index: 1001;
-    gap: 0; /* スマホでは間隔を詰める */
-  }
+.header-nav{
+display:none;
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:var(--primary);
+flex-direction:column;
+padding:20px;
+z-index:1001;
+}
 
-  /* メニュー展開時 */
-  .header-nav.show {
-    display: flex;
-  }
+.header-nav.show{
+display:flex;
+}
 
-  .header-nav a {
-    color: white !important;
-    text-decoration: none;
-    padding: 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    width: 100%;
-    box-sizing: border-box;
-  }
+.header-nav a{
+padding:15px;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
 
-  /* --- HEROエリアの修正（スマホ時のみ） --- */
-  .hero {
-    padding: 3rem 1rem;
-  }
+/* HERO */
 
-  .hero h1 {
-    font-size: 1.6rem;
-    line-height: 1.4;
-  }
+.hero{
+padding:3rem 1rem;
+}
 
-  .hero-sub {
-    font-size: 1rem;
-  }
+.hero h1{
+font-size:1.6rem;
+line-height:1.4;
+}
 
-  .cta-button {
-    padding: 14px 0;
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
-  }
+.hero-sub{
+font-size:1rem;
+}
 
-  /* --- レイアウトの修正（スマホ時は1列にする） --- */
-  .hero-inner,
-  .office-wrapper,
-  .profile-container {
-    flex-direction: column;
-    grid-template-columns: 1fr;
-    display: flex; /* gridからflexに変更して縦並びを確実に */
-  }
+.cta-button{
+padding:14px 0;
+width:100%;
+max-width:300px;
+text-align:center;
+}
 
-  .hero-news-box {
-    max-width: 100%;
-    margin-top: 2rem;
-  }
-} /* <--- ここでスマホ専用設定を確実に閉じる */
+/* スマホ縦並び */
+
+.hero-inner,
+.office-wrapper,
+.profile-container{
+flex-direction:column;
+display:flex;
+}
+
+}
