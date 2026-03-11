@@ -124,31 +124,33 @@ header {
     padding-top: 60px; /* 左側のテキストだけ少し下げてバランスを取る */
 }
 
-/* --- お知らせボックスの修正（右上配置・高級感Ver） --- */
+/* --- お知らせボックス：右上配置・四隅丸角・高級感Ver --- */
 .hero-news-box {
-    width: 380px;
+    width: 360px;
     flex-shrink: 0;
-    /* 背景：シャンパンホワイトのグラデーション */
-    background: linear-gradient(135deg, #ffffff 0%, #fcfaf5 100%);
+    
+    /* 背景：シャンパンゴールドを感じさせる繊細なグラデーション */
+    background: linear-gradient(145deg, #ffffff 0%, #fcfaf5 100%);
     color: #333;
     padding: 25px;
     
-    /* 角の調整：四隅統一（15px） */
-    border-radius: 15px;
+    /* 四隅の角丸を16pxで統一（優雅でソフトな印象） */
+    border-radius: 16px;
     
-    /* 高級感のアクセント */
+    /* 高級感の演出：細いゴールドの枠線と、上部のアクセントライン */
     border: 1px solid rgba(184, 155, 94, 0.3);
-    border-top: 5px solid var(--accent); 
+    border-top: 6px solid var(--accent); 
 
-    /* 【右上への移動】 */
-    margin-right: -20px; /* コンテナの右端ギリギリ、あるいは少しはみ出すくらいに設定 */
-    margin-top: -90px;    /* さらに上に持ち上げ、ヘッダーとヒーローの境界に配置 */
+    /* 【右上への移動】数値を調整してさらに右上へ */
+    margin-right: -50px; /* 右端へさらに突き出す */
+    margin-top: -120px;  /* 上へ大きく持ち上げ、ヘッダーに重なる位置へ */
     
-    /* 影：浮遊感を出すために少し強めに設定 */
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    /* 影：より深く、柔らかい広がりを持たせて「浮遊感」を強調 */
+    box-shadow: 0 20px 60px rgba(0,0,0,0.18);
     
     z-index: 10;
     position: relative;
+    text-align: left;
 }
 
 /* スマホ用の調整 */
