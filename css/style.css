@@ -67,16 +67,17 @@ header {
 
 .lang-dropdown { position: relative; }
 .lang-btn {
-    background: #6fa8dc;
-    border: 1px solid #6fa8dc;
-    color: white;
+    background: #b6d7f4;        /* ← ここを薄い青に変更 */
+    border: 1px solid #b6d7f4;  /* ← 枠線も合わせる */
+    color: #1f2f3a;             /* ← 文字色を濃い青にすると読みやすくなります */
     padding: 6px 15px;
     border-radius: 20px;
     cursor: pointer;
 }
 
 .lang-btn:hover {
-    background: #4f90c8;
+    background: #d1e9ff;        /* ← ホバー時をさらに薄い青に */
+    border-color: #d1e9ff;
 }
 .lang-menu { display: none; position: absolute; top: 100%; right: 0; background: white; border-radius: 8px; min-width: 180px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 .lang-dropdown:hover .lang-menu { display: block; }
@@ -167,7 +168,9 @@ footer { background: var(--primary); color: white; padding: 80px 20px; text-alig
     header { height: 70px; padding: 0 15px; }
     .hamburger { display: flex; }
     .header-nav { display: none; } /* ハンバーガーメニューの実装に合わせて調整 */
+/* --- 7. RESPONSIVE 内の .header-nav の次あたりに追加 --- */
 
+    .header-nav.show { display: flex; } /* ← この1行を追加 */
     .hero { padding: 40px 0; }
     .hero-inner { flex-direction: column !important; text-align: center; padding: 0 20px; }
     .hero-left { text-align: center; }
