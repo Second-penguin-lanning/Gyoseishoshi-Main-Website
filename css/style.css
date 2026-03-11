@@ -1,15 +1,8 @@
 /* ============================================================
-   徳永良雄行政書士事務所 - 最終完全版スタイルシート
-   (全デザイン復旧 + PC中央寄せ + スマホ最適化)
+   徳永良雄行政書士事務所 - 完成版スタイルシート
    ============================================================ */
 
 /* --- 1. RESET & BASE --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -28,11 +21,13 @@ html {
 }
 
 body {
+    margin: 0;
     padding-top: 90px;
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.8;
     background: var(--bg-light);
     color: var(--text-main);
+    overflow-x: hidden;
 }
 
 a {
@@ -41,22 +36,15 @@ a {
     transition: 0.3s;
 }
 
-ul { list-style: none; }
-
 /* --- 2. LAYOUT COMPONENTS --- */
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 4rem 1.5rem;
+    box-sizing: border-box;
 }
 
-section {
-    padding: 100px 0;
-}
-
-.bg-light-section { background: #ffffff; }
-.bg-accent-section { background: var(--bg-light); }
-
+/* グリッドレイアウト */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -65,17 +53,19 @@ section {
 
 .card {
     background: #fff;
-    padding: 2.5rem;
+    padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    transition: transform 0.3s;
-    height: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-.card:hover { transform: translateY(-5px); }
-.card h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.3rem; border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
+section {
+    padding: 80px 0;
+}
 
-/* --- 3. HEADER & NAV --- */
+.bg-light-section { background: #ffffff; }
+.bg-accent-section { background: var(--bg-light); }
+
+/* --- 3. HEADER --- */
 header {
     position: fixed;
     top: 0;
@@ -85,144 +75,247 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 40px;
+    padding: 0 2rem;
     height: 90px;
+    box-sizing: border-box;
     background: var(--primary);
     color: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-.header-logo { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.2rem; }
-.header-logo img { height: 40px; }
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
 
-.header-nav { display: flex; gap: 2rem; align-items: center; }
-.header-nav a { font-size: 1rem; font-weight: 600; color: white; }
-.header-nav a:hover { color: var(--accent); }
+.header-logo img { height: 35px; }
 
-.business-link { background: rgba(255,255,255,0.1); padding: 6px 15px; border-radius: 4px; font-size: 0.85rem !important; }
+.header-nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
 
-/* 言語メニュー */
-.lang-dropdown { position: relative; }
-.lang-btn { background: transparent; border: 1px solid white; color: white; padding: 6px 15px; border-radius: 20px; cursor: pointer; }
-.lang-menu { display: none; position: absolute; top: 100%; right: 0; background: white; border-radius: 8px; min-width: 180px; padding: 10px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.header-nav a {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.business-link {
+    font-size: 0.8rem !important;
+    background: rgba(255,255,255,0.1);
+    padding: 5px 12px;
+    border-radius: 4px;
+}
+
+/* 言語切替 */
+.lang-dropdown { position: relative; margin-left: 10px; }
+.lang-btn { background: transparent; border: 1px solid rgba(255,255,255,0.5); color: white; padding: 6px 12px; border-radius: 20px; cursor: pointer; }
+.lang-menu { display: none; position: absolute; top: 100%; right: 0; background: white; border-radius: 8px; min-width: 180px; padding: 10px 0; box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
 .lang-dropdown:hover .lang-menu { display: block; }
-.lang-menu a { display: block; padding: 12px 20px; color: #333; font-weight: bold; }
-.lang-menu a:hover { background: #f0f0f0; }
+.lang-menu a { display: block; padding: 10px 20px; color: #333; font-size: 0.9rem; }
 
-.hamburger { display: none; flex-direction: column; gap: 6px; }
-.hamburger span { width: 30px; height: 3px; background: white; border-radius: 2px; }
+.hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
+.hamburger span { width: 28px; height: 3px; background: white; }
 
-/* --- 4. HERO SECTION (PC中央寄せ修正済) --- */
+/* --- 4. HERO SECTION (PCでのズレを修正) --- */
 .hero {
-    background: linear-gradient(135deg, #1f2f3a 0%, #2c3e50 100%);
+    background: linear-gradient(135deg, #1f2f3a 0%, #2f3f4c 100%);
     color: white;
-    padding: 100px 0;
+    padding: 80px 0;
     width: 100%;
 }
 
 .hero-inner {
-    max-width: 1150px; /* ここでPCの幅を制限 */
-    margin: 0 auto;    /* ここでPCの中央に寄せる */
-    padding: 0 30px;
+    max-width: 1150px; /* 全体の幅を制限 */
+    margin: 0 auto;    /* 中央に寄せる */
+    padding: 0 20px;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    gap: 50px;
+    justify-content: space-between; /* 左右に分散配置 */
+    gap: 40px;
+    box-sizing: border-box;
 }
 
-.hero-left { flex: 1; }
-.hero h1 { font-size: 2.6rem; margin-bottom: 1.5rem; line-height: 1.3; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-.hero-sub { font-size: 1.3rem; margin-bottom: 1.5rem; color: #cbd5e0; }
-.hero-badge { display: inline-block; padding: 8px 25px; background: #f4b400; color: #000; border-radius: 50px; font-weight: 900; margin-bottom: 2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+.hero-left {
+    flex: 1;
+    text-align: left;
+}
 
-.cta-button { display: inline-block; padding: 20px 50px; background: var(--accent); color: white; border-radius: 50px; font-weight: 700; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: 0.3s; }
-.cta-button:hover { transform: scale(1.05); background: #c9ab6d; }
+.hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
 
-.hero-links { display: flex; gap: 20px; margin: 3rem 0; }
-.hero-link-box { flex: 1; background: rgba(255,255,255,0.08); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
-.hero-link-box:hover { background: rgba(255,255,255,0.15); }
-.hero-link-box h3 { font-size: 1.1rem; color: var(--accent); margin-bottom: 10px; }
-.hero-link-box p { font-size: 0.9rem; margin: 0; line-height: 1.6; }
+.hero-sub {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
 
-.hero-notice { background: rgba(255,255,255,0.95); color: #333; padding: 25px; border-radius: 10px; font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.6; }
-.quick-response { font-size: 0.9rem; color: #cbd5e0; }
+.hero-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    background: #f4b400;
+    color: #000;
+    border-radius: 50px;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50px;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.hero-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.hero-link-box {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.hero-link-box h3 { font-size: 0.95rem; color: var(--accent); margin-bottom: 8px; }
+.hero-link-box p { font-size: 0.8rem; line-height: 1.4; margin: 0; }
 
 .hero-news-box {
-    width: 420px; /* お知らせの幅をPCで固定 */
-    background: white;
+    width: 380px; /* PCでのお知らせの幅を固定 */
+    background: #fff;
     color: #333;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    padding: 30px;
+    border-radius: 12px;
 }
 
-.hero-tags { margin-bottom: 15px; }
-.hero-tags span { font-size: 0.8rem; padding: 4px 12px; border-radius: 4px; margin-right: 8px; color: white; }
+.hero-tags span { font-size: 0.7rem; padding: 3px 8px; border-radius: 4px; color: white; margin-right: 5px; }
 .tag-gyosei { background: var(--primary); }
 .tag-support { background: var(--accent); }
 
-.hero-news-box h3 { font-size: 1.4rem; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-.hero-news-box ul li { padding: 15px 0; border-bottom: 1px solid #eee; }
-.hero-news-box .date { font-weight: bold; color: #888; display: block; font-size: 0.85rem; }
+/* --- 5. CONTENT SECTIONS --- */
+h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
 
-/* --- 5. SECTIONS STYLE --- */
-h2 { font-size: 2.2rem; text-align: center; margin-bottom: 4rem; color: var(--primary); }
+.price-tag { font-size: 1.4rem; font-weight: 800; color: var(--primary); margin: 10px 0; }
 
-.testimonials { background: #fff; }
-.testimonial-item { max-width: 850px; margin: 0 auto 40px; padding: 40px; background: #f8f9fa; border-radius: 15px; border-left: 8px solid var(--accent); }
-.testimonial-name { display: block; text-align: right; font-weight: bold; margin-top: 20px; color: var(--primary); }
-
-/* 強調メッセージ */
+/* 強調セクション */
 .one-stop-support-strong {
-    max-width: 1000px;
-    margin: 80px auto;
-    padding: 60px 40px;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
     background: #fff;
     text-align: center;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    border-radius: 15px;
 }
-.one-stop-support-strong h2 { margin-bottom: 2rem; }
-.one-stop-support-strong p { font-size: 1.1rem; margin-bottom: 1.5rem; }
-.one-stop-support-strong .highlight { font-weight: bold; color: #e74c3c; font-size: 1.3rem; }
 
-.pricing-note { text-align: center; margin-bottom: 3rem; font-weight: bold; color: var(--text-sub); }
-.price-tag { font-size: 1.8rem; font-weight: 800; color: var(--primary); margin: 20px 0; }
+/* 代表・事務所 */
+.profile-container, .office-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
 
-/* --- 6. PROFILE & OFFICE --- */
-.profile-container { display: flex; gap: 60px; align-items: center; }
-.profile-main { flex: 2; }
-.profile-photo { flex: 1; text-align: center; }
-.profile-photo img { width: 100%; max-width: 350px; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+.profile-main, .office-left { flex: 1.5; }
+.profile-photo, .office-right { flex: 1; }
+.profile-photo img { width: 100%; max-width: 300px; border-radius: 10px; }
 
-.profile-compact-list { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
-.second-penguin-box { margin-top: 40px; padding: 25px; background: #eef2f7; border-radius: 12px; }
+.profile-compact-list { display: flex; gap: 30px; margin-top: 15px; }
 
-.office-wrapper { display: flex; gap: 60px; }
-.office-left, .office-right { flex: 1; }
-.office-info li { margin-bottom: 25px; }
-.office-info strong { font-size: 1.1rem; color: var(--primary); display: block; margin-bottom: 8px; }
-
-.cta-section { background: var(--primary); color: white; text-align: center; padding: 80px 20px; }
-.btn-white { display: inline-block; padding: 15px 40px; background: white; color: var(--primary); border-radius: 50px; font-weight: 700; margin-top: 20px; }
-
-/* --- 7. LINKS & SNS --- */
-.link-group { margin-bottom: 40px; }
-.link-group h4 { border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-bottom: 15px; }
-.link-group ul li { margin-bottom: 8px; }
-.link-group a:hover { text-decoration: underline; color: var(--accent); }
-
-.sns-fixed { position: fixed; right: 25px; bottom: 25px; z-index: 9999; display: flex; flex-direction: column; gap: 15px; }
-.sns-btn-wide { padding: 15px 30px; border-radius: 50px; color: white; font-weight: bold; display: flex; align-items: center; gap: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); }
+/* --- 6. SNS & FOOTER --- */
+.sns-fixed { position: fixed; right: 20px; bottom: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; }
+.sns-btn-wide { padding: 10px 20px; border-radius: 50px; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; font-size: 0.9rem; }
 .line-btn { background: var(--line-color); }
 .facebook-btn { background: var(--fb-color); }
 
-footer { background: var(--primary); color: white; padding: 80px 20px; text-align: center; }
+footer { background: var(--primary); color: white; padding: 40px 20px; text-align: center; }
 
-/* --- 8. RESPONSIVE (スマホ最適化) --- */
+/* --- 7. MOBILE OPTIMIZATION --- */
+@media (max-width: 768px) {
+    body { padding-top: 70px; }
+    header { height: 70px; padding: 0 15px; }
+    .hamburger { display: flex; }
+    .header-nav { display: none; position: absolute; top: 70px; left: 0; width: 100%; background: var(--primary); flex-direction: column; padding: 20px 0; }
+    .header-nav.show { display: flex; }
+
+    /* HERO スマホ修正 */
+    .hero { padding: 30px 0; }
+    .hero-inner {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    .hero-left { text-align: center; }
+    .hero h1 { font-size: 1.4rem !important; }
+    .hero-links { flex-direction: column; }
+    .hero-news-box { width: 100% !important; box-sizing: border-box; margin-top: 20px; }
+
+    /* 写真サイズ固定 */
+    .profile-photo img {
+        width: 150px !important;
+        height: 150px !important;
+        object-fit: cover;
+        border-radius: 50% !important;
+    }
+    
+    .profile-container, .office-wrapper { flex-direction: column; text-align: center; }
+    .profile-compact-list { flex-direction: column; gap: 10px; }
+}
+/* --- 8. RESPONSIVE (スマホ最適化：箱の縦並びを強制) --- */
 @media (max-width: 768px) {
     body { padding-top: 70px; }
     header { height: 70px; padding: 0 20px; }
     .header-logo { font-size: 1rem; }
     .hamburger { display: flex; }
-    .header-nav { display: none; position: absolute; top: 70px; left: 0; width: 100%; background: var(--
+    .header-nav { display: none; position: absolute; top: 70px; left: 0; width: 100%; background: var(--primary); flex-direction: column; padding: 30px 0; }
+    .header-nav.show { display: flex; }
+
+    .hero { padding: 40px 0; }
+    .hero-inner { flex-direction: column !important; text-align: center; padding: 0 20px; }
+    .hero h1 { font-size: 1.5rem !important; margin-bottom: 1rem; }
+    
+    /* 【修正箇所】3つの箱を縦に1つずつ並べる */
+    .hero-links { 
+        flex-direction: column !important; /* 横並びを解除して縦並びに */
+        display: flex !important;
+        gap: 15px; 
+        margin: 2rem 0;
+        width: 100%;
+    }
+    .hero-link-box { 
+        width: 100% !important; /* 横幅いっぱいに広げる */
+        text-align: left; /* 文字は左寄せが見やすい */
+        padding: 20px;
+    }
+
+    .hero-news-box { width: 100% !important; margin-top: 20px; padding: 25px 20px; }
+
+    /* プロフィール写真 */
+    .profile-container, .office-wrapper { flex-direction: column; text-align: center; }
+    .profile-photo { order: -1; margin-bottom: 20px; }
+    .profile-photo img {
+        width: 150px !important;
+        height: 150px !important;
+        border-radius: 50% !important;
+        object-fit: cover;
+    }
+    .profile-compact-list { grid-template-columns: 1fr; }
+
+    /* SNSボタン */
+    .sns-fixed { width: calc(100% - 40px); left: 20px; bottom: 10px; }
+    .sns-btn-wide { justify-content: center; font-size: 0.9rem; padding: 12px; }
+}
