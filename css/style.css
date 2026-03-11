@@ -105,11 +105,19 @@ header {
     color: white; padding: 80px 0; width: 100%;
 }
 .hero-inner {
-    max-width: 1150px; margin: 0 auto; padding: 0 30px;
-    display: flex; align-items: flex-start; justify-content: space-between; gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: flex-start; /* 上揃えにする（これで右上に固定されます） */
+    justify-content: space-between;
+    gap: 40px;
 }
-.hero-left { flex: 1.2; text-align: left; }
-.hero h1 { font-size: 2.4rem; margin-bottom: 1.5rem; line-height: 1.3; }
+
+.hero-left {
+    flex: 1; /* 左側を広く取る */
+    text-align: left;
+}
 
 .hero-badge { 
     display: inline-block; padding: 8px 25px; background: #f4b400; color: #000; 
@@ -150,7 +158,30 @@ header {
 }
 .hero-link-box a:hover { color: var(--accent) !important; }
 
-.hero-news-box { width: 420px; background: white; color: #333; padding: 40px; border-radius: 15px; text-align: left; }
+/* お知らせボックスの調整 */
+.hero-news-box {
+    width: 380px; /* 幅を少しスリムに */
+    background: white;
+    color: #333;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* 少し浮き上がらせる */
+    flex-shrink: 0; /* ボックスが潰れないように固定 */
+}
+/* お知らせ内のリスト装飾（お好みで） */
+.hero-news-box ul {
+    margin-top: 15px;
+}
+.hero-news-box li {
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+.hero-news-box li:last-child {
+    border-bottom: none;
+}
 
 /* --- 5. SECTIONS (各コンテンツの装飾) --- */
 h2 { font-size: 2.2rem; margin-bottom: 4rem; color: var(--primary); text-align: center !important; width: 100%; }
@@ -222,3 +253,4 @@ footer { background: var(--primary); color: white; padding: 80px 20px; text-alig
     .sns-btn-wide { justify-content: center; }
     iframe { height: 300px !important; }
 }
+
