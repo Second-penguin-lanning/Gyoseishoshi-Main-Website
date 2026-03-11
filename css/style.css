@@ -176,3 +176,12 @@ footer { background: var(--primary); color: white; padding: 80px 20px; text-alig
     .sns-fixed { width: calc(100% - 40px); left: 20px; }
     .sns-btn-wide { justify-content: center; }
 }
+
+/* ヒーロー内のリンク文字を白く固定（紫にならないように） */
+.hero-link-box a, 
+.hero-link-box p,
+.hero-link-box li {
+    color: #ffffff !important; /* 強制的に白にする */
+    text-decoration: none;
+    opacity: 0.9;
+}
