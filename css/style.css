@@ -123,34 +123,41 @@ header {
     text-align: left;
     padding-top: 60px; /* 左側のテキストだけ少し下げてバランスを取る */
 }
+/* --- お知らせボックス：絶対配置で確実に右上へ --- */
+.hero {
+    position: relative; /* ヒーロー全体を基準点にする */
+}
 
-/* --- お知らせボックス：右上配置・四隅丸角・高級感Ver --- */
 .hero-news-box {
-    width: 360px;
-    flex-shrink: 0;
+    /* 絶対配置に変更 */
+    position: absolute; 
+    top: 20px;    /* 上からの距離（ヘッダーに被るなら 80px などに調整） */
+    right: 5%;    /* 右端からの距離（%で指定するとバランスが良いです） */
     
-    /* 背景：シャンパンゴールドを感じさせる繊細なグラデーション */
+    width: 360px;
     background: linear-gradient(145deg, #ffffff 0%, #fcfaf5 100%);
     color: #333;
     padding: 25px;
     
-    /* 四隅の角丸を16pxで統一（優雅でソフトな印象） */
+    /* 四隅の角丸を統一 */
     border-radius: 16px;
     
-    /* 高級感の演出：細いゴールドの枠線と、上部のアクセントライン */
+    /* 高級感の装飾 */
     border: 1px solid rgba(184, 155, 94, 0.3);
     border-top: 6px solid var(--accent); 
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    
+    z-index: 100; /* ヘッダー(1000)よりは下、ヒーロー(1)よりは上 */
+}
 
-    /* 【右上への移動】数値を調整してさらに右上へ */
-    margin-right: -50px; /* 右端へさらに突き出す */
-    margin-top: -120px;  /* 上へ大きく持ち上げ、ヘッダーに重なる位置へ */
-    
-    /* 影：より深く、柔らかい広がりを持たせて「浮遊感」を強調 */
-    box-shadow: 0 20px 60px rgba(0,0,0,0.18);
-    
-    z-index: 10;
-    position: relative;
-    text-align: left;
+/* スマホでは絶対配置を解除しないと崩れるため、以下が重要です */
+@media (max-width: 768px) {
+    .hero-news-box {
+        position: static; /* 絶対配置を解除 */
+        width: 100%;
+        margin: 20px 0 0 0 !important;
+        border-radius: 12px;
+    }
 }
 
 /* スマホ用の調整 */
