@@ -70,13 +70,14 @@ header {
 
 .lang-dropdown { position: relative; }
 
-/* 言語ボタン：白背景・青アイコン・サイズ3分の2 */
+/* 言語ボタンのアイコン色を青に変更 */
 .lang-btn {
     background: #ffffff;
     border: 1px solid #ffffff;
-    color: #1f2f3a;
+    /* color: #1f2f3a;  ← これを以下の青色（例：#3498db）に変更 */
+    color: #3498db; 
     padding: 4px 10px;
-    font-size: 1.0rem;
+    font-size: 1.2rem; /* 少し大きくすると見栄えが良くなります */
     border-radius: 20px;
     cursor: pointer;
     display: flex;
@@ -85,9 +86,10 @@ header {
     transition: 0.3s;
 }
 
+/* ホバー（マウスを乗せた時）の調整 */
 .lang-btn:hover {
-    background: #e1f0ff;
-    border-color: #e1f0ff;
+    background: #f0f7ff; /* 薄い青背景 */
+    color: #2980b9;      /* 濃い青 */
 }
 
 .lang-menu { display: none; position: absolute; top: 100%; right: 0; background: white; border-radius: 8px; min-width: 180px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
