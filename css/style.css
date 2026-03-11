@@ -66,7 +66,18 @@ header {
 .header-nav a { font-size: 1rem; color: white; font-weight: 600; }
 
 .lang-dropdown { position: relative; }
-.lang-btn { background: transparent; border: 1px solid white; color: white; padding: 6px 15px; border-radius: 20px; cursor: pointer; }
+.lang-btn {
+    background: #6fa8dc;
+    border: 1px solid #6fa8dc;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.lang-btn:hover {
+    background: #4f90c8;
+}
 .lang-menu { display: none; position: absolute; top: 100%; right: 0; background: white; border-radius: 8px; min-width: 180px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 .lang-dropdown:hover .lang-menu { display: block; }
 .lang-menu a { display: block; padding: 12px 20px; color: #333; }
