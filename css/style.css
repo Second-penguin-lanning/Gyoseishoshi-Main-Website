@@ -401,3 +401,93 @@ RESPONSIVE (スマホ完全修正版)
         gap: 2rem;
     }
 }
+/* ============================================================
+   スマホ表示の不自然さを解消する最終修正
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* 1. 全体的な横揺れと余白の解消 */
+    body {
+        overflow-x: hidden !important;
+    }
+    .container {
+        padding: 2rem 1rem !important;
+    }
+
+    /* 2. HEROセクション（トップ）の修正 */
+    .hero-inner {
+        flex-direction: column !important; /* 縦並びを強制 */
+        text-align: center !important;
+        padding: 0 !important;
+    }
+
+    .hero-left {
+        order: 2 !important; /* 文字を写真の下に */
+    }
+
+    /* 「申請だけで終わらせない」の見出しサイズ調整 */
+    .hero h1 {
+        font-size: 1.4rem !important; /* はみ出さないサイズ */
+        line-height: 1.4 !important;
+        margin-top: 15px !important;
+        word-break: break-all !important;
+    }
+
+    /* 「まずはお気軽に」バッジの調整 */
+    .hero-badge {
+        font-size: 0.85rem !important;
+        padding: 5px 15px !important;
+        margin-bottom: 10px !important;
+        display: inline-block !important;
+        white-space: nowrap !important;
+    }
+
+    /* 3. 【重要】写真の巨大化を解決する（代表からセクション） */
+    .profile-container {
+        flex-direction: column !important; /* 縦並び */
+        align-items: center !important;
+        display: flex !important;
+    }
+
+    .profile-main {
+        order: 2 !important; /* 説明文を写真の下に */
+        text-align: center !important;
+    }
+
+    /* 代表写真のサイズを強制固定 */
+    .profile-photo {
+        order: 1 !important; /* 写真を上に */
+        width: 100% !important;
+        margin-bottom: 20px !important;
+        text-align: center !important;
+    }
+
+    .profile-photo img {
+        width: 160px !important;  /* スマホで適切なサイズ */
+        height: 160px !important; 
+        object-fit: cover !important;
+        border-radius: 50% !important; /* 円形にするとスッキリします */
+        margin: 0 auto !important;
+        border: 4px solid var(--accent) !important;
+    }
+
+    /* 4. お知らせボックス（hero-news-box）の調整 */
+    .hero-news-box {
+        margin-top: 20px !important;
+        padding: 15px !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* 5. お問い合わせボタンの横幅 */
+    .cta-button {
+        padding: 12px 30px !important;
+        width: 100% !important;
+        max-width: 280px !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* 6. 事務所情報の地図がはみ出るのを防ぐ */
+    .office-wrapper {
+        flex-direction: column !important;
+    }
+}
