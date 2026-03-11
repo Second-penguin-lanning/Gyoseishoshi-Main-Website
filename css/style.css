@@ -66,13 +66,16 @@ header {
 .header-nav a { font-size: 1rem; color: white; font-weight: 600; }
 
 .lang-dropdown { position: relative; }
+/* --- 3. HEADER 内の該当箇所 --- */
+
 .lang-btn {
-    background: #b6d7f4;        /* ← ここを薄い青に変更 */
-    border: 1px solid #b6d7f4;  /* ← 枠線も合わせる */
-    color: #1f2f3a;             /* ← 文字色を濃い青にすると読みやすくなります */
+    background: #b6d7f4;        /* ← 背景は前回提案の薄い青のまま */
+    border: 1px solid #b6d7f4;
+    color: #1f2f3a;             /* ← アイコンの色をサイト全体の藍色に変更 */
     padding: 6px 15px;
     border-radius: 20px;
     cursor: pointer;
+    font-size: 1.5rem;          /* ← アイコンのサイズを少し大きく（元の約1.3倍に）調整 */
 }
 
 .lang-btn:hover {
@@ -175,7 +178,28 @@ footer { background: var(--primary); color: white; padding: 80px 20px; text-alig
     .hero-inner { flex-direction: column !important; text-align: center; padding: 0 20px; }
     .hero-left { text-align: center; }
     .hero h1 { font-size: 1.5rem !important; }
+/* ============================================================
+   /* --- 4. HERO SECTION (既存のスタイルは省略) --- */
+   ============================================================ */
 
+/* ヒーロー左下の「通常24時間以内にご返信します」などのテキスト色を薄い水色にする */
+.hero-left .hero-notice {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    color: #add8e6;        /* ← 【追加】薄い水色 (パステルスカイブルー) */
+}
+
+/* その中のリンク「セコンドペンギン企画」の色も薄い水色にし、下線を引く */
+.hero-left .hero-notice a {
+    color: #add8e6;        /* ← 【追加】薄い水色 */
+    text-decoration: underline; /* リンクであることを示す下線 */
+    transition: 0.3s;
+}
+
+/* リンクのホバー時だけは黄色（accent色）にする */
+.hero-left .hero-notice a:hover {
+    color: var(--accent); /* ホバー時は黄色に変更 */
+}
     /* スマホで箱を縦に並べ、デザインを維持 */
     .hero-links { display: flex !important; flex-direction: column !important; gap: 15px !important; margin: 25px 0 !important; }
     .hero-link-box { 
