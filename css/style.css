@@ -111,18 +111,20 @@ header {
 }
 .cta-button { display: inline-block; padding: 18px 45px; background: var(--accent); color: white; border-radius: 50px; font-weight: 700; }
 
-/* ヒーロー左下：セコンドペンギン関連を薄い水色に */
-.hero-notice {
-    color: #add8e6 !important;
-    margin-top: 25px;
-    line-height: 1.6;
-    font-size: 0.95rem;
+/* ヒーロー左下のテキスト全体を「薄い水色」に強制する */
+.hero-notice, 
+.hero-notice strong {
+    color: #add8e6 !important; /* 薄い水色 */
 }
+
+/* リンク「セコンドペンギン企画」を「薄い水色」にし、下線を引く */
 .sp-text-link {
-    color: #add8e6 !important;
+    color: #add8e6 !important; /* 強制的に水色 */
     text-decoration: underline !important;
     font-weight: bold;
 }
+
+/* マウスを乗せた時だけ白く光らせる */
 .sp-text-link:hover {
     color: #ffffff !important;
 }
