@@ -1,187 +1,435 @@
-/* ============================================================
-   徳永良雄行政書士事務所 - 統合完成版スタイルシート
-   (全コンテンツ・全修正反映済み)
-   ============================================================ */
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特定技能外国人ビザ申請｜フィリピン・インドネシア対応｜徳永行政書士事務所</title>
+    <meta name="description" content="フィリピン人・インドネシア人の特定技能ビザ申請、在留資格変更、登録支援機関サポートまで全国対応。両国に詳しい行政書士が企業様を全面支援します。">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
-/* --- 1. RESET & BASE --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; overflow-x: hidden; }
-:root {
-    --primary: #1f2f3a;
-    --accent: #b89b5e;
-    --bg-light: #f3f4f5;
-    --text-main: #1a1a1a;
-    --white: #ffffff;
-    --line-color: #06C755;
-    --fb-color: #1877f2;
-}
-
-body {
-    padding-top: 90px;
-    font-family: 'Noto Sans JP', sans-serif;
-    line-height: 1.8;
-    background: var(--bg-light);
-    color: var(--text-main);
-}
-
-a { text-decoration: none; transition: 0.3s; color: inherit; }
-ul { list-style: none; }
-
-/* --- 2. LAYOUT --- */
-.container {
-    max-width: 1100px;
-    margin: 0 auto !important;
-    padding: 0 20px;
-    text-align: center;
-}
-
-section { padding: 100px 0; width: 100%; clear: both; }
-.bg-light-section { background: var(--white); }
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    text-align: left;
-}
-
-.card {
-    background: #fff;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    height: 100%;
-}
-
-/* --- 3. HEADER --- */
-header {
-    position: fixed; top: 0; left: 0; z-index: 1000;
-    display: flex; justify-content: space-between; align-items: center;
-    width: 100%; padding: 0 40px; height: 90px;
-    background: var(--primary); color: white;
-}
-.header-logo { display: flex; align-items: center; gap: 12px; font-weight: 700; }
-.header-logo img { height: 40px; }
-.header-nav { display: flex; gap: 2rem; align-items: center; }
-.header-nav a { font-size: 1rem; color: white; font-weight: 600; }
-
-.lang-dropdown { position: relative; }
-.lang-btn { background: transparent; border: 1px solid white; color: white; padding: 6px 15px; border-radius: 20px; cursor: pointer; }
-.lang-menu { display: none; position: absolute; top: 100%; right: 0; background: white; border-radius: 8px; min-width: 180px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-.lang-dropdown:hover .lang-menu { display: block; }
-.lang-menu a { display: block; padding: 12px 20px; color: #333; }
-
-.hamburger { display: none; flex-direction: column; gap: 6px; }
-.hamburger span { width: 30px; height: 3px; background: white; }
-
-/* --- 4. HERO SECTION (PC中央寄せ & リンク文字色修正) --- */
-.hero {
-    background: linear-gradient(135deg, #1f2f3a 0%, #2c3e50 100%);
-    color: white; padding: 80px 0; width: 100%;
-}
-.hero-inner {
-    max-width: 1150px; margin: 0 auto; padding: 0 30px;
-    display: flex; align-items: flex-start; justify-content: space-between; gap: 50px;
-}
-.hero-left { flex: 1.2; text-align: left; }
-.hero h1 { font-size: 2.4rem; margin-bottom: 1.5rem; line-height: 1.3; }
-
-.hero-badge { 
-    display: inline-block; padding: 8px 25px; background: #f4b400; color: #000; 
-    border-radius: 50px; font-weight: 900; margin-bottom: 2rem;
-}
-.cta-button { display: inline-block; padding: 18px 45px; background: var(--accent); color: white; border-radius: 50px; font-weight: 700; }
-
-/* PC版3つの箱 */
-.hero-links { display: flex; gap: 20px; margin: 3rem 0; }
-.hero-link-box { 
-    flex: 1; background: rgba(255,255,255,0.08); padding: 25px; 
-    border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); 
-}
-.hero-link-box h3 { color: var(--accent); font-size: 1.1rem; margin-bottom: 15px; }
-
-/* ボックス内のリンクが紫にならないための修正 */
-.hero-link-box a, .hero-link-box p, .hero-link-box li {
-    color: #ffffff !important;
-    text-decoration: none !important;
-    font-size: 0.9rem;
-    display: block;
-    margin-bottom: 8px;
-}
-.hero-link-box a:hover { color: var(--accent) !important; }
-
-.hero-news-box { width: 420px; background: white; color: #333; padding: 40px; border-radius: 15px; text-align: left; }
-
-/* --- 5. SECTIONS (料金・お客様の声・プロフィール等) --- */
-h2 { font-size: 2.2rem; margin-bottom: 4rem; color: var(--primary); text-align: center !important; width: 100%; }
-
-/* お客様の声 */
-.testimonial-item { 
-    max-width: 850px; margin: 0 auto 40px; padding: 40px; 
-    background: #f8f9fa; border-radius: 15px; border-left: 8px solid var(--accent); text-align: left;
-}
-.testimonial-name { display: block; text-align: right; font-weight: bold; margin-top: 20px; }
-
-/* 強調メッセージ */
-.one-stop-support-strong {
-    max-width: 1000px; margin: 80px auto; padding: 60px 40px;
-    background: #fff; text-align: center; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-}
-
-/* プロフィール */
-.profile-container { display: flex; gap: 60px; align-items: center; text-align: left; }
-.profile-photo img { width: 100%; max-width: 350px; border-radius: 15px; }
-.profile-compact-list { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
-
-/* 事務所概要 */
-.office-wrapper { display: flex; gap: 60px; text-align: left; }
-.office-left, .office-right { flex: 1; }
-.office-info li { margin-bottom: 20px; }
-.office-info strong { display: block; color: var(--primary); }
-
-/* 地図 */
-iframe { border-radius: 15px; width: 100%; height: 450px; border: 0; }
-
-/* --- 6. SNS & FOOTER --- */
-.sns-fixed { position: fixed; right: 25px; bottom: 25px; z-index: 9999; display: flex; flex-direction: column; gap: 15px; }
-.sns-btn-wide { padding: 15px 30px; border-radius: 50px; color: white; font-weight: bold; display: flex; align-items: center; gap: 12px; }
-.line-btn { background: var(--line-color); }
-.facebook-btn { background: var(--fb-color); }
-
-footer { background: var(--primary); color: white; padding: 80px 20px; text-align: center; }
-
-/* --- 7. RESPONSIVE (スマホ最終修正) --- */
-@media (max-width: 768px) {
-    body { padding-top: 70px; }
-    header { height: 70px; padding: 0 15px; }
-    .hamburger { display: flex; }
-    .header-nav { display: none; } /* ハンバーガーメニューの実装に合わせて調整 */
-
-    .hero { padding: 40px 0; }
-    .hero-inner { flex-direction: column !important; text-align: center; padding: 0 20px; }
-    .hero-left { text-align: center; }
-    .hero h1 { font-size: 1.5rem !important; }
-
-    /* スマホで箱を縦に並べ、デザインを維持 */
-    .hero-links { display: flex !important; flex-direction: column !important; gap: 15px !important; margin: 25px 0 !important; }
-    .hero-link-box { 
-        width: 100% !important; background: rgba(255,255,255,0.1) !important; 
-        border: 1px solid rgba(255,255,255,0.2) !important; padding: 20px !important; text-align: left;
+    <link rel="canonical" href="https://tokunaga-gyosei.jp/">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/gyosei_logo_192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="images/gyosei_logo_192.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="alternate" hreflang="ja" href="https://tokunaga-gyosei.jp/">
+    <link rel="alternate" hreflang="en" href="https://tokunaga-gyosei.jp/en/">
+    <link rel="alternate" hreflang="tl" href="https://tokunaga-gyosei.jp/tl/">
+    
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"LegalService",
+        "image":"https://tokunaga-gyosei.jp/images/myfoto.png",
+        "priceRange":"¥¥",
+        "name":"德永良雄行政書士事務所",
+        "alternateName":"Tokunaga Administrative Scrivener Office",
+        "url":"https://tokunaga-gyosei.jp/",
+        "telephone":"+81-70-9192-2524",
+        "email":"info@tokunaga-gyosei.jp",
+        "address":{
+            "@type":"PostalAddress",
+            "streetAddress":"向洋町中6-9 神戸ファッションマート 4N-07-01",
+            "addressLocality":"神戸市東灘区",
+            "addressRegion":"兵庫県",
+            "postalCode":"658-0032",
+            "addressCountry":"JP"
+        },
+        "areaServed":"JP",
+        "founder":{
+            "@type":"Person",
+            "name":"德永 良雄"
+        },
+        "serviceType":[
+            "特定技能ビザ申請",
+            "Specified Skilled Worker Visa Application",
+            "Philippine Worker Support"
+        ]
     }
-    .hero-link-box a { text-decoration: none !important; color: #ffffff !important; }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="images/行政書士マーク.png" alt="行政書士ロゴ">
+            <span>德永 良雄 行政書士事務所</span>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+        <nav class="header-nav" id="nav">
+            <a href="#for-company">企業様へ</a>
+            <a href="#for-worker">外国籍の方へ</a>
+            <a href="#pricing">料金</a>
+<a href="#about">代表</a> 
+            <a href="#office">事務所</a>
+            <a href="#contact">お問い合わせ</a>
+            <a href="https://second-penguin-planning.github.io/member/" target="_blank" class="business-link">🔒 業務用</a>
+        </nav>
+      
+<div class="lang-dropdown">
+    <button class="lang-btn">
+        <i class="fa-solid fa-globe"></i>
+    </button>
 
-    .hero-news-box { width: 100% !important; margin-top: 30px; }
+    <div class="lang-menu">
+        <a href="index.html">🇯🇵 日本語</a>
+        <a href="en/">🇺🇸 English</a>
+        <a href="tl/">🇵🇭 Tagalog</a>
+        <a href="id/">🇮🇩 Bahasa Indonesia</a>
+    </div>
+</div>
+    </header>
 
-    /* プロフィール写真 */
-    .profile-container, .office-wrapper { flex-direction: column; text-align: center; }
-    .profile-photo { order: -1; margin-bottom: 20px; }
-    .profile-photo img { width: 160px !important; height: 160px !important; border-radius: 50% !important; object-fit: cover; }
-    .profile-compact-list { grid-template-columns: 1fr; }
+    <main>
+        <section class="hero"id="top">
+            <div class="hero-inner">
+                <div class="hero-left">
+                    <h1>フィリピン人・インドネシア人特定技能ビザ申請専門｜全国対応の行政書士</h1>
+                    <p class="hero-sub">特定技能・在留資格の申請を一括サポート</p>
+                    <div class="hero-badge">初回相談 無料｜全国オンライン対応</div>
+                    <a href="#contact" class="cta-button">無料相談はこちら</a>
+<div class="hero-links">
 
-    /* バッジ中央寄せ */
-    .hero-badge { margin: 0 auto 1.5rem auto !important; display: table !important; }
+<a href="#for-company" class="hero-link-box">
+<h3>企業様へ</h3>
+<p>
+外国人雇用サポート<br>
+特定技能・技能実習<br>
+組合顧問対応
+</p>
+</a>
 
-    .sns-fixed { width: calc(100% - 40px); left: 20px; }
-    .sns-btn-wide { justify-content: center; }
-    iframe { height: 300px !important; }
-}
+<a href="#country-support" class="hero-link-box">
+<h3>フィリピン・インドネシア方へ</h3>
+<p>
+特定技能採用<br>
+送り出し機関連携<br>
+ビザ申請支援
+</p>
+</a>
+
+<a href="#for-worker" class="hero-link-box">
+<h3>外国人の方へ</h3>
+<p>
+在留資格変更<br>
+ビザ更新<br>
+日本で働きたい方
+</p>
+</a>
+
+</div>
+                    <div class="hero-notice">
+                        <strong>【行政書士＋登録支援機関 ワンストップ対応】</strong><br>
+                        外国人雇用支援事業（登録支援機関 申請中・2026年3月登録予定）は、
+                       <a href="http://second-penguin.com/" target="_blank" style="color:#9fd3ff; text-decoration:underline;">
+セコンドペンギン企画
+</a>
+                        にて対応予定です。
+                    </div>
+                    <p class="quick-response">通常24時間以内にご返信します</p>
+                </div>
+                <div class="hero-news-box">
+                    <div class="hero-tags">
+                        <span class="tag-gyosei">行政書士業務</span>
+                        <span class="tag-support">登録支援機関</span>
+                    </div>
+                    <h3>お知らせ</h3>
+                    <ul>
+                        <li><span class="date">2026.03.01</span>特定技能ビザ申請の最新情報を更新しました。</li>
+                        <li><span class="date">2026.02.20</span>フィリピン人向け在留資格相談を強化しました。</li>
+                        <li><span class="date">2026.02.05</span>組合顧問契約の受付を開始しました。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="for-company" class="bg-light-section">
+            <div class="container">
+                <h2>企業・組合様向けサポート</h2>
+                <div class="grid">
+                    <div class="card"><h3>組合顧問契約</h3><p>技能実習から特定技能移行、受入体制整備、監査対応まで継続サポート。全国対応可能。</p></div>
+                    <div class="card"><h3>特定技能フルサポート</h3><p>在留資格認定、変更、更新、支援計画作成、登録支援機関との連携まで一括対応。</p></div>
+                    <div class="card"><h3>フィリピン送出機関対応</h3><p>フィリピン大使館・DMW（旧POEA）関連手続き、契約書確認・調整支援。</p></div>
+                </div>
+            </div>
+        </section>
+<section id="country-support" class="bg-light-section">
+<div class="container">
+<h2>フィリピン・インドネシアの方の対応</h2>
+<div class="grid">
+<div class="card"><h3>生活支援、就業支援</h3><p>日本で働いている皆さんの生活相談、日本で働きたい皆さんの留学/就業相談在留資格変更、日本語学習相談</p></div>
+<div class="card"><h3>フィリピン人 特定技能サポート</h3><p>フィリピン送り出し機関対応、DMW（旧POEA）関連手続き、大使館関係書類まで対応可能。</p></div>
+<div class="card"><h3>インドネシア人 特定技能サポート</h3><p>インドネシア送り出し機関との連携、特定技能採用・在留資格申請をサポート。</p></div>
+</div>
+</div>
+</section>
+        <section id="for-worker" class="bg-accent-section">
+            <div class="container">
+                <h2>外国籍の皆様へ</h2>
+                <div class="grid">
+                    <div class="card"><h3>ビザ更新・変更</h3><p>在留期間更新、転職に伴う変更申請など全国対応。</p></div>
+　　　　　　　　　 <div class="card"><h3>その他の行政手続き</h3><p>行政機関の各種申請、起業などの支援。</p></div>
+                    <div class="card"><h3>相談対応（英語可）</h3><p>英語での相談可能。オンライン面談にも対応しています。</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>お客様の声</h2>
+                <div class="testimonial-item">
+                    <p>「フィリピン人特定技能の手続きを安心して任せることができました。書類作成から入管対応まで丁寧で、企業として非常に助かりました。」</p>
+                    <span class="testimonial-name">（製造業 企業様）</span>
+                </div>
+                <div class="testimonial-item">
+                    <p>「在留資格変更手続きで不安がありましたが、迅速な対応で無事許可を取得できました。」</p>
+                    <span class="testimonial-name">（本人申請サポート）</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="one-stop-support-strong">
+            <h2>申請だけで終わらせない。採用から定着まで、すべて任せられる体制。</h2>
+            <p>当事務所は行政書士業務に加え、登録支援機関としての登録（名称：セコンドペンギン企画）も行っております。</p>
+            <p>そのため、在留資格申請だけでなく、雇用契約支援・支援計画作成・生活サポート・企業様の体制整備まで、一気通貫で対応可能です。</p>
+            <p class="highlight">「申請は行政書士」「支援は別会社」と分断されることなく、責任の所在が明確なワンストップ体制を実現しています。</p>
+            <p>外国人雇用を“点”ではなく“仕組み”として整えたい企業様に選ばれています。</p>
+        </section>
+
+<section id="pricing" class="pricing">
+    <div class="container">
+        <h2>料金の目安（在留資格専門）</h2>
+        <p class="pricing-note">すべて事前見積・明朗会計。追加費用は事前にご説明します。</p>
+
+        <div class="grid">
+
+            <!-- 初回相談 -->
+            <div class="card">
+                <h3>初回のご相談</h3>
+                <p class="price-tag">無料</p>
+                <ul>
+                    <li>外国の方の在留資格</li>
+                    <li>外国の方の日本での手続き全般（支払い・違反など）</li>
+                    <li>企業様の行政手続き支援全般</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>在留資格認定証明書交付申請</h3>
+                <p class="price-tag">110,000円〜</p>
+                <ul>
+                    <li>特定技能対応</li>
+                    <li>書類作成一式</li>
+                    <li>入管対応含む</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>在留資格変更許可申請</h3>
+                <p class="price-tag">88,000円〜</p>
+                <ul>
+                    <li>技能実習→特定技能 など</li>
+                    <li>必要書類整理</li>
+                    <li>入管提出代行</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>在留期間更新許可申請</h3>
+                <p class="price-tag">55,000円〜</p>
+                <ul>
+                    <li>更新手続一式</li>
+                    <li>企業サポート</li>
+                    <li>迅速対応</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>企業・組合顧問契約</h3>
+                <p class="price-tag">月額 33,000円〜</p>
+                <ul>
+                    <li>特定技能受入サポート</li>
+                    <li>定期相談対応</li>
+                    <li>在留管理支援</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <section id="about" class="bg-light-section">
+            <div class="container">
+                <h2>代表から</h2>
+                <div class="profile-container">
+                    <div class="profile-main">
+                        <h3>德永 良雄 (Yoshio Tokunaga)</h3>
+                        <p><strong>行政書士 / 代表</strong></p>
+                        <p>国家公務員として31年間勤務後、神戸にて開業。許認可申請・在留資格申請・相続業務を中心に対応。「専門的なことを、できるだけわかりやすく」を信条に、ご相談者様と共に歩むサポートを行っています。</p>
+                        <div class="profile-compact-list">
+                            <div><strong>資格</strong><ul><li>行政書士 / 申請取次</li><li>英語（ビジネスレベル）</li><li>日本語教師</li></ul></div>
+                            <div><strong>主な経歴</strong><ul><li>ダム・許認可行政</li><li>在インドネシア日本大使館</li><li>防災専門家（海外勤務）</li></ul></div>
+                        </div>
+                        <div class="second-penguin-box">
+                            <div class="sp-text">【ご案内】 外国人雇用・生活支援の事業はこちら →</div>
+                            <a href="http://second-penguin.com/" target="_blank" class="sp-link">セコンドペンギン企画 公式サイト</a>
+                        </div>
+                    </div>
+                    <div class="profile-photo"><img src="images/myfoto.png" alt="德永良雄プロフィール写真"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="office" class="bg-light-section">
+            <div class="container">
+                <h2>事務所情報</h2>
+                <div class="office-wrapper">
+                    <div class="office-left">
+                        <ul class="office-info">
+                            <li><strong>事務所名</strong><br>德永良雄行政書士事務所</li>
+                            <li><strong>登録番号</strong><br>日本行政書士連合会 第24303656号</li>
+                            <li><strong>電話番号</strong><br>070-9192-2524</li>
+                            <li><strong>メール</strong><br>info@tokunaga-gyosei.jp</li>
+                            <li><strong>所在地</strong><br>〒658-0032<br>兵庫県神戸市東灘区向洋町中6-9<br>神戸ファッションマート 4N-07-01</li>
+                            <li><strong>営業時間</strong><br>平日 8:30〜17:00<br>土曜 9:00〜15:00（予約制）<br>※日曜・祝日休業</li>
+                        </ul>
+                    </div>
+                    <div class="office-right">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.02674395874!2d135.2679!3d34.6896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60008d660417931f%3A0xd6e5f8664ecb9575!2z56We5oi4576p44OD44K344On44Oz44Oe44O844OIdQ!5e0!3m2!1sja!2sjp!4v1710000000000!5m2!1sja!2sjp" width="100%" height="350" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <p class="map-note">※地図は拡大・ルート検索が可能です</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>まずはお気軽にご相談ください</h2>
+            <p>初回相談無料。国際経験豊富な行政書士が直接対応いたします。</p>
+            <a href="tel:070-9192-2524" class="btn-white">今すぐ電話する</a>
+        </section>
+
+        <section id="contact" class="bg-light-section">
+            <div class="container">
+                <h2>お問い合わせ</h2>
+                <div class="contact-form">
+                    <h3 style="margin-top:0;">お問い合わせフォーム</h3>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeJPYhr5yeNR1IyZvTHCWVO5s_os7ff83NjhB02nPmMgARSmA/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+                    <p class="privacy-note">※通常1営業日以内にご返信いたします。</p>
+                </div>
+            </div>
+        </section>
+
+      <section id="links" class="bg-light-section">
+<div class="container">
+
+<h2>外国人雇用・関係リンク</h2>
+
+<div class="grid">
+
+<!-- 外国人雇用の制度 -->
+<div class="link-group">
+<h4>外国人雇用の制度</h4>
+<ul>
+<li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/gaikokujin/" target="_blank">厚生労働省 外国人雇用対策</a></li>
+<li><a href="https://www.moj.go.jp/isa/policies/ssw/" target="_blank">特定技能制度（出入国在留管理庁）</a></li>
+<li><a href="https://www.otit.go.jp/" target="_blank">外国人技能実習機構</a></li>
+<li><a href="https://www.jitco.or.jp/" target="_blank">国際人材協力機構（JITCO）</a></li>
+</ul>
+</div>
+
+<!-- 協議会 -->
+<div class="link-group">
+<h4>特定技能 協議会</h4>
+<ul>
+<li><a href="https://www.mhlw.go.jp/stf/newpage_000117702.html" target="_blank">外食業特定技能協議会</a></li>
+<li><a href="https://jac-skill.or.jp/" target="_blank">建設技能人材機構（JAC）</a></li>
+<li><a href="https://www.mlit.go.jp/" target="_blank">国土交通省（特定技能 建設分野）</a></li>
+<li><a href="https://www.maff.go.jp/" target="_blank">農林水産省（農業・漁業分野）</a></li>
+</ul>
+</div>
+
+<!-- 日本語能力 -->
+<div class="link-group">
+<h4>日本語能力試験</h4>
+<ul>
+<li><a href="https://www.jlpt.jp/" target="_blank">日本語能力試験 JLPT</a></li>
+<li><a href="https://www.jftbasic.jp/" target="_blank">JFT-Basic（国際交流基金日本語基礎テスト）</a></li>
+<li><a href="https://www.jasso.go.jp/" target="_blank">日本学生支援機構 JASSO</a></li>
+</ul>
+</div>
+
+<!-- 助成金 -->
+<div class="link-group">
+<h4>外国人雇用 助成金・支援</h4>
+<ul>
+<li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/index.html" target="_blank">厚生労働省 雇用関係助成金</a></li>
+<li><a href="https://mirasapo-plus.go.jp/" target="_blank">ミラサポplus（補助金検索）</a></li>
+<li><a href="https://j-net21.smrj.go.jp/" target="_blank">J-Net21（中小企業支援）</a></li>
+</ul>
+</div>
+
+<!-- 入管 -->
+<div class="link-group">
+<h4>入管関係</h4>
+<ul>
+<li><a href="https://www.moj.go.jp/isa/" target="_blank">出入国在留管理庁</a></li>
+<li><a href="https://www.moj.go.jp/isa/applications/index.html" target="_blank">在留資格申請手続き</a></li>
+<li><a href="https://www.moj.go.jp/isa/publications/materials/nyuukokukanri07_00045.html" target="_blank">在留資格一覧</a></li>
+</ul>
+</div>
+
+<!-- 行政書士会 -->
+<div class="link-group">
+<h4>行政書士会</h4>
+<ul>
+<li><a href="https://www.gyosei.or.jp/" target="_blank">日本行政書士会連合会</a></li>
+<li><a href="https://www.hyogokai.or.jp/" target="_blank">兵庫県行政書士会</a></li>
+</ul>
+</div>
+
+<!-- 行政機関 -->
+<div class="link-group">
+<h4>行政機関</h4>
+<ul>
+<li><a href="https://www.mhlw.go.jp/" target="_blank">厚生労働省</a></li>
+<li><a href="https://www.meti.go.jp/" target="_blank">経済産業省</a></li>
+<li><a href="https://www.soumu.go.jp/" target="_blank">総務省</a></li>
+<li><a href="https://www.cao.go.jp/" target="_blank">内閣府</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+    </main>
+
+    <div class="sns-fixed">
+        <a href="https://line.me/R/oaMessage/@556fihjp/" target="_blank" rel="noopener noreferrer" class="sns-btn-wide line-btn">
+            <i class="fab fa-line"></i> LINEで無料相談
+        </a>
+        <a href="https://www.facebook.com/second.penguin/" target="_blank" class="sns-btn-wide facebook-btn">
+            <i class="fab fa-facebook-f"></i> Facebookページを見る
+        </a>
+    </div>
+
+<a href="#top" class="back-to-top">TOPへ</a>
+    
+    <footer>
+        <div class="footer-contacts"><p>電話: 070-9192-2524 | メール: info@tokunaga-gyosei.jp</p></div>
+        <p><a href="private.html" style="color:white; text-decoration:underline;">プライバシーポリシー</a></p>
+        <p>© 2024 行政書士 サポートオフィス. All rights reserved.</p>
+        <div style="margin-top:2rem; font-size:0.8rem; opacity:0.8;">
+            <p>所属：兵庫県行政書士会 | 登録番号：第24303656号</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+<script>
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    document.querySelector('.header-nav').classList.toggle('show');
+  });
+</script>
+</body>
