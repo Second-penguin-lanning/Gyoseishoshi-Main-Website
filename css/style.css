@@ -124,38 +124,36 @@ header {
     padding-top: 60px; /* 左側のテキストだけ少し下げてバランスを取る */
 }
 
-/* --- お知らせボックスの修正（四隅統一・高級感Ver） --- */
+/* --- お知らせボックスの修正（右上配置・高級感Ver） --- */
 .hero-news-box {
     width: 380px;
     flex-shrink: 0;
-    /* 背景：白から極薄いベージュへのグラデーション */
+    /* 背景：シャンパンホワイトのグラデーション */
     background: linear-gradient(135deg, #ffffff 0%, #fcfaf5 100%);
     color: #333;
     padding: 25px;
     
-    /* 角の調整：四隅すべてを15pxで統一（優雅で落ち着いた印象） */
+    /* 角の調整：四隅統一（15px） */
     border-radius: 15px;
     
-    /* 高級感のアクセント：全体に非常に細いゴールドの枠線 */
+    /* 高級感のアクセント */
     border: 1px solid rgba(184, 155, 94, 0.3);
-    /* 上部だけにアクセントラインを入れて視線を誘導 */
     border-top: 5px solid var(--accent); 
 
-    /* 位置の調整：右側のマージンを広げて、ボックスを左へ寄せます */
-    margin-right: 100px; 
+    /* 【右上への移動】 */
+    margin-right: -20px; /* コンテナの右端ギリギリ、あるいは少しはみ出すくらいに設定 */
+    margin-top: -90px;    /* さらに上に持ち上げ、ヘッダーとヒーローの境界に配置 */
     
-    /* 影：四隅が丸くなったので、全方向に柔らかく広がる影に調整 */
-    box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+    /* 影：浮遊感を出すために少し強めに設定 */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
     
-    /* 位置：ヘッダーとの重なりを少し解消し、独立したカードに見せます */
-    margin-top: -40px; 
     z-index: 10;
     position: relative;
 }
 
 /* スマホ用の調整 */
 @media (max-width: 768px) {
-    .hero-news-box {
+   .hero-news-box {
         width: 100%;
         margin-right: 0 !important;
         margin-top: 20px !important;
