@@ -17,7 +17,7 @@ html { scroll-behavior: smooth; overflow-x: hidden; }
 }
 
 body {
-    padding-top: 70px;
+    padding-top: 60px; /* 70px → 60px */
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.8;
     background: var(--bg-light);
@@ -58,7 +58,7 @@ section { padding: 100px 0; width: 100%; clear: both; }
 
 /* --- 3. HEADER (言語ボタン最新修正反映) --- */
 header {
-    height: 70px; /* 90px → 70px に変更（これでヘッダーが細くなります） */
+    height: 60px; /* 70px → 60px (さらに細く) */
     position: fixed; top: 0; left: 0; z-index: 1000;
     display: flex; justify-content: space-between; align-items: center;
     width: 100%; padding: 0 40px;
@@ -104,32 +104,36 @@ header {
 .hero {
     background: linear-gradient(135deg, #1f2f3a 0%, #2c3e50 100%);
     color: white; 
-    padding: 0 0 80px; /* 30px → 0 に変更。これでヘッダーとの隙間が消えます */
+    padding: 0; /* 上下の余白を一旦ゼロに */
     width: 100%;
 }
 .hero-inner {
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-between;
-    align-items: flex-start; /* 上揃えを維持 */
-    /* ...他の設定はそのまま... */
+    align-items: flex-start; /* これで右側ボックスが上に張り付きます */
+    max-width: 1200px; /* 少し広げると参考サイトに近づきます */
+    margin: 0 auto;
+    padding: 0 20px 80px; /* 下だけに余白を作る */
 }
-
 .hero-left {
     flex: 1;
     text-align: left;
-    padding-top: 40px; /* ボックスは上、テキストだけ少し下げる調整 */
+    padding-top: 60px; /* 左側のテキストだけ少し下げてバランスを取る */
 }
 
+/* お知らせボックスの修正 */
 .hero-news-box {
     width: 380px;
     flex-shrink: 0;
-    margin-top: 0 !important; /* 強制的に隙間をゼロにする */
     background: white;
     color: #333;
     padding: 25px;
-    border-radius: 0 0 12px 12px; /* 上の角を直線にするとヘッダーとの一体感が出ます */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    /* 上側の角丸を0にするとヘッダーに吸着して見えます */
+    border-radius: 0 0 12px 12px; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    margin-top: 0 !important; /* 隙間を完全にゼロに */
+    z-index: 10;
 }
 /* お知らせ内のリスト装飾（お好みで） */
 .hero-news-box ul {
@@ -225,8 +229,8 @@ footer { background: var(--primary); color: white; padding: 80px 20px; text-alig
 
 /* --- 7. RESPONSIVE --- */
 @media (max-width: 768px) {
-    body { padding-top: 70px; }
-    header { height: 70px; padding: 0 15px; }
+body { padding-top: 60px; }
+    header { height: 60px; padding: 0 15px; }
     .hamburger { display: flex; }
     
     .header-nav { display: none; } 
@@ -235,19 +239,18 @@ footer { background: var(--primary); color: white; padding: 80px 20px; text-alig
  .hero {
         padding: 0 0 40px; /* スマホも上は0 */
     }
+.hero-inner {
+        flex-direction: column !important; /* スマホは縦並び */
+        padding-bottom: 40px;
+    }
     .hero-left {
-        padding-top: 30px; /* スマホでのテキスト位置調整 */
+        padding-top: 30px; 
         text-align: center;
     }
     .hero-news-box {
         width: 100%;
-        margin-top: 20px;
-        border-radius: 12px; /* スマホでは全面角丸に戻す */
-    }
-    .hero-inner {
-        flex-direction: column !important; /* スマホでは縦並び */
-        align-items: center;
-        gap: 20px;
+        margin-top: 20px !important;
+        border-radius: 12px; /* スマホでは角丸を戻す */
     }
 
     .hero h1 { font-size: 1.5rem !important; }
