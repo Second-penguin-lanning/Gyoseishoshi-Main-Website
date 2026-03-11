@@ -106,7 +106,7 @@ header {
     color: white; 
     padding: 0; /* 上下の余白を一旦ゼロに */
     width: 100%;
-    border-top: 1px solid rgba(255,255,255,0.35); 
+    border-top: 3px solid rgba(255,255,255,0.35); 
 }
 .hero-inner {
     display: flex !important;
@@ -234,6 +234,15 @@ iframe { border-radius: 15px; width: 100%; height: 450px; border: 0; }
 .contact-cta {
     text-align: center;
 }
+.phone-link{
+    color:#3498db;
+    text-decoration:underline;
+    font-weight:600;
+}
+
+.phone-link:hover{
+    color:#1f78d1;
+}
 /* --- 6. SNS & FOOTER --- */
 .sns-fixed { position: fixed; right: 25px; bottom: 25px; z-index: 9999; display: flex; flex-direction: column; gap: 15px; }
 .sns-btn-wide { padding: 15px 30px; border-radius: 50px; color: white; font-weight: bold; display: flex; align-items: center; gap: 12px; }
@@ -286,4 +295,19 @@ body { padding-top: 60px; }
     .sns-fixed { width: calc(100% - 40px); left: 20px; }
     .sns-btn-wide { justify-content: center; }
     iframe { height: 300px !important; }
+}
+.google-form-wrapper{
+    width:100%;
+    max-width:900px;
+    margin:0 auto;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+    overflow:hidden;
+}
+
+.google-form-wrapper iframe{
+    width:100%;
+    min-height:900px;
+    border:0;
 }
