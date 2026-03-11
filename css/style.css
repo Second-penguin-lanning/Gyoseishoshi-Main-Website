@@ -17,7 +17,7 @@ html { scroll-behavior: smooth; overflow-x: hidden; }
 }
 
 body {
-    padding-top: 90px;
+    padding-top: 70px;
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.8;
     background: var(--bg-light);
@@ -58,9 +58,10 @@ section { padding: 100px 0; width: 100%; clear: both; }
 
 /* --- 3. HEADER (言語ボタン最新修正反映) --- */
 header {
+    height: 70px; /* 90px → 70px に変更（これでヘッダーが細くなります） */
     position: fixed; top: 0; left: 0; z-index: 1000;
     display: flex; justify-content: space-between; align-items: center;
-    width: 100%; padding: 0 40px; height: 90px;
+    width: 100%; padding: 0 40px;
     background: var(--primary); color: white;
 }
 .header-logo { display: flex; align-items: center; gap: 12px; font-weight: 700; }
@@ -103,7 +104,7 @@ header {
 .hero {
     background: linear-gradient(135deg, #1f2f3a 0%, #2c3e50 100%);
     color: white; 
-    padding: 0 0 80px; /* 30px → 0 に変更。これでヘッダーとの隙間がなくなります */
+    padding: 0 0 80px; /* 30px → 0 に変更。これでヘッダーとの隙間が消えます */
     width: 100%;
 }
 .hero-inner {
@@ -111,17 +112,39 @@ header {
     flex-direction: row !important;
     justify-content: space-between;
     align-items: flex-start; /* 上揃えを維持 */
-    max-width: 1100px; /* containerと合わせるか、少し広めの1200pxにする */
-    margin: 0 auto;
-    padding: 0 20px;
-    gap: 30px;
+    /* ...他の設定はそのまま... */
 }
 
 .hero-left {
     flex: 1;
     text-align: left;
-    padding-top: 50px; /* 左側のテキストエリアだけ少し下げてバランスを取る */
+    padding-top: 40px; /* ボックスは上、テキストだけ少し下げる調整 */
 }
+
+.hero-news-box {
+    width: 380px;
+    flex-shrink: 0;
+    margin-top: 0 !important; /* 強制的に隙間をゼロにする */
+    background: white;
+    color: #333;
+    padding: 25px;
+    border-radius: 0 0 12px 12px; /* 上の角を直線にするとヘッダーとの一体感が出ます */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+/* お知らせ内のリスト装飾（お好みで） */
+.hero-news-box ul {
+    margin-top: 15px;
+}
+.hero-news-box li {
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+.hero-news-box li:last-child {
+    border-bottom: none;
+}
+
 .hero-badge { 
     display: inline-block; padding: 8px 25px; background: #f4b400; color: #000; 
     border-radius: 50px; font-weight: 900; margin-bottom: 2rem;
@@ -161,32 +184,6 @@ header {
 }
 .hero-link-box a:hover { color: var(--accent) !important; }
 
-/* お知らせボックスの修正 */
-.hero-news-box {
-    width: 380px;
-    flex-shrink: 0;
-    background: white;
-    color: #333;
-    padding: 25px;
-    border-radius: 0 0 15px 15px; /* 下側だけ角丸にすると、ヘッダーから生えているように見えます（お好みで） */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    margin-top: 0; /* 隙間を完全にゼロにする */
-    position: relative;
-    z-index: 10;
-}
-/* お知らせ内のリスト装飾（お好みで） */
-.hero-news-box ul {
-    margin-top: 15px;
-}
-.hero-news-box li {
-    font-size: 0.9rem;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-}
-.hero-news-box li:last-child {
-    border-bottom: none;
-}
 
 /* --- 5. SECTIONS (各コンテンツの装飾) --- */
 h2 { font-size: 2.2rem; margin-bottom: 4rem; color: var(--primary); text-align: center !important; width: 100%; }
