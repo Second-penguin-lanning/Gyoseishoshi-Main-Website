@@ -452,8 +452,7 @@ background:#f5f7fa;
 }
 
 .service-table{
-max-width:1000px;
-margin:auto;
+display:none;
 }
 
 .service-row{
