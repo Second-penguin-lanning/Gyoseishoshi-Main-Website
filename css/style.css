@@ -59,7 +59,7 @@ section { padding: 100px 0; width: 100%; clear: both; }
 /* --- 3. HEADER (言語ボタン最新修正反映) --- */
 header {
     height: 60px; /* 70px → 60px (さらに細く) */
-    position: fixed; top: 0; left: 0; z-index: 1000;
+    position: fixed; top: 0; left: 0; z-index: 200;
     display: flex; justify-content: space-between; align-items: center;
     width: 100%; padding: 0 40px;
     background: var(--primary); color: white;
@@ -290,7 +290,7 @@ body { padding-top: 60px; }
     .hamburger { display: flex; }
     
     .header-nav { display: none; } 
-    .header-nav.show { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: var(--primary); padding: 20px; gap: 15px; } 
+    .header-nav.show { display: flex; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: var(--primary); padding: 20px; gap: 15px; } 
 
  .hero {
         padding: 0 0 40px; /* スマホも上は0 */
@@ -404,27 +404,6 @@ font-size:13px;
 margin-top:15px;
 color:#666;
 text-align:center;
-}
-/* フォームデザイン */
-
-.contact-form{
-max-width:700px;
-margin:40px auto;
-background:#fff;
-padding:40px;
-border-radius:12px;
-box-shadow:0 6px 20px rgba(0,0,0,0.05);
-text-align:left;
-}
-
-.form-row{
-margin-bottom:20px;
-}
-
-.form-row label{
-display:block;
-font-weight:600;
-margin-bottom:6px;
 }
 
 .contact-form input,
