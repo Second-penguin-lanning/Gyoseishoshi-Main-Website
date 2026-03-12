@@ -1,4 +1,7 @@
-
+/* ============================================================
+    徳永良雄行政書士事務所 - 統合完成版スタイルシート
+    (1行の漏れもなく全修正・全デバイス対応を反映)
+   ============================================================ */
 
 /* --- 1. RESET & BASE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -443,57 +446,66 @@ margin-top:15px;
 color:#666;
 text-align:center;
 }
-/* =========================================================
-アコーディオン
-========================================================= */
-
-.accordion{
-max-width:900px;
-margin:0 auto;
-text-align:left;
+.services{
+padding:80px 20px;
+background:#f5f7fa;
 }
 
-.accordion-item{
+.service-table{
+max-width:1000px;
+margin:auto;
+}
+
+.service-row{
+display:grid;
+grid-template-columns:180px 220px 1fr 150px;
+gap:20px;
+padding:20px;
 border-bottom:1px solid #ddd;
-}
-
-.accordion-header{
-width:100%;
-padding:18px 20px;
 background:#fff;
-border:none;
-cursor:pointer;
-font-size:18px;
-font-weight:700;
-display:flex;
-justify-content:space-between;
-align-items:center;
 }
 
-.accordion-header:hover{
-background:#f7f7f7;
-}
-
-.accordion-content{
-display:none;
-padding:15px 20px 25px;
+.service-row:nth-child(even){
 background:#fafafa;
 }
 
-.accordion-content ul{
-padding-left:20px;
-}
-
-.accordion-content li{
-margin-bottom:12px;
-}
-
-.accordion-title{
-font-weight:600;
+.service-category{
+font-weight:700;
 color:#1f2f3a;
 }
 
-.accordion-desc{
+.service-title{
+font-weight:600;
+}
+
+.service-desc{
 font-size:14px;
 color:#555;
+}
+
+.service-price{
+font-weight:700;
+color:#b89b5e;
+}
+
+@media(max-width:768px){
+
+.service-row{
+grid-template-columns:1fr;
+gap:8px;
+}
+
+.service-category{
+font-size:13px;
+color:#888;
+}
+
+.service-title{
+font-size:16px;
+}
+
+.service-price{
+margin-top:5px;
+}
+
 }
