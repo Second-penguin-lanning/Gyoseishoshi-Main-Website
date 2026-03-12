@@ -1,32 +1,47 @@
-document.addEventListener('DOMContentLoaded', () => {
+ocument.addEventListener('DOMContentLoaded', () => {
+
+    /* =============================
+       ハンバーガーメニュー
+    ============================= */
 
     const hamburger = document.getElementById("hamburger");
     const nav = document.getElementById("nav");
-    const langBtn = document.querySelector(".lang-btn");
-    const langMenu = document.querySelector(".lang-menu");
 
-    // 言語メニュー
-    if(langBtn && langMenu){
-        langBtn.addEventListener("click", function(){
-            langMenu.classList.toggle("show");
+    if (hamburger && nav) {
+
+        const toggleMenu = (forceClose = false) => {
+            const isOpen = forceClose ? false : hamburger.classList.toggle("active");
+            nav.classList.toggle("show", isOpen);
+            if (forceClose) hamburger.classList.remove("active");
+        };
+
+        hamburger.addEventListener("click", () => toggleMenu());
+
+        nav.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') toggleMenu(true);
         });
     }
 
-    if (!hamburger || !nav) return;
+    /* =============================
+       アコーディオン
+    ============================= */
 
-    // メニュー開閉
-    const toggleMenu = (forceClose = false) => {
-        const isOpen = forceClose ? false : hamburger.classList.toggle("active");
-        nav.classList.toggle("show", isOpen);
-        if (forceClose) hamburger.classList.remove("active");
-    };
+    const accordions = document.querySelectorAll(".accordion-header");
 
-    // ハンバーガークリック
-    hamburger.addEventListener("click", () => toggleMenu());
+    accordions.forEach(button => {
 
-    // リンククリックで閉じる
-    nav.addEventListener("click", (e) => {
-        if (e.target.tagName === 'A') toggleMenu(true);
+        button.addEventListener("click", () => {
+
+            const content = button.nextElementSibling;
+
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+
+        });
+
     });
 
 });
