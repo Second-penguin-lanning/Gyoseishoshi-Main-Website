@@ -467,3 +467,57 @@ margin-top:15px;
 color:#666;
 text-align:center;
 }
+/* =========================================================
+アコーディオン
+========================================================= */
+
+.accordion{
+max-width:900px;
+margin:0 auto;
+text-align:left;
+}
+
+.accordion-item{
+border-bottom:1px solid #ddd;
+}
+
+.accordion-header{
+width:100%;
+padding:18px 20px;
+background:#fff;
+border:none;
+cursor:pointer;
+font-size:18px;
+font-weight:700;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.accordion-header:hover{
+background:#f7f7f7;
+}
+
+.accordion-content{
+display:none;
+padding:15px 20px 25px;
+background:#fafafa;
+}
+
+.accordion-content ul{
+padding-left:20px;
+}
+
+.accordion-content li{
+margin-bottom:12px;
+}
+
+.accordion-title{
+font-weight:600;
+color:#1f2f3a;
+}
+
+.accordion-desc{
+font-size:14px;
+color:#555;
+}
