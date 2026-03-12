@@ -93,7 +93,7 @@
                     <a href="#contact" class="cta-button">無料相談はこちら</a>
 <div class="hero-links">
 
-<a href="#for-company" class="hero-link-box">
+<a href="#services" class="hero-link-box" onclick="showService('company')">
 <h3>企業様へ</h3>
 <p>
 特定技能・技能実習生の雇用支援<br>
@@ -102,15 +102,16 @@
 </p>
 </a>
 
-<a href="#country-support" class="hero-link-box">
+<a href="#services" class="hero-link-box" onclick="showService('country')">
 <h3>フィリピン・インドネシアの方へ</h3>
 <p>
 特定技能、技術・人文・国際ビザ申請<br>
 その他のビザ申請<br>
-渉外戸籍、帰化申請</p>
+渉外戸籍、帰化申請
+</p>
 </a>
 
-<a href="#for-worker" class="hero-link-box">
+<a href="#services" class="hero-link-box" onclick="showService('worker')">
 <h3>外国籍の方へ</h3>
 <p>
 ビザ更新申請<br>
@@ -120,6 +121,7 @@
 </a>
 
 </div>
+
                  <div class="hero-notice">
     <span class="text-white">【行政書士＋登録支援機関 ワンストップ対応】</span><br>
     <span class="text-white">外国人雇用支援事業（登録支援機関 申請中・2026年3月登録予定）は、</span><br> <a href="http://second-penguin.com/" target="_blank" class="sp-link-blue">セコンドペンギン企画</a>
@@ -142,21 +144,22 @@
             </div>
         </section>
 
-      ```html
+
+
+
+
+
 <section id="services" class="services">
 
 <h2 class="section-title">サービス一覧・費用の目安</h2>
 
-<div class="service-table">
-
-<!-- =========================
-企業様向け
-========================= -->
+<!-- 企業様 -->
+<div id="company-services" class="service-table">
 
 <div class="service-row">
 <div class="service-category">企業様</div>
 <div class="service-title">特定技能外国人の受入れ支援</div>
-<div class="service-desc">特定技能外国人の採用から入管申請、受入れ体制整備まで企業様を総合的にサポートします。</div>
+<div class="service-desc">特定技能外国人の採用から入管申請まで総合サポート</div>
 <div class="service-price">100,000円〜</div>
 </div>
 
@@ -215,10 +218,12 @@
 <div class="service-desc">在留資格や雇用契約など外国人雇用に関するトラブルの相談に対応します。</div>
 <div class="service-price">相談10,000円〜</div>
 </div>
-
+</div>
 <!-- =========================
 フィリピン・インドネシア
 ========================= -->
+<div id="country-services" class="service-table" style="display:none;">
+
 
 <div class="service-row">
 <div class="service-category">フィリピン・インドネシア</div>
@@ -283,10 +288,11 @@
 <div class="service-price">50,000円〜</div>
 </div>
 
+</div>
 <!-- =========================
 外国籍の方
 ========================= -->
-
+<div id="worker-services" class="service-table" style="display:none;">
 <div class="service-row">
 <div class="service-category">外国籍の方</div>
 <div class="service-title">ビザ更新申請</div>
@@ -363,8 +369,6 @@
 
 </section>
 ```
-
-
         <section class="testimonials">
             <div class="container">
                 <h2>お客様の声</h2>
@@ -696,6 +700,29 @@ content.style.display = "block";
 });
 
 });
+</script>
+<script>
+
+function showService(type){
+
+document.getElementById("company-services").style.display="none";
+document.getElementById("country-services").style.display="none";
+document.getElementById("worker-services").style.display="none";
+
+if(type === "company"){
+document.getElementById("company-services").style.display="block";
+}
+
+if(type === "country"){
+document.getElementById("country-services").style.display="block";
+}
+
+if(type === "worker"){
+document.getElementById("worker-services").style.display="block";
+}
+
+}
+
 </script>
 </body>
 </html>
