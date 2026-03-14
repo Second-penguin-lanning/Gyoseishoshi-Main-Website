@@ -143,31 +143,33 @@ background:#a5894f;
 
 position:absolute;
 
-/* ヘッダーとかぶらない位置 */
-top:90px;
+/* ヘッダーから十分離す */
+top:120px;
 
-right:5%;
+/* 少し中央寄りにする */
+right:3%;
 
-/* 幅を少し細く */
-width:300px;
+/* 幅を広げる */
+width:420px;
 
-background: linear-gradient(145deg, #ffffff 0%, #fcfaf5 100%);
+background:linear-gradient(145deg,#ffffff 0%,#fcfaf5 100%);
 color:#333;
-padding:20px;
+
+padding:25px;
 
 border-radius:16px;
+
 border:1px solid rgba(184,155,94,0.3);
 border-top:6px solid var(--accent);
 
 box-shadow:0 20px 60px rgba(0,0,0,0.25);
 
-/* ここが重要（スクロール） */
-max-height:240px;
+/* スクロール設定 */
+max-height:260px;
 overflow-y:auto;
 
 z-index:100;
-}
-.hero-news-box::-webkit-scrollbar{
+}.hero-news-box::-webkit-scrollbar{
 width:6px;
 }
 
@@ -327,10 +329,9 @@ body { padding-top: 60px; }
  .hero {
         padding: 0 0 40px; /* スマホも上は0 */
     }
-.hero-inner {
-        flex-direction: column !important; /* スマホは縦並び */
-        padding-bottom: 40px;
-    }
+.hero-inner{
+max-width:1300px;
+}
     .hero-left {
         padding-top: 30px; 
         text-align: center;
@@ -349,7 +350,31 @@ body { padding-top: 60px; }
         border: 1px solid rgba(255,255,255,0.2) !important; padding: 20px !important; text-align: left;
     }
     .hero-link-box a { text-decoration: none !important; color: #ffffff !important; }
+.hero-news-box::-webkit-scrollbar{
+width:10px;
+}
 
+.hero-news-box::-webkit-scrollbar-track{
+background:#f1f1f1;
+border-radius:5px;
+}
+
+.hero-news-box::-webkit-scrollbar-thumb{
+background:#b89b5e;
+border-radius:5px;
+}
+
+.hero-news-box::-webkit-scrollbar-thumb:hover{
+background:#9a824a;
+}
+.hero-news-box::after{
+content:"▼スクロールできます";
+display:block;
+text-align:center;
+font-size:12px;
+color:#888;
+margin-top:5px;
+}
     .profile-container, .office-wrapper { flex-direction: column; text-align: center; }
     .profile-photo { order: -1; margin-bottom: 20px; }
     .profile-photo img { width: 160px !important; height: 160px !important; border-radius: 50% !important; object-fit: cover; }
