@@ -140,27 +140,45 @@ background:#a5894f;
 }
 
 .hero-news-box {
-    /* 絶対配置に変更 */
-    position: absolute; 
-    top: 20px;    /* 上からの距離（ヘッダーに被るなら 80px などに調整） */
-    right: 5%;    /* 右端からの距離（%で指定するとバランスが良いです） */
-    
-    width: 360px;
-    background: linear-gradient(145deg, #ffffff 0%, #fcfaf5 100%);
-    color: #333;
-    padding: 25px;
-    
-    /* 四隅の角丸を統一 */
-    border-radius: 16px;
-    
-    /* 高級感の装飾 */
-    border: 1px solid rgba(184, 155, 94, 0.3);
-    border-top: 6px solid var(--accent); 
-    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-    
-    z-index: 100; /* ヘッダー(1000)よりは下、ヒーロー(1)よりは上 */
+
+position:absolute;
+
+/* ヘッダーとかぶらない位置 */
+top:90px;
+
+right:5%;
+
+/* 幅を少し細く */
+width:300px;
+
+background: linear-gradient(145deg, #ffffff 0%, #fcfaf5 100%);
+color:#333;
+padding:20px;
+
+border-radius:16px;
+border:1px solid rgba(184,155,94,0.3);
+border-top:6px solid var(--accent);
+
+box-shadow:0 20px 60px rgba(0,0,0,0.25);
+
+/* ここが重要（スクロール） */
+max-height:240px;
+overflow-y:auto;
+
+z-index:100;
+}
+.hero-news-box::-webkit-scrollbar{
+width:6px;
 }
 
+.hero-news-box::-webkit-scrollbar-thumb{
+background:#ccc;
+border-radius:3px;
+}
+
+.hero-news-box::-webkit-scrollbar-thumb:hover{
+background:#999;
+}
 /* スマホでは絶対配置を解除しないと崩れるため、以下が重要です */
 @media (max-width: 768px) {
     .hero-news-box {
@@ -181,17 +199,20 @@ background:#a5894f;
     }
 }
 /* お知らせ内のリスト装飾（お好みで） */
-.hero-news-box ul {
-    margin-top: 15px;
+.hero-news-box ul{
+margin-top:12px;
+padding-right:6px;
 }
-.hero-news-box li {
-    font-size: 0.9rem;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
+
+.hero-news-box li{
+font-size:0.85rem;
+border-bottom:1px solid #eee;
+padding-bottom:6px;
+margin-bottom:6px;
 }
-.hero-news-box li:last-child {
-    border-bottom: none;
+
+.hero-news-box li:last-child{
+border-bottom:none;
 }
 
 .hero-badge { 
@@ -416,16 +437,20 @@ margin-top:15px;
 color:#666;
 text-align:center;
 }
-
-.submit-btn:hover{
-background:#a5894f;
+.back-to-top{
+position:fixed;
+left:20px;
+bottom:25px;
+background:#1f2f3a;
+color:#fff;
+padding:10px 16px;
+border-radius:30px;
+font-size:14px;
+z-index:9999;
 }
 
-.privacy-note{
-font-size:13px;
-margin-top:15px;
-color:#666;
-text-align:center;
+.back-to-top:hover{
+background:#34495e;
 }
 /* =========================================================
 アコーディオン
