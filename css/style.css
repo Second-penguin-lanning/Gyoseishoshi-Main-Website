@@ -162,9 +162,9 @@ line-height:1.4;
 ------------------------------ */
 
 .hero-news-box{
-    position:absolute;
-    top:80px;           /* ヘッダーとの距離 */
-    right:3%;
+   position:absolute;
+    top:70px;
+    right:30px;
 
     width:420px;
     max-width:90%;
