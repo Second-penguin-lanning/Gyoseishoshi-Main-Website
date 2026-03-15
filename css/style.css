@@ -579,5 +579,32 @@ footer{
     p, li, .service-desc, .accordion-desc, .support-list, .office-info, .testimonial-item, .profile-container {
         text-align: left;
     }
+/* Q&A */
 
+.qa-section{
+max-width:900px;
+margin:40px auto;
+text-align:left;
+}
+
+.qa-section h3{
+margin-top:40px;
+font-size:22px;
+color:#1f2f3a;
+border-left:5px solid #b89b5e;
+padding-left:12px;
+}
+
+.qa-item{
+background:#ffffff;
+padding:20px;
+margin-top:15px;
+border-radius:8px;
+box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+
+.qa-item h4{
+font-size:18px;
+margin:0;
+}
 }
