@@ -132,14 +132,16 @@ header {
 /* --- 4. ヒーローセクション --- */
 .hero {
     background: linear-gradient(135deg, #1f2f3a 0%, #2c3e50 100%);
-    color: white; padding: 0; width: 100%;
+    color: white; min-height:650px; width: 100%;
     border-top: 3px solid rgba(255,255,255,0.35);
     position: relative;
 }
 
 .hero-inner {
-    display: flex !important; flex-direction: row !important;
-    justify-content: space-between; align-items: center;
+   display:flex;
+flex-direction:row;
+justify-content:space-between;
+align-items:center;
     max-width: 1200px; margin: 0 auto; padding: 0 20px 80px;
 }
 
@@ -150,25 +152,66 @@ header {
     border-radius: 50px; font-weight: 900; margin-bottom: 2rem;
 }
 
-/* お知らせボックス */
-.hero-news-box {
-    position: absolute; top: 120px; right: 3%; width: 420px;
-    background: linear-gradient(145deg,#ffffff 0%,#fcfaf5 100%);
-    color: #333; padding: 25px; border-radius: 16px;
-    border: 1px solid rgba(184,155,94,0.3); border-top: 6px solid var(--accent);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-    max-height: 260px; overflow-y: auto; z-index: 100;
+/* ------------------------------
+   ヒーロー お知らせBOX
+------------------------------ */
+
+.hero-news-box{
+    position:absolute;
+    top:140px;           /* ヘッダーとの距離 */
+    right:3%;
+
+    width:420px;
+    max-width:90%;
+
+    background:linear-gradient(145deg,#ffffff 0%,#fcfaf5 100%);
+    color:#333;
+
+    padding:22px 25px 25px;
+
+    border-radius:16px;
+
+    border:1px solid rgba(184,155,94,0.3);
+    border-top:6px solid var(--accent);
+
+    box-shadow:0 20px 60px rgba(0,0,0,0.25);
+
+    z-index:100;
+}
+.hero-news-box h3{
+    margin-top:-5px;
+    margin-bottom:10px;
+    font-size:1rem;
+    font-weight:600;
 }
 .hero-news-box::-webkit-scrollbar { width: 6px; }
 .hero-news-box::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
 .hero-news-box::-webkit-scrollbar-thumb:hover { background: #999; }
 
-.hero-news-box ul {
-    list-style: none; margin: 0; padding: 0;
-    max-height: 200px; overflow-y: auto;
-    scrollbar-width: thin; border-top: 1px solid #eee; border-bottom: 1px solid #eee;
+.hero-news-box ul{
+
+    list-style:none;
+    margin:5px 0 0 0;
+    padding:0;
+
+    max-height:200px;   /* スクロール高さ */
+    overflow-y:auto;
+
+    scrollbar-width:thin;
+
+    border-top:1px solid #eee;
+    border-bottom:1px solid #eee;
+
 }
-.hero-news-box li { font-size: 0.85rem; border-bottom: 1px solid #eee; padding-bottom: 6px; margin-bottom: 6px; }
+.hero-news-box li{
+
+    font-size:0.85rem;
+    line-height:1.4;
+
+    border-bottom:1px solid #eee;
+
+    padding:6px 0;
+}
 .hero-news-box li:last-child { border-bottom: none; }
 
 /* 注釈・リンク */
@@ -336,13 +379,26 @@ footer { background: var(--primary); color: white; padding: 80px 20px; text-alig
     .hero-news-box::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 5px; }
     .hero-news-box::-webkit-scrollbar-thumb { background: #b89b5e; border-radius: 5px; }
     .hero-news-box::-webkit-scrollbar-thumb:hover { background: #9a824a; }
-    .hero-news-box ul::-webkit-scrollbar { width: 6px; }
-    .hero-news-box ul::-webkit-scrollbar-thumb { background: #b89b5e; border-radius: 3px; }
-    .hero-news-box::after {
-        content: "▼スクロールできます"; display: block; text-align: center;
-        font-size: 12px; color: #888; margin-top: 5px;
-    }
+ .hero-news-box ul::-webkit-scrollbar{
+width:6px;
+}
 
+.hero-news-box ul::-webkit-scrollbar-thumb{
+background:#ccc;
+border-radius:3px;
+}
+
+.hero-news-box ul::-webkit-scrollbar-thumb:hover{
+background:#999;
+}
+    .hero-news-box::after{
+    content:"▼ スクロールできます";
+    display:block;
+    text-align:center;
+    font-size:11px;
+    color:#b89b5e;
+    margin-top:6px;
+}
     .hero-links { display: flex !important; flex-direction: column !important; gap: 15px !important; margin: 25px 0 !important; }
     .hero-link-box { 
         width: 100% !important; background: rgba(255,255,255,0.1) !important; 
@@ -371,4 +427,5 @@ footer { background: var(--primary); color: white; padding: 80px 20px; text-alig
     p, li, .service-desc, .accordion-desc, .support-list, .office-info, .testimonial-item, .profile-container {
         text-align: left;
     }
+
 }
