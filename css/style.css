@@ -449,7 +449,9 @@ background:#999;
     .profile-photo { order: -1; margin-bottom: 20px; }
     .profile-photo img { width: 160px !important; height: 160px !important; border-radius: 50% !important; object-fit: cover; }
     .profile-compact-list { grid-template-columns: 1fr; }
-
+footer{
+    padding-bottom:140px;
+}
     /* サービス・テーブルレスポンシブ */
     .service-row { grid-template-columns: 1fr; gap: 6px; }
     .service-price { text-align: left; }
