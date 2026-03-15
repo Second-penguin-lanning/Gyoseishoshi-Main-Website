@@ -18,7 +18,7 @@
 html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
-    padding-top: 60px;
+    padding-top: 50px;
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.8;
     background: var(--bg-light);
@@ -133,6 +133,7 @@ header {
 .hero {
     background: linear-gradient(135deg, #1f2f3a 0%, #2c3e50 100%);
     color: white; min-height:650px; width: 100%;
+    padding-top:10px;
     border-top: 3px solid rgba(255,255,255,0.35);
     position: relative;
 }
@@ -146,7 +147,7 @@ align-items:center;
 position:relative; 
 }
 
-.hero-left { flex: 2; text-align: left; padding-top: 60px; }
+.hero-left { flex: 2; text-align: left; padding-top: 30px; }
 
 .hero-badge { 
     display: inline-block; padding: 8px 25px; background: #f4b400; color: #000; 
