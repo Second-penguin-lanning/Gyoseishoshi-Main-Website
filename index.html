@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -145,7 +144,7 @@
         </section>
 
         <section id="services" class="services">
-            <h2 class="section-title">外国人ビザ申請サポート（特定技能・就労ビザ・在留資格）</h2>
+            <h2 class="section-title">業務内容</h2>
 
             <div id="company-services" class="service-table">
                 <div class="service-intro-box">
@@ -638,12 +637,33 @@
                 document.getElementById("worker-services").style.display = "block";
             }
         }
+// 言語取得
+let lang = document.documentElement.lang;
+
 // ニュース読み込み
-fetch('news-list.html')
-  .then(response => response.text())
-  .then(data => {
-      document.getElementById("news-list").innerHTML = data;
-  });
+fetch('/news/news.json')
+.then(response => response.json())
+.then(news => {
+
+    let html = "";
+
+    news.forEach(item => {
+
+        let title = item.title[lang] || item.title["ja"];
+
+        html += `
+        <li>
+            <a href="${item.url}">
+                <span class="news-date">${item.date}</span>
+                ${title}
+            </a>
+        </li>
+        `;
+    });
+
+    document.getElementById("news-list").innerHTML = html;
+
+});
     </script>
 </body>
 
