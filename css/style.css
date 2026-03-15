@@ -37,7 +37,7 @@ ul { list-style: none; }
 }
 
 section { 
-    padding: 100px 0; 
+    padding: 70px 0; 
     width: 100%; 
     clear: both; 
     scroll-margin-top: 80px; /* セクション移動時の余白 */
@@ -46,11 +46,12 @@ section {
 .bg-light-section { background: var(--white); }
 
 h2 { 
-    font-size: 2.2rem; 
-    margin-bottom: 4rem; 
-    color: var(--primary); 
-    text-align: center !important; 
-    width: 100%; 
+    font-size: 2.2rem;
+    margin: 0 0 1.8rem 0;
+    color: var(--primary);
+    text-align: center !important;
+    width: 100%;
+    line-height: 1.3;
 }
 
 /* グリッド・カード */
