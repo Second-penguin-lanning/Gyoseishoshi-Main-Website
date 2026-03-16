@@ -131,6 +131,12 @@ header {
 .header-nav { display: flex; gap: 2rem; align-items: center; }
 .header-nav a { font-size: 1rem; color: white; font-weight: 600; }
 
+.header-nav a,
+.header-nav span,
+.header-nav div {
+    cursor: pointer;
+}
+
 .header-contact {
     background: #b89b5e;
     padding: 8px 16px;
@@ -565,6 +571,12 @@ background:#999;
     .profile-compact-list { grid-template-columns: 1fr; }
 footer{
     padding-bottom:150px;
+}
+/* スマホ：TOPボタンをSNSの右側に配置 */
+.back-to-top{
+    left:auto;
+    right:20px;
+    bottom:120px;
 }
     /* サービス・テーブルレスポンシブ */
     .service-row { grid-template-columns: 1fr; gap: 6px; }
