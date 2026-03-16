@@ -630,3 +630,8 @@ font-size:18px;
 margin:0;
 }
 }
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
