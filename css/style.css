@@ -334,8 +334,7 @@ line-height:1.4;
     background: #fff; text-align: center; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05);
 }
 
-/* ニュース詳細用スタイル */
-.news-article{
+/* ニュース詳細用スタイル.news-article{
 max-width:800px;
 margin:auto;
 padding:80px 20px;
@@ -372,12 +371,6 @@ font-size:16px;
 .news-article h2 { margin-top: 40px; font-size: 20px; }
 .news-article p { margin-bottom: 15px; line-height: 1.9; }
 .news-date { color: #b89b5e; font-weight: 700; margin-bottom: 20px; }
-.service-price{
-font-size:20px;
-font-weight:900;
-color:#b89b5e;
-margin-top:6px;
-}
 
 /* --- 6. 事務所紹介・地図 --- */
 .profile-container { display: flex; gap: 60px; align-items: center; text-align: left; }
@@ -636,100 +629,4 @@ box-shadow:0 3px 10px rgba(0,0,0,0.05);
 font-size:18px;
 margin:0;
 }
-}
-/* ================================
-   PCでサービスが広がりすぎる問題修正
-================================ */
-
-@media (min-width: 1024px){
-
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:0 80px;   /* ←左右余白をしっかり確保 */
-}
-
-/* サービスセクション中央寄せ */
-.service-table{
-    max-width:900px;
-    margin:40px auto;
-}
-
-/* 導入ボックスも幅を揃える */
-.service-intro-box{
-    max-width:900px;
-    margin:30px auto 50px;
-}
-}
-/* ================================
-   サービス表の文字改善
-================================ */
-
-.service-row{
-    display:grid;
-    grid-template-columns:150px 1.4fr 2fr 130px;
-    gap:25px;
-    padding:20px 10px;
-    border-bottom:1px solid #ddd;
-    align-items:center;
-}
-
-/* カテゴリ */
-.service-category{
-    font-weight:700;
-    font-size:15px;
-    color:#1f2f3a;
-}
-
-/* タイトル */
-.service-title{
-    font-weight:700;
-    font-size:18px;
-}
-
-/* 説明 */
-.service-desc{
-    font-size:15px;
-    color:#555;
-    line-height:1.7;
-}
-
-/* 価格 */
-.service-price{
-    font-size:18px;
-    font-weight:800;
-    color:#b89b5e;
-}
-/* ================================
-   サービス導入の読みやすさ改善
-================================ */
-
-.service-intro-box h3{
-    font-size:24px;
-    margin-bottom:10px;
-}
-
-.support-lead{
-    font-size:19px;
-    font-weight:700;
-}
-
-.support-list li{
-    font-size:16px;
-    line-height:1.8;
-}
-@media (min-width:1024px){
-
-body{
-    font-size:17px;
-}
-
-h2{
-    font-size:2.2rem;
-}
-
-p{
-    font-size:17px;
-}
-
 }
