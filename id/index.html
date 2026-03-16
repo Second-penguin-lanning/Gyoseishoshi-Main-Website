@@ -520,22 +520,7 @@
   </footer>
 
   <script src="js/common.js"></script>
-  <script>
-    document.querySelector('.hamburger').addEventListener('click', function() {
-      document.querySelector('.header-nav').classList.toggle('show');
-    });
 
-    document.addEventListener('DOMContentLoaded', function() {
-      const accordions = document.querySelectorAll(".accordion-header");
-      accordions.forEach(button => {
-        button.addEventListener("click", function() {
-          const content = this.nextElementSibling;
-          content.style.display = (content.style.display === "block") ? "none" : "block";
-        });
-      });
-    });
-
-  </script>
   <script src="/data/content.js"></script>
   <script src="/js/content-loader.js"></script>
   <script src="../common.js"></script>
