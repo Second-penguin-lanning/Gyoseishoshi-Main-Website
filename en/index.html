@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foreign Worker Employment & Visa Applications | Permanent Residence & Family Visa | Tokunaga Administrative Scrivener Office｜
-Philippine Specified Skilled Worker Support | Nationwide Service</title>
+    <title><title>
+Specified Skilled Worker Visa Support for Filipinos | Tokunaga Administrative Scrivener
+</title></title>
     <meta name="description" content="Administrative scrivener support for Specified Skilled Worker visas, work visas, and status of residence changes for Filipinos and Indonesians across Japan. Support for companies employing foreign workers and visa renewal or permanent residence applications. First consultation free.">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -67,9 +68,9 @@ Philippine Specified Skilled Worker Support | Nationwide Service</title>
 </div>
 
 <nav class="header-nav" id="nav">
-<a href="#services" onclick="showService('company')">For Companies</a>
-<a href="#services" onclick="showService('country')">For PH / ID</a>
-<a href="#services" onclick="showService('worker')">For Foreign Residents</a>
+<a href="#services" onclick="showService('company'); return false;">For Companies</a>
+<a onclick="showService('country')">For PH / ID</a>
+<a onclick="showService('worker')">For Foreign Residents</a>
 <a href="#office">Office</a>
 <a href="#about">Representative</a>
 <a href="#qa">Q&A</a>
@@ -109,7 +110,7 @@ Administrative scrivener support for immigration procedures such as Specified Sk
 
 <div class="hero-links">
 
-<a href="#services" class="hero-link-box" onclick="showService('company');return true;">
+<a href="#services" class="hero-link-box" onclick="showService('company'); return false;">
 <h3>For Companies</h3>
 <p>
 Support for hiring foreign workers and Specified Skilled Worker visa applications<br>
@@ -118,7 +119,7 @@ Advisory services for companies and supervising organizations
 </p>
 </a>
 
-<a href="#services" class="hero-link-box" onclick="showService('country')">
+<a href="#services" class="hero-link-box" onclick="showService('country'); return false;">
 <h3>For Philippines / Indonesia</h3>
 <p>
 Specified Skilled Worker visa and Engineer / Specialist / International Services visa<br>
@@ -127,7 +128,7 @@ Family register and naturalization applications
 </p>
 </a>
 
-<a href="#services" class="hero-link-box" onclick="showService('worker')">
+<a href="#services" class="hero-link-box" onclick="showService('worker'); return false;">
 <h3>For Foreign Residents</h3>
 <p>
 Visa renewal applications<br>
@@ -437,8 +438,6 @@ will handle the support.<br>We usually respond within 24 hours.
         </section>
 <section class="one-stop-support-strong">
 
-<h2>Not just applications. From recruitment to retention, a complete support system.</h2>
-
 <p>In addition to administrative scrivener services, our office is also applying to operate as a Registered Support Organization (Second Penguin Planning).</p>
 
 <p>Therefore, we provide integrated support including visa applications, employment contract support, support plan creation, daily life assistance, and company system development.</p>
@@ -623,7 +622,42 @@ Our services are chosen by companies that want to build a sustainable system for
 
 </footer>
 
-<script src="/js/common.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        // Hamburger Menu Toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.header-nav').classList.toggle('show');
+        });
+
+        // Accordion Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordions = document.querySelectorAll(".accordion-header");
+            accordions.forEach(button => {
+                button.addEventListener("click", function() {
+                    const content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            });
+        });
+
+        // Service Tab Switcher
+        function showService(type) {
+
+document.getElementById("company-services").style.display="none";
+document.getElementById("country-services").style.display="none";
+document.getElementById("worker-services").style.display="none";
+
+document.getElementById(type + "-services").style.display="block";
+
+document.getElementById("services").scrollIntoView({
+behavior:"smooth"
+});
+        }
+    </script>
 <script src="/data/content.js"></script>
 <script src="/js/content-loader.js"></script>
 
