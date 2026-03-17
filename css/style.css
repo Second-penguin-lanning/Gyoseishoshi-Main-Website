@@ -37,7 +37,7 @@ ul { list-style: none; }
 }
 
 section { 
-    padding: 50px 0; 
+    padding: 20px 0 50px; 
     width: 100%; 
     clear: both; 
     scroll-margin-top: 80px; /* セクション移動時の余白 */
@@ -48,6 +48,7 @@ section {
 h2 { 
     font-size: 2rem;
     margin: 0 0 1.5rem 0;
+margin-top: 0;
     color: var(--primary);
     text-align: center !important;
     width: 100%;
@@ -97,7 +98,7 @@ h2 {
 
 .service-intro-box {
     max-width: 960px; /* 導入文もテーブルの幅に合わせる */
-    margin: 30px auto 40px; /* 中央寄せ */
+    margin: 10px auto 40px; /* 中央寄せ */
     background: #f4f7fb;
     border-left: 6px solid #1f2f3a;
     padding: 35px 40px; /* ボックス内の余白も少し広げて読みやすく */
@@ -640,4 +641,7 @@ margin:0;
 #country-services,
 #worker-services {
     scroll-margin-top: 80px;
+}
+.section-title {
+    margin-bottom: 10px;
 }
