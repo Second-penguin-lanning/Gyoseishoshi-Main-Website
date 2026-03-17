@@ -629,12 +629,25 @@ box-shadow:0 3px 10px rgba(0,0,0,0.05);
 font-size:18px;
 margin:0;
 }
-}
 .site-header {
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 section {
+    scroll-margin-top: 150px;
+}
+#services,
+#company-services,
+#country-services,
+#worker-services {
+    scroll-margin-top: 140px;
+}section {
+    scroll-margin-top: 150px;
+}
+#services,
+#company-services,
+#country-services,
+#worker-services {
     scroll-margin-top: 140px;
 }
