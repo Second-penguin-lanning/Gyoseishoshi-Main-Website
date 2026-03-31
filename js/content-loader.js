@@ -1,50 +1,28 @@
-document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener("DOMContentLoaded", () => {
+  // 言語判定（必要なら拡張可）
+  const lang = document.documentElement.lang === "ja" ? "ja" : "ja";
 
-const lang=document.documentElement.lang || "ja";
+  // お知らせ表示
+  const newsList = document.getElementById("newsList");
+  if (newsList && typeof CONTENT !== "undefined" && CONTENT.news) {
+    newsList.innerHTML = CONTENT.news.map(item => `
+      <li>
+        <a href="${item.url}">
+          <span class="news-date">${item.date}</span>
+          ${item[lang] || item.ja}
+        </a>
+      </li>
+    `).join("");
+  }
 
-
-/* NEWS */
-
-const newsBox=document.getElementById("newsList");
-
-if(newsBox){
-
-CONTENT.news.forEach(n=>{
-
-const li=document.createElement("li");
-
-li.innerHTML=
-`<span class="news-date">${n.date}</span> ${n[lang]}`;
-
-newsBox.appendChild(li);
-
-});
-
-}
-
-
-/* QA */
-
-const qaBox=document.getElementById("qaList");
-
-if(qaBox){
-
-CONTENT.qa.forEach(q=>{
-
-const div=document.createElement("div");
-
-div.className="qa-item";
-
-div.innerHTML=
-`
-<h4>${q.q[lang]}</h4>
-<p>${q.a[lang]}</p>
-`;
-
-qaBox.appendChild(div);
-
-});
-
-}
-
+  // Q&A表示
+  const qaList = document.getElementById("qaList");
+  if (qaList && typeof CONTENT !== "undefined" && CONTENT.qa) {
+    qaList.innerHTML = CONTENT.qa.map(item => `
+      <div class="qa-item">
+        <h4>Q. ${item.q[lang] || item.q.ja}</h4>
+        <p>A. ${item.a[lang] || item.a.ja}</p>
+      </div>
+    `).join("");
+  }
 });
