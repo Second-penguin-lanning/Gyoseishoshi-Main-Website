@@ -5,6 +5,7 @@ news:[
 {
 date:"2026.03",
 ja:"在留資格手続き手数料引き上げ法案を検討",
+url: "/news/news202603.html",
 en:"Government considering visa procedure fee increase",
 tl:"Pinag-aaralan ang pagtaas ng visa procedure fee",
 id:"Pemerintah mempertimbangkan kenaikan biaya prosedur visa"
