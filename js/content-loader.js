@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const newsList = document.getElementById("newsList");
-  if (!newsList || typeof CONTENT === "undefined" || !Array.isArray(CONTENT.news)) return;
+  const qaList = document.getElementById("qaList");
+
+  if (typeof CONTENT === "undefined") return;
 
   function getCurrentLang() {
     return (
@@ -11,10 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getNewsTitle(item, lang) {
-    return item[lang] || item.ja || item.en || item.title || "お知らせ";
+    return item[lang] || item.ja || item.en || item.tl || item.id || item.title || "お知らせ";
+  }
+
+  function getLocalizedText(obj, lang) {
+    if (!obj) return "";
+    if (typeof obj === "string") return obj;
+    return obj[lang] || obj.ja || obj.en || obj.tl || obj.id || "";
   }
 
   window.renderNews = function () {
+    if (!newsList || !Array.isArray(CONTENT.news)) return;
+
     const lang = getCurrentLang();
 
     newsList.innerHTML = CONTENT.news.map(item => {
@@ -33,18 +43,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }).join("");
   };
 
-  window.renderNews();
-});
+  window.renderQA = function () {
+    if (!qaList || !Array.isArray(CONTENT.qa)) return;
 
+    const lang = getCurrentLang();
 
-  // Q&A表示
-  const qaList = document.getElementById("qaList");
-  if (qaList && typeof CONTENT !== "undefined" && CONTENT.qa) {
     qaList.innerHTML = CONTENT.qa.map(item => `
       <div class="qa-item">
-        <h4>Q. ${item.q[lang] || item.q.ja}</h4>
-        <p>A. ${item.a[lang] || item.a.ja}</p>
+        <h4>Q. ${getLocalizedText(item.q, lang)}</h4>
+        <p>A. ${getLocalizedText(item.a, lang)}</p>
       </div>
     `).join("");
-  }
+  };
+
+  window.renderNews();
+  window.renderQA();
 });
