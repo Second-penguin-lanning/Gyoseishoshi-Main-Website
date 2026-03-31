@@ -67,3 +67,47 @@ function showService(type) {
     });
 
 }
+/* =============================
+   追加：プランBOX アニメーション
+   （IntersectionObserver で
+     画面に入ったときフェードイン）
+============================= */
+(function () {
+    const targets = document.querySelectorAll(
+        '.sp-plan-box, .ph-register-box'
+    );
+
+    if (!targets.length) return; // 要素がなければ何もしない
+
+    // IntersectionObserver が使えない環境はそのまま表示
+    if (!('IntersectionObserver' in window)) {
+        targets.forEach(function (el) {
+            el.style.opacity = '1';
+        });
+        return;
+    }
+
+    // 初期状態：非表示
+    targets.forEach(function (el) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(24px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    var observer = new IntersectionObserver(
+        function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target); // 一度だけ発火
+                }
+            });
+        },
+        { threshold: 0.15 }
+    );
+
+    targets.forEach(function (el) {
+        observer.observe(el);
+    });
+})();
