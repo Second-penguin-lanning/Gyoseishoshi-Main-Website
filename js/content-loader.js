@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getNewsTitle(item, lang) {
-    return item[lang] || item.ja || item.en || item.tl || item.id || item.title || "お知らせ";
+    return item[lang] || item.ja || item.en || item.title || "お知らせ";
   }
 
   window.renderNews = function () {
@@ -35,9 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.renderNews();
 });
-if (typeof window.renderNews === "function") {
-  window.renderNews();
-}
 
 
   // Q&A表示
