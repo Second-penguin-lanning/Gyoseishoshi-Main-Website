@@ -1,19 +1,44 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 言語判定（必要なら拡張可）
-  const lang = document.documentElement.lang === "ja" ? "ja" : "ja";
-
-  // お知らせ表示
   const newsList = document.getElementById("newsList");
-  if (newsList && typeof CONTENT !== "undefined" && CONTENT.news) {
-    newsList.innerHTML = CONTENT.news.map(item => `
-      <li>
-        <a href="${item.url}">
-          <span class="news-date">${item.date}</span>
-          ${item[lang] || item.ja}
-        </a>
-      </li>
-    `).join("");
+  if (!newsList || typeof CONTENT === "undefined" || !Array.isArray(CONTENT.news)) return;
+
+  function getCurrentLang() {
+    return (
+      localStorage.getItem("lang") ||
+      document.documentElement.lang ||
+      "ja"
+    ).toLowerCase();
   }
+
+  function getNewsTitle(item, lang) {
+    return item[lang] || item.ja || item.en || item.tl || item.id || item.title || "お知らせ";
+  }
+
+  window.renderNews = function () {
+    const lang = getCurrentLang();
+
+    newsList.innerHTML = CONTENT.news.map(item => {
+      const href = item.url || item.link || item.href || "#";
+      const title = getNewsTitle(item, lang);
+      const date = item.date || "";
+
+      return `
+        <li>
+          <a href="${href}">
+            <span class="news-date">${date}</span>
+            ${title}
+          </a>
+        </li>
+      `;
+    }).join("");
+  };
+
+  window.renderNews();
+});
+if (typeof window.renderNews === "function") {
+  window.renderNews();
+}
+
 
   // Q&A表示
   const qaList = document.getElementById("qaList");
