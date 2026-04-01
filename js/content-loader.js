@@ -1,52 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const lang = document.documentElement.lang || "ja";
+  const content = window.siteContent?.[lang] || window.siteContent?.ja;
+
+  // News list
   const newsList = document.getElementById("newsList");
-
-  function getCurrentLang() {
-    return (
-      localStorage.getItem("lang") ||
-      document.documentElement.lang ||
-      "ja"
-    ).toLowerCase();
+  if (newsList && content?.news) {
+    newsList.innerHTML = content.news.map(item => `<li>${item}</li>`).join("");
   }
 
-  function getNewsTitle(item, lang) {
-    return item[lang] || item.ja || item.en || item.title || "お知らせ";
-  }
-
-  // お知らせ表示
-  if (newsList && typeof CONTENT !== "undefined" && Array.isArray(CONTENT.news)) {
-    window.renderNews = function () {
-      const lang = getCurrentLang();
-
-      newsList.innerHTML = CONTENT.news.map(item => {
-        const href = item.url || item.link || item.href || "#";
-        const title = getNewsTitle(item, lang);
-        const date = item.date || "";
-
-        return `
-          <li>
-            <a href="${href}">
-              <span class="news-date">${date}</span>
-              ${title}
-            </a>
-          </li>
-        `;
-      }).join("");
-    };
-
-    window.renderNews();
-  }
-
-  // Q&A表示
+  // Q&A list
   const qaList = document.getElementById("qaList");
-  if (qaList && typeof CONTENT !== "undefined" && Array.isArray(CONTENT.qa)) {
-    const lang = getCurrentLang();
-
-    qaList.innerHTML = CONTENT.qa.map(item => `
+  if (qaList && content?.qa) {
+    qaList.innerHTML = content.qa.map((item, index) => `
       <div class="qa-item">
-        <h4>Q. ${item.q[lang] || item.q.ja}</h4>
-        <p>A. ${item.a[lang] || item.a.ja}</p>
+        <button class="qa-question" aria-expanded="false" aria-controls="qa-answer-${index}">
+          ${item.q}
+        </button>
+        <div class="qa-answer" id="qa-answer-${index}" hidden>
+          <p>${item.a}</p>
+        </div>
       </div>
     `).join("");
+
+    const buttons = qaList.querySelectorAll(".qa-question");
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("aria-controls");
+        const answer = document.getElementById(targetId);
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!expanded));
+        if (answer) answer.hidden = expanded;
+      });
+    });
   }
 });
