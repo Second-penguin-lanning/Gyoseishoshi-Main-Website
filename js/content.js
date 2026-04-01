@@ -1,63 +1,86 @@
-const CONTENT = {
-
-news:[
-
-{
-date:"2026.03",
-ja:"外食分野における特定技能1号（SSW(i)）受入れ中止",
-url: "/news/news260330.html",
-en:"Suspension of SSW(i) Acceptance in the Food Service Sector from April 13",
-tl:"Pansamantalang paghinto ng pagtanggap ng SSW(i) sa Food Service Sector simula Abril 13",
-id:"Penghentian Sementara Penerimaan SSW(i) Bidang Food Service Mulai 13 April"
-},
-  
-{
-date:"2026.03",
-ja:"在留資格手続き手数料引き上げ法案を検討",
-url: "/news/news202603.html",
-en:"Government considering visa procedure fee increase",
-tl:"Pinag-aaralan ang pagtaas ng visa procedure fee",
-id:"Pemerintah mempertimbangkan kenaikan biaya prosedur visa"
-},
-
-{
-date:"2026.02",
-ja:"永住許可申請の審査基準が厳格化",
-en:"Permanent residency screening becoming stricter",
-tl:"Hihigpitan ang pagsusuri ng permanent residency",
-id:"Pemeriksaan permanent residency diperketat"
-},
-
-{
-date:"2026.01",
-ja:"外国人政策の新方針を政府が公表",
-en:"Government announces new foreign worker policy",
-tl:"Inanunsyo ng gobyerno ang bagong foreign worker policy",
-id:"Pemerintah mengumumkan kebijakan pekerja asing baru"
-}
-
-],
-
-
-qa:[
-
-{
-q:{
-ja:"介護資格で日本で働く方法は？",
-en:"How can I work in Japan with a caregiver qualification?",
-tl:"Paano magtrabaho sa Japan bilang caregiver?",
-id:"Bagaimana bekerja di Jepang sebagai caregiver?"
-},
-
-a:{
-ja:"特定技能（介護）、EPA、または介護福祉士のルートがあります。",
-en:"There are SSW care worker, EPA, or certified care worker routes.",
-tl:"Mayroong SSW caregiver, EPA, o care worker certification route.",
-id:"Ada jalur SSW caregiver, EPA, atau sertifikasi caregiver."
-}
-
-}
-
-]
-
-}
+window.siteContent = {
+  ja: {
+    news: [
+      "・指定技能ビザの申請相談を全国対応で受付中",
+      "・外国人雇用の顧問契約・月額サポートのご相談を承ります",
+      "・フィリピン・インドネシア人材の採用支援を強化しています"
+    ],
+    qa: [
+      {
+        q: "外国人を雇用したいのですが、何から始めればよいですか？",
+        a: "まずは在留資格と職種の適合性を確認します。そのうえで、必要書類、採用フロー、受入れ体制をご案内します。"
+      },
+      {
+        q: "特定技能の申請は全国対応ですか？",
+        a: "はい。オンライン面談や郵送を活用し、全国からご相談いただけます。"
+      },
+      {
+        q: "月額サポートには何が含まれますか？",
+        a: "在留手続き、生活支援、緊急対応、雇用相談などを含む継続支援をご用意しています。"
+      }
+    ]
+  },
+  en: {
+    news: [
+      "• Nationwide consultations are available for Specified Skilled Worker visa applications",
+      "• We accept consultations for foreign employment advisory contracts and monthly support plans",
+      "• We are strengthening recruitment support for Filipino and Indonesian talent"
+    ],
+    qa: [
+      {
+        q: "I want to hire foreign workers. Where should I start?",
+        a: "First, we confirm the compatibility between the residence status and the job duties. Then we guide you through the required documents, hiring process, and support system."
+      },
+      {
+        q: "Do you support SSW applications nationwide?",
+        a: "Yes. We accept consultations from all over Japan using online meetings and postal submission when needed."
+      },
+      {
+        q: "What is included in the monthly support plan?",
+        a: "The plan includes ongoing support such as residence procedures, daily life support, emergency assistance, and employment consultation."
+      }
+    ]
+  },
+  tl: {
+    news: [
+      "• Tumatanggap kami ng konsultasyon sa buong Japan para sa aplikasyon ng Specified Skilled Worker visa",
+      "• Tumatanggap kami ng konsultasyon para sa foreign employment advisory contracts at buwanang support plan",
+      "• Pinalalakas namin ang recruitment support para sa mga Pilipino at Indonesian na talento"
+    ],
+    qa: [
+      {
+        q: "Gusto kong mag-hire ng mga foreign worker. Saan ako magsisimula?",
+        a: "Una, tinitingnan namin kung tugma ang residence status at ang trabaho. Pagkatapos ay gagabayan namin kayo sa mga kailangang dokumento, proseso ng pag-hire, at support system."
+      },
+      {
+        q: "Sinusuportahan ba ninyo ang SSW applications sa buong Japan?",
+        a: "Oo. Tumatanggap kami ng konsultasyon mula sa buong Japan gamit ang online meetings at postal submission kung kinakailangan."
+      },
+      {
+        q: "Ano ang kasama sa monthly support plan?",
+        a: "Kasama rito ang patuloy na suporta tulad ng residence procedures, daily life support, emergency assistance, at employment consultation."
+      }
+    ]
+  },
+  id: {
+    news: [
+      "• Konsultasi aplikasi visa Specified Skilled Worker tersedia untuk seluruh Jepang",
+      "• Kami menerima konsultasi untuk kontrak penasihat employment asing dan paket support bulanan",
+      "• Kami memperkuat dukungan rekrutmen untuk talenta Filipina dan Indonesia"
+    ],
+    qa: [
+      {
+        q: "Saya ingin mempekerjakan pekerja asing. Harus mulai dari mana?",
+        a: "Pertama, kami akan memeriksa kecocokan antara status tinggal dan jenis pekerjaan. Setelah itu, kami akan menjelaskan dokumen yang diperlukan, alur rekrutmen, dan sistem dukungan."
+      },
+      {
+        q: "Apakah Anda mendukung aplikasi SSW di seluruh Jepang?",
+        a: "Ya. Kami menerima konsultasi dari seluruh Jepang melalui pertemuan online dan pengiriman dokumen pos jika diperlukan."
+      },
+      {
+        q: "Apa saja yang termasuk dalam paket support bulanan?",
+        a: "Paket ini mencakup dukungan berkelanjutan seperti prosedur tinggal, dukungan kehidupan sehari-hari, bantuan darurat, dan konsultasi ketenagakerjaan."
+      }
+    ]
+  }
+};
