@@ -1,4 +1,26 @@
 window.siteContent = {
+
+{
+date:"2026.03",
+ja:"外食分野における特定技能1号（SSW(i)）受入れ中止",
+url: "/news/news260330.html",
+en:"Suspension of SSW(i) Acceptance in the Food Service Sector from April 13",
+tl:"Pansamantalang paghinto ng pagtanggap ng SSW(i) sa Food Service Sector simula Abril 13",
+id:"Penghentian Sementara Penerimaan SSW(i) Bidang Food Service Mulai 13 April"
+},
+  
+{
+date:"2026.03",
+ja:"在留資格手続き手数料引き上げ法案を検討",
+url: "/news/news202603.html",
+en:"Government considering visa procedure fee increase",
+tl:"Pinag-aaralan ang pagtaas ng visa procedure fee",
+id:"Pemerintah mempertimbangkan kenaikan biaya prosedur visa"
+},
+
+
+
+  
   ja: {
     news: [
       "・指定技能ビザの申請相談を全国対応で受付中",
