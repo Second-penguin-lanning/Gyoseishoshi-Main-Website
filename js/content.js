@@ -1,31 +1,21 @@
 window.siteContent = {
-
-{
-date:"2026.03",
-ja:"外食分野における特定技能1号（SSW(i)）受入れ中止",
-url: "/news/news260330.html",
-en:"Suspension of SSW(i) Acceptance in the Food Service Sector from April 13",
-tl:"Pansamantalang paghinto ng pagtanggap ng SSW(i) sa Food Service Sector simula Abril 13",
-id:"Penghentian Sementara Penerimaan SSW(i) Bidang Food Service Mulai 13 April"
-},
-  
-{
-date:"2026.03",
-ja:"在留資格手続き手数料引き上げ法案を検討",
-url: "/news/news202603.html",
-en:"Government considering visa procedure fee increase",
-tl:"Pinag-aaralan ang pagtaas ng visa procedure fee",
-id:"Pemerintah mempertimbangkan kenaikan biaya prosedur visa"
-},
-
-
-
-  
   ja: {
     news: [
-      "・指定技能ビザの申請相談を全国対応で受付中",
-      "・外国人雇用の顧問契約・月額サポートのご相談を承ります",
-      "・フィリピン・インドネシア人材の採用支援を強化しています"
+      {
+        date: "2026.03",
+        text: "外食分野における特定技能1号（SSW(i)）受入れ中止",
+        url: "/news/news260330.html"
+      },
+      {
+        date: "2026.03",
+        text: "在留資格手続き手数料引き上げ法案を検討",
+        url: "/news/news202603.html"
+      }
+    ],
+    announcements: [
+      "指定技能ビザの申請相談を全国対応で受付中",
+      "外国人雇用の顧問契約・月額サポートのご相談を承ります",
+      "フィリピン・インドネシア人材の採用支援を強化しています"
     ],
     qa: [
       {
@@ -42,11 +32,24 @@ id:"Pemerintah mempertimbangkan kenaikan biaya prosedur visa"
       }
     ]
   },
+
   en: {
     news: [
-      "• Nationwide consultations are available for Specified Skilled Worker visa applications",
-      "• We accept consultations for foreign employment advisory contracts and monthly support plans",
-      "• We are strengthening recruitment support for Filipino and Indonesian talent"
+      {
+        date: "2026.03",
+        text: "Suspension of SSW(i) Acceptance in the Food Service Sector from April 13",
+        url: "/news/news260330.html"
+      },
+      {
+        date: "2026.03",
+        text: "Government considering visa procedure fee increase",
+        url: "/news/news202603.html"
+      }
+    ],
+    announcements: [
+      "Nationwide consultations are available for Specified Skilled Worker visa applications",
+      "We accept consultations for foreign employment advisory contracts and monthly support plans",
+      "We are strengthening recruitment support for Filipino and Indonesian talent"
     ],
     qa: [
       {
@@ -63,11 +66,24 @@ id:"Pemerintah mempertimbangkan kenaikan biaya prosedur visa"
       }
     ]
   },
+
   tl: {
     news: [
-      "• Tumatanggap kami ng konsultasyon sa buong Japan para sa aplikasyon ng Specified Skilled Worker visa",
-      "• Tumatanggap kami ng konsultasyon para sa foreign employment advisory contracts at buwanang support plan",
-      "• Pinalalakas namin ang recruitment support para sa mga Pilipino at Indonesian na talento"
+      {
+        date: "2026.03",
+        text: "Pansamantalang paghinto ng pagtanggap ng SSW(i) sa Food Service Sector simula Abril 13",
+        url: "/news/news260330.html"
+      },
+      {
+        date: "2026.03",
+        text: "Pinag-aaralan ang pagtaas ng visa procedure fee",
+        url: "/news/news202603.html"
+      }
+    ],
+    announcements: [
+      "Tumatanggap kami ng konsultasyon sa buong Japan para sa aplikasyon ng Specified Skilled Worker visa",
+      "Tumatanggap kami ng konsultasyon para sa foreign employment advisory contracts at buwanang support plan",
+      "Pinalalakas namin ang recruitment support para sa mga Pilipino at Indonesian na talento"
     ],
     qa: [
       {
@@ -84,11 +100,24 @@ id:"Pemerintah mempertimbangkan kenaikan biaya prosedur visa"
       }
     ]
   },
+
   id: {
     news: [
-      "• Konsultasi aplikasi visa Specified Skilled Worker tersedia untuk seluruh Jepang",
-      "• Kami menerima konsultasi untuk kontrak penasihat employment asing dan paket support bulanan",
-      "• Kami memperkuat dukungan rekrutmen untuk talenta Filipina dan Indonesia"
+      {
+        date: "2026.03",
+        text: "Penghentian Sementara Penerimaan SSW(i) Bidang Food Service Mulai 13 April",
+        url: "/news/news260330.html"
+      },
+      {
+        date: "2026.03",
+        text: "Pemerintah mempertimbangkan kenaikan biaya prosedur visa",
+        url: "/news/news202603.html"
+      }
+    ],
+    announcements: [
+      "Konsultasi aplikasi visa Specified Skilled Worker tersedia untuk seluruh Jepang",
+      "Kami menerima konsultasi untuk kontrak penasihat employment asing dan paket support bulanan",
+      "Kami memperkuat dukungan rekrutmen untuk talenta Filipina dan Indonesia"
     ],
     qa: [
       {
