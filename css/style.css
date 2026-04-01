@@ -285,11 +285,6 @@ line-height:1.4;
 
 /* --- 5. サービス・コンテンツ詳細 --- */
 
-.sp-plan-box {
-    color: #0000ff; /* 青色 */
-    text-decoration: underline; /* アンダーライン */
-}
-
 /* サービス紹介導入 */
 .service-intro-box {
     background: #f4f7fb; border-left: 6px solid #1f2f3a;
@@ -656,6 +651,7 @@ margin:0;
 
 /* --- 特定技能支援プランBOX --- */
 .sp-plan-box {
+    color: #3498db;
     background: linear-gradient(135deg, #1f2f3a 0%, #2c4a5e 100%);
     color: #fff;
     border-radius: 16px;
