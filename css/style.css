@@ -213,13 +213,15 @@ header {
     flex-direction: column;
     gap: 16px;
 
-    margin-left: auto;   /* 左側に余白を作って右に寄せる */
-    margin-right: -20px; /* ★さらに右へ寄せるための調整（お好みで-40px等に広げてください） */
+    /* ★さらに右へ押し出すため、ネガティブマージンを大きくします（-20px → -80px） */
+    /* これにより、コンテナの右端を越えて配置されます */
+    margin-left: auto;
+    margin-right: -80px; 
     margin-top: 0;
     padding-top: 0;
     align-self: flex-start;
 
-    /* ★ヘッダーとの重なりを解消するため、上にずらす量を減らします（-28px → 10px前後へ） */
+    /* ヘッダーとの空間（縦位置）は現在の10pxを維持 */
     transform: translateY(10px); 
 }
 
@@ -231,12 +233,10 @@ header {
     padding: 16px 20px 18px;
     border-radius: 16px;
     border: 1px solid rgba(184,155,94,0.3);
-    border-top: 6px solid var(--accent);
+    
+    /* ★金色の上縁を追加 */
+    border-top: 6px solid var(--accent); 
     box-shadow: 0 18px 45px rgba(0,0,0,0.18);
-}
-
-.hero-announcement-box {
-    border-top-color: #1f2f3a;
 }
 
 .hero-news-box h3 {
@@ -410,6 +410,7 @@ line-height:1.4;
 .hero-right-boxes {
         margin-right: 0;
         transform: translateY(0);
+        margin-top: 20px; /* スマホではヒーローエリアの下に配置 */
     }
 
     .hero-news-box {
