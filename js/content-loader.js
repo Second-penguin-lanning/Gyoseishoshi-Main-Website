@@ -2,39 +2,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const lang = document.documentElement.lang || "ja";
   const content = window.siteContent?.[lang] || window.siteContent?.ja;
 
-  // =========================
-  // News list (clickable)
-  // =========================
+  // News
   const newsList = document.getElementById("newsList");
   if (newsList && Array.isArray(content?.news)) {
     newsList.innerHTML = content.news.map(item => {
-      const date = item.date ? `<span class="news-date">${item.date}</span>` : "";
-      const text = item.text || "";
-      const url = item.url || "#";
       return `
-        <li class="news-item">
-          <a href="${url}" class="news-link">
-            ${date}
-            <span class="news-text">${text}</span>
+        <li>
+          <a href="${item.url || '#'}" class="news-link">
+            <span class="news-date">${item.date || ""}</span>
+            <span class="news-text">${item.text || ""}</span>
           </a>
         </li>
       `;
     }).join("");
   }
 
-  // =========================
-  // Announcements (plain text)
-  // =========================
+  // Announcements
   const announcementList = document.getElementById("announcementList");
   if (announcementList && Array.isArray(content?.announcements)) {
-    announcementList.innerHTML = content.announcements
-      .map(item => `<li class="announcement-item">${item}</li>`)
-      .join("");
+    announcementList.innerHTML = content.announcements.map(item => {
+      return `<li class="announcement-item">${item}</li>`;
+    }).join("");
   }
 
-  // =========================
-  // Q&A accordion
-  // =========================
+  // Q&A
   const qaList = document.getElementById("qaList");
   if (qaList && Array.isArray(content?.qa)) {
     qaList.innerHTML = content.qa.map((item, index) => `
@@ -48,8 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `).join("");
 
-    const buttons = qaList.querySelectorAll(".qa-question");
-    buttons.forEach((btn) => {
+    qaList.querySelectorAll(".qa-question").forEach((btn) => {
       btn.addEventListener("click", () => {
         const targetId = btn.getAttribute("aria-controls");
         const answer = document.getElementById(targetId);
