@@ -179,34 +179,31 @@ header {
 /* --- 4. ヒーローセクション --- */
 .hero {
     background: linear-gradient(135deg, #1f2f3a 0%, #2c3e50 100%);
-    color: white; min-height:650px; width: 100%;
-    padding-top:10px;
+    color: white;
+    min-height: 650px;
+    width: 100%;
+    padding-top: 10px;
     border-top: 3px solid rgba(255,255,255,0.35);
     position: relative;
 }
 
 .hero-inner {
-   display:flex;
-flex-direction:row;
-justify-content:space-between;
-align-items:center;
-    max-width: 1200px; margin: 0 auto; padding: 0 20px 80px;
-position:relative; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start; /* 上寄せ */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+    position: relative;
 }
 
-.hero-left { flex: 2; text-align: left; padding-top: 30px; }
-
-.hero-badge { 
-    display: inline-block; padding: 8px 25px; background: #f4b400; color: #000; 
-    border-radius: 50px; font-weight: 900; margin-bottom: 2rem;
+.hero-left {
+    flex: 1.8;
+    text-align: left;
+    padding-top: 30px;
+    padding-right: 30px;
 }
-.hero-left h1{
-max-width:680px;
-line-height:1.4;
-}
-/* ------------------------------
-   ヒーロー お知らせBOX
------------------------------- */
 
 .hero-right-boxes {
     flex: 1;
@@ -214,20 +211,27 @@ line-height:1.4;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    margin-left: 30px;
-    padding-top: 30px;
+    gap: 16px;
+
+    /* ヘッダー直下に近づける */
+    margin-left: 20px;
+    margin-top: 0;
+    padding-top: 0;
+    align-self: flex-start;
+
+    /* 右上へ少し持ち上げる */
+    transform: translateY(-28px);
 }
 
 .hero-news-box {
     width: 100%;
     background: linear-gradient(145deg, #ffffff 0%, #fcfaf5 100%);
     color: #333;
-    padding: 18px 22px 20px;
+    padding: 16px 20px 18px;
     border-radius: 16px;
     border: 1px solid rgba(184,155,94,0.3);
     border-top: 6px solid var(--accent);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.20);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.18);
 }
 
 .hero-announcement-box {
@@ -235,8 +239,7 @@ line-height:1.4;
 }
 
 .hero-news-box h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
     font-size: 1rem;
     font-weight: 700;
     color: var(--primary);
@@ -246,7 +249,7 @@ line-height:1.4;
     list-style: none;
     margin: 0;
     padding: 0;
-    max-height: 170px;
+    max-height: 175px;
     overflow-y: auto;
     scrollbar-width: thin;
     border-top: 1px solid #eee;
