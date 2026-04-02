@@ -208,62 +208,74 @@ line-height:1.4;
    ヒーロー お知らせBOX
 ------------------------------ */
 
-.hero-news-box{
-   position:absolute;
-    top:20px;
-    right:20px;
-
-    width:420px;
-    max-width:90%;
-
-    background:linear-gradient(145deg,#ffffff 0%,#fcfaf5 100%);
-    color:#333;
-
-    padding:18px 22px 20px;
-
-    border-radius:16px;
-
-    border:1px solid rgba(184,155,94,0.3);
-    border-top:6px solid var(--accent);
-
-    box-shadow:0 20px 60px rgba(0,0,0,0.25);
-
-    z-index:100;
+.hero-right-boxes {
+    flex: 1;
+    max-width: 420px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-left: 30px;
+    padding-top: 30px;
 }
-.hero-news-box h3{
-    margin-top:-5px;
-    margin-bottom:10px;
-    font-size:1rem;
-    font-weight:600;
+
+.hero-news-box {
+    width: 100%;
+    background: linear-gradient(145deg, #ffffff 0%, #fcfaf5 100%);
+    color: #333;
+    padding: 18px 22px 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(184,155,94,0.3);
+    border-top: 6px solid var(--accent);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.20);
 }
-.hero-news-box::-webkit-scrollbar { width: 6px; }
-.hero-news-box::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
-.hero-news-box::-webkit-scrollbar-thumb:hover { background: #999; }
 
-.hero-news-box ul{
-
-    list-style:none;
-    margin:5px 0 0 0;
-    padding:0;
-
-    max-height:160px;   /* スクロール高さ */
-    overflow-y:auto;
-
-    scrollbar-width:thin;
-
-    border-bottom:1px solid #eee;
-
+.hero-announcement-box {
+    border-top-color: #1f2f3a;
 }
-.hero-news-box li{
 
-    font-size:0.85rem;
-    line-height:1.4;
-
-    border-bottom:1px solid #eee;
-
-    padding:6px 0;
+.hero-news-box h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
 }
-.hero-news-box li:last-child { border-bottom: none; }
+
+.hero-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 170px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    border-top: 1px solid #eee;
+}
+
+.hero-list li {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+}
+
+.hero-list li:last-child {
+    border-bottom: none;
+}
+
+.hero-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.hero-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.hero-list::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
 
 /* 注釈・リンク */
 .hero-notice { margin-top: 10px; line-height: 1.8; font-size: 0.95rem; }
@@ -280,6 +292,36 @@ line-height:1.4;
     font-size: 0.9rem; display: block; margin-bottom: 8px;
 }
 .hero-link-box a:hover { color: var(--accent) !important; }
+
+
+.news-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.news-link:hover .news-text {
+    color: var(--accent);
+}
+
+.news-date {
+    display: inline-block;
+    color: #b89b5e;
+    font-weight: 700;
+    margin-right: 8px;
+    white-space: nowrap;
+}
+
+.news-text {
+    color: #333;
+}
+
+.announcement-item {
+    color: #333;
+}
+
+
+
 
 /* --- 5. サービス・コンテンツ詳細 --- */
 
@@ -357,7 +399,19 @@ line-height:1.4;
 }
 
 @media (max-width:768px){
+    .hero-inner {
+        flex-direction: column !important;
+    }
 
+    .hero-right-boxes {
+        max-width: 100%;
+        margin-left: 0;
+        padding-top: 20px;
+    }
+
+    .hero-news-box {
+        width: 100%;
+    }
 .news-article{
 padding:40px 18px;
 }
