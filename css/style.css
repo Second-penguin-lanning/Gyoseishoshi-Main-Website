@@ -213,12 +213,14 @@ header {
     flex-direction: column;
     gap: 16px;
 
-    margin-left: auto;   /* 右へ押し出す */
+    margin-left: auto;   /* 左側に余白を作って右に寄せる */
+    margin-right: -20px; /* ★さらに右へ寄せるための調整（お好みで-40px等に広げてください） */
     margin-top: 0;
     padding-top: 0;
     align-self: flex-start;
 
-    transform: translateY(-28px);
+    /* ★ヘッダーとの重なりを解消するため、上にずらす量を減らします（-28px → 10px前後へ） */
+    transform: translateY(10px); 
 }
 
 
@@ -405,10 +407,9 @@ line-height:1.4;
         flex-direction: column !important;
     }
 
-    .hero-right-boxes {
-        max-width: 100%;
-        margin-left: 0;
-        padding-top: 20px;
+.hero-right-boxes {
+        margin-right: 0;
+        transform: translateY(0);
     }
 
     .hero-news-box {
