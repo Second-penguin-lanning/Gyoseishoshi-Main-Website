@@ -194,7 +194,7 @@ header {
     align-items: flex-start; /* 上寄せ */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px 80px;
+    padding: 0 10px 80px 20px;
     position: relative;
 }
 
@@ -218,7 +218,7 @@ header {
     padding-top: 0;
     align-self: flex-start;
 
-    transform: translateY(-18px);
+    transform: translateY(-28px);
 }
 
 
