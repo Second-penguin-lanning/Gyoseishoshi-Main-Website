@@ -206,22 +206,21 @@ header {
 }
 
 .hero-right-boxes {
-    flex: 1;
-    max-width: 420px;
-    width: 100%;
+    flex: 0 0 380px;
+    width: 380px;
+    max-width: 380px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 
-    /* ヘッダー直下に近づける */
-    margin-left: 20px;
+    margin-left: auto;   /* 右へ押し出す */
     margin-top: 0;
     padding-top: 0;
     align-self: flex-start;
 
-    /* 右上へ少し持ち上げる */
-    transform: translateY(-28px);
+    transform: translateY(-18px);
 }
+
 
 .hero-news-box {
     width: 100%;
