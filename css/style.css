@@ -276,6 +276,25 @@ header {
 }
 .hero-link-box a:hover { color: var(--accent) !important; }
 
+/* お知らせ/ニュース：見出し行（右側に一覧リンク） */
+.hero-news-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline; /* 文字の見た目を揃える */
+  gap:12px;
+  margin: 0 0 10px 0;   /* 既存 h3 の下余白相当 */
+}
+
+.hero-news-box h3{
+  margin:0;            /* ここで一旦リセット（hero-news-head側で余白管理） */
+}
+
+/* 「一覧はコチラ→」をh3と同じサイズに */
+.hero-news-box .all-news-link{
+  font-size: 1rem;     /* ← h3(=1rem) と同じ */
+  font-weight: 700;
+  white-space: nowrap; /* 折り返し防止 */
+}
 
 .news-link {
     display: block;
