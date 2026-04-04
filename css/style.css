@@ -432,6 +432,12 @@ font-size:16px;
 .news-article p { margin-bottom: 15px; line-height: 1.9; }
 .news-date { color: #b89b5e; font-weight: 700; margin-bottom: 20px; }
 
+/* お知らせ・ニュースは縦に並べる */
+.hero-news-wrap{
+  display: flex;
+  flex-direction: column; /* ←これが重要 */
+  gap: 16px;
+}
 /* --- 6. 事務所紹介・地図 --- */
 .profile-container { display: flex; gap: 60px; align-items: center; text-align: left; }
 .profile-photo img { width: 100%; max-width: 350px; border-radius: 15px; }
@@ -1002,7 +1008,17 @@ margin:0;
 .all-news-list li:last-child {
     border-bottom: none;
 }
+.hero-news-box .hero-all-link{
+  font-size: 1rem;      /* h3と同じ */
+  font-weight: 700;
+  color: var(--primary); /* 見出しと同系色に */
+  text-decoration: none; /* 下線を消す */
+  white-space: nowrap;
+}
 
+.hero-news-box .hero-all-link:hover{
+  color: var(--accent);
+}
 /* --- レスポンシブ対応（追加分） --- */
 @media (max-width: 768px) {
 
