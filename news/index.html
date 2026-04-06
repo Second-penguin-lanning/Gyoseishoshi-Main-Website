@@ -28,16 +28,14 @@
     <script>
         // URLパラメータを見て「ニュース」か「お知らせ」か判断する
         // 例: news-list.html?type=news
-        const params = new URLSearchParams(window.location.search);
-        const type = params.get('type') || 'news'; // 指定がなければnews
-        const lang = document.documentElement.lang || 'ja';
+const params = new URLSearchParams(window.location.search);
+const type = params.get('type') || 'news'; // 指定がなければnews
+console.log(type); // デバッグ用
 
-        const data = window.siteContent[lang][type];
-        const listBody = document.getElementById('listBody');
-        const listTitle = document.getElementById('listTitle');
+const data = window.siteContent[lang][type];
 
-        // タイトルの切り替え
-        listTitle.innerText = type === 'news' ? 'ニュース一覧' : 'お知らせ一覧';
+listTitle.innerText = type === 'news' ? 'ニュース一覧' : 'お知らせ一覧';
+
 
         // データの流し込み
         data.forEach(item => {
