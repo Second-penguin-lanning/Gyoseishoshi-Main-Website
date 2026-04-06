@@ -135,28 +135,3 @@ window.siteContent = {
     ]
   }
 };
-document.addEventListener('DOMContentLoaded', () => {
-    // 日本語データを取得
-    const data = window.siteContent.ja;
-
-    // お知らせ一覧の生成
-    const annList = document.getElementById('announcementArchiveList');
-    if (annList) {
-        annList.innerHTML = data.announcements
-            .map(item => `<li>${item}</li>`)
-            .join('');
-    }
-
-    // ニュース一覧の生成
-    const newsList = document.getElementById('newsArchiveList');
-    if (newsList) {
-        newsList.innerHTML = data.news
-            .map(item => `
-                <li>
-                    <strong>${item.date}</strong>：
-                    <a href="${item.url}">${item.text}</a>
-                </li>
-            `)
-            .join('');
-    }
-});
