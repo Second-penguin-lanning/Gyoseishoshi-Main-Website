@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>お知らせ・ニュース一覧</title>
+    <link rel="stylesheet" href="/css/style.css"> </head>
+<body>
+    <header> </header>
+
+    <main class="container">
+        <h2 id="listTitle">一覧</h2>
+        <table border="1" id="listTable" style="width:100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th style="width:20%;">日付</th>
+                    <th>内容</th>
+                </tr>
+            </thead>
+            <tbody id="listBody">
+                </tbody>
+        </table>
+        <div style="margin-top: 20px;">
+            <a href="/">← トップページへ戻る</a>
+        </div>
+    </main>
+
+    <script src="/js/content-data.js"></script>
+    <script>
+        // URLパラメータを見て「ニュース」か「お知らせ」か判断する
+        // 例: news-list.html?type=news
+        const params = new URLSearchParams(window.location.search);
+        const type = params.get('type') || 'news'; // 指定がなければnews
+        const lang = document.documentElement.lang || 'ja';
+
+        const data = window.siteContent[lang][type];
+        const listBody = document.getElementById('listBody');
+        const listTitle = document.getElementById('listTitle');
+
+        // タイトルの切り替え
+        listTitle.innerText = type === 'news' ? 'ニュース一覧' : 'お知らせ一覧';
+
+        // データの流し込み
+        data.forEach(item => {
+            const tr = document.createElement('tr');
+            
+            // お知らせ(announcements)は文字列、ニュース(news)はオブジェクトなので分岐
+            if (typeof item === 'string') {
+                tr.innerHTML = `<td colspan="2">${item}</td>`;
+            } else {
+                const link = item.url ? `<a href="${item.url}">${item.text}</a>` : item.text;
+                tr.innerHTML = `<td>${item.date}</td><td>${link}</td>`;
+            }
+            listBody.appendChild(tr);
+        });
+    </script>
+</body>
+</html>
