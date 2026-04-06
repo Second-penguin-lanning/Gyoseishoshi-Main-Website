@@ -2,6 +2,16 @@ window.siteContent = {
   ja: {
     news: [
       {
+        date: "2026.04",
+        text: "在留資格「技術・人文知識・国際業務」で日本語能力を求める方向",
+        url: ""
+      },
+      {
+        date: "2026.04",
+        text: "自転車でも反則金が課される厳罰化が施行",
+        url: ""
+      },
+      {
         date: "2026.03",
         text: "外食分野における特定技能1号（SSW(i)）受入れ中止",
         url: "/news/news260330.html"
@@ -13,6 +23,7 @@ window.siteContent = {
       }
     ],
     announcements: [
+      "ビジネスFacebookを立ち上げニュース解説などを開始しました。",
       "指定技能ビザの申請相談を全国対応で受付中",
       "外国人雇用の顧問契約・月額サポートのご相談を承ります",
       "フィリピン・インドネシア人材の採用支援を強化しています"
@@ -36,6 +47,16 @@ window.siteContent = {
   en: {
     news: [
       {
+        date: "2026.04",
+        text: "Move toward requiring Japanese language proficiency for 'Engineer / Specialist in Humanities / International Services' visa",
+        url: ""
+      },
+      {
+        date: "2026.04",
+        text: "Stricter penalties introduced: traffic fines will also apply to bicycles",
+        url: ""
+      },
+      {
         date: "2026.03",
         text: "Suspension of SSW(i) Acceptance in the Food Service Sector from April 13",
         url: "/news/news260330.html"
@@ -47,6 +68,7 @@ window.siteContent = {
       }
     ],
     announcements: [
+      "We have launched our business Facebook page and started providing news analysis.",
       "Nationwide consultations are available for Specified Skilled Worker visa applications",
       "We accept consultations for foreign employment advisory contracts and monthly support plans",
       "We are strengthening recruitment support for Filipino and Indonesian talent"
@@ -70,6 +92,16 @@ window.siteContent = {
   tl: {
     news: [
       {
+        date: "2026.04",
+        text: "Papunta sa pag-require ng Japanese language proficiency para sa visa na 'Engineer / Specialist in Humanities / International Services'",
+        url: ""
+      },
+      {
+        date: "2026.04",
+        text: "Mas mahigpit na parusa: magkakaroon na rin ng multa ang mga bisikleta",
+        url: ""
+      },
+      {
         date: "2026.03",
         text: "Pansamantalang paghinto ng pagtanggap ng SSW(i) sa Food Service Sector simula Abril 13",
         url: "/news/news260330.html"
@@ -81,6 +113,7 @@ window.siteContent = {
       }
     ],
     announcements: [
+      "Nag-launch kami ng aming business Facebook page at nagsimula ng pagbibigay ng news analysis.",
       "Tumatanggap kami ng konsultasyon sa buong Japan para sa aplikasyon ng Specified Skilled Worker visa",
       "Tumatanggap kami ng konsultasyon para sa foreign employment advisory contracts at buwanang support plan",
       "Pinalalakas namin ang recruitment support para sa mga Pilipino at Indonesian na talento"
@@ -104,6 +137,16 @@ window.siteContent = {
   id: {
     news: [
       {
+        date: "2026.04",
+        text: "Arah kebijakan untuk mewajibkan kemampuan bahasa Jepang pada visa 'Engineer / Specialist in Humanities / International Services'",
+        url: ""
+      },
+      {
+        date: "2026.04",
+        text: "Penegakan lebih ketat: sepeda juga akan dikenakan denda pelanggaran",
+        url: ""
+      },
+      {
         date: "2026.03",
         text: "Penghentian Sementara Penerimaan SSW(i) Bidang Food Service Mulai 13 April",
         url: "/news/news260330.html"
@@ -115,6 +158,7 @@ window.siteContent = {
       }
     ],
     announcements: [
+      "Kami telah meluncurkan halaman Facebook bisnis dan mulai membagikan analisis berita.",
       "Konsultasi aplikasi visa Specified Skilled Worker tersedia untuk seluruh Jepang",
       "Kami menerima konsultasi untuk kontrak penasihat employment asing dan paket support bulanan",
       "Kami memperkuat dukungan rekrutmen untuk talenta Filipina dan Indonesia"
