@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita & Pengumuman | Tokunaga Administrative Scrivener Office</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/news-list.css">
+</head>
+<body>
+
+<header>
+    <div class="header-logo">
+        <img src="/images/行政書士マーク.png" alt="Logo">
+        <span>Tokunaga Yoshio Administrative Scrivener Office</span>
+    </div>
+    <div class="lang-dropdown">
+        <button class="lang-btn"><i class="fa-solid fa-globe"></i></button>
+        <div class="lang-menu">
+            <a href="/news/">🇯🇵 日本語</a>
+            <a href="/en/news/">🇺🇸 English</a>
+            <a href="/tl/news/">🇵🇭 Tagalog</a>
+            <a href="/id/news/">🇮🇩 Bahasa Indonesia</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="news-list-page">
+        <h1>Berita &amp; Pengumuman</h1>
+        <p class="page-lead">Berita imigrasi terbaru dan pengumuman dari kantor kami.</p>
+
+        <div class="tab-bar">
+            <button class="tab-btn active" id="tabNews"     onclick="switchTab('news')">Berita</button>
+            <button class="tab-btn"        id="tabAnnounce" onclick="switchTab('announcements')">Pengumuman</button>
+        </div>
+
+        <div class="news-panel">
+            <ul id="listBody"></ul>
+        </div>
+
+        <a href="/id/" class="back-link">← Kembali ke Halaman Utama</a>
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 Administrative Scrivener Support Office. All rights reserved.</p>
+</footer>
+
+<script src="/js/content.js"></script>
+<script src="/js/news-list.js"></script>
+</body>
+</html>
