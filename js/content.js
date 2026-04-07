@@ -23,10 +23,22 @@ window.siteContent = {
       }
     ],
     announcements: [
-      "ビジネスFacebookを立ち上げニュース解説などを開始しました。",
-      "指定技能ビザの申請相談を全国対応で受付中",
-      "外国人雇用の顧問契約・月額サポートのご相談を承ります",
-      "フィリピン・インドネシア人材の採用支援を強化しています"
+      {
+        date: "2026.03",
+        text: "ビジネスFacebookを立ち上げニュース解説などを開始しました。"
+      },
+      {
+        date: "2026.03",
+        text: "指定技能ビザの申請相談を全国対応で受付中"
+      },
+      {
+        date: "2026.03",
+        text: "外国人雇用の顧問契約・月額サポートのご相談を承ります"
+      },
+      {
+        date: "2026.03",
+        text: "フィリピン・インドネシア人材の採用支援を強化しています"
+      }
     ],
     qa: [
       {
@@ -68,10 +80,22 @@ window.siteContent = {
       }
     ],
     announcements: [
-      "We have launched our business Facebook page and started providing news analysis.",
-      "Nationwide consultations are available for Specified Skilled Worker visa applications",
-      "We accept consultations for foreign employment advisory contracts and monthly support plans",
-      "We are strengthening recruitment support for Filipino and Indonesian talent"
+      {
+        date: "2026.03",
+        text: "We have launched our business Facebook page and started providing news analysis."
+      },
+      {
+        date: "2026.03",
+        text: "Nationwide consultations are available for Specified Skilled Worker visa applications"
+      },
+      {
+        date: "2026.03",
+        text: "We accept consultations for foreign employment advisory contracts and monthly support plans"
+      },
+      {
+        date: "2026.03",
+        text: "We are strengthening recruitment support for Filipino and Indonesian talent"
+      }
     ],
     qa: [
       {
@@ -113,10 +137,22 @@ window.siteContent = {
       }
     ],
     announcements: [
-      "Nag-launch kami ng aming business Facebook page at nagsimula ng pagbibigay ng news analysis.",
-      "Tumatanggap kami ng konsultasyon sa buong Japan para sa aplikasyon ng Specified Skilled Worker visa",
-      "Tumatanggap kami ng konsultasyon para sa foreign employment advisory contracts at buwanang support plan",
-      "Pinalalakas namin ang recruitment support para sa mga Pilipino at Indonesian na talento"
+      {
+        date: "2026.03",
+        text: "Nag-launch kami ng aming business Facebook page at nagsimula ng pagbibigay ng news analysis."
+      },
+      {
+        date: "2026.03",
+        text: "Tumatanggap kami ng konsultasyon sa buong Japan para sa aplikasyon ng Specified Skilled Worker visa"
+      },
+      {
+        date: "2026.03",
+        text: "Tumatanggap kami ng konsultasyon para sa foreign employment advisory contracts at buwanang support plan"
+      },
+      {
+        date: "2026.03",
+        text: "Pinalalakas namin ang recruitment support para sa mga Pilipino at Indonesian na talento"
+      }
     ],
     qa: [
       {
@@ -158,10 +194,22 @@ window.siteContent = {
       }
     ],
     announcements: [
-      "Kami telah meluncurkan halaman Facebook bisnis dan mulai membagikan analisis berita.",
-      "Konsultasi aplikasi visa Specified Skilled Worker tersedia untuk seluruh Jepang",
-      "Kami menerima konsultasi untuk kontrak penasihat employment asing dan paket support bulanan",
-      "Kami memperkuat dukungan rekrutmen untuk talenta Filipina dan Indonesia"
+      {
+        date: "2026.03",
+        text: "Kami telah meluncurkan halaman Facebook bisnis dan mulai membagikan analisis berita."
+      },
+      {
+        date: "2026.03",
+        text: "Konsultasi aplikasi visa Specified Skilled Worker tersedia untuk seluruh Jepang"
+      },
+      {
+        date: "2026.03",
+        text: "Kami menerima konsultasi untuk kontrak penasihat employment asing dan paket support bulanan"
+      },
+      {
+        date: "2026.03",
+        text: "Kami memperkuat dukungan rekrutmen untuk talenta Filipina dan Indonesia"
+      }
     ],
     qa: [
       {
@@ -179,6 +227,7 @@ window.siteContent = {
     ]
   }
 };
+
 
 /* ============================================
    ▼ DOMContentLoaded は1回だけ！
@@ -214,9 +263,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // ── Announcements ──
   const announcementList = document.getElementById("announcementList");
   if (announcementList && Array.isArray(content?.announcements)) {
-    announcementList.innerHTML = content.announcements
-      .map(item => `<li class="announcement-item">${item}</li>`)
-      .join("");
+    announcementList.innerHTML = content.announcements.map(item => `
+      <li>
+        <span class="news-date">${item.date || ""}</span>
+        <span class="announcement-item">${item.text || ""}</span>
+      </li>
+    `).join("");
   }
 
   // ── Q&A ──
