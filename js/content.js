@@ -188,10 +188,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const content = window.siteContent?.[lang] || window.siteContent?.ja;
 
   const detailLabels = {
-    ja: "詳しく",
-    en: "Details",
-    tl: "Detalye",
-    id: "Detail"
+    ja: "詳しく→",
+    en: "Details→",
+    tl: "Detalye→",
+    id: "Detail→"
   };
   const detailLabel = detailLabels[lang] || "詳しく";
 
