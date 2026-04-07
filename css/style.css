@@ -1938,17 +1938,19 @@ footer {
     }
 .news-detail-btn {
   display: inline-block;
-  margin-left: 10px;        /* テキストとの間隔を広げる */
-  padding: 2px 4px;         /* 上下左右の余白を少し大きく */
-  font-size: 0.85em;        /* 文字サイズを少し大きく */
-  color: #1a56a0;           /* 青文字 */
-  text-decoration: underline; /* アンダーライン */
-  border: none;             /* 枠線を消す */
-  background: none;         /* 背景なし */
+  margin-left: 12px;
+  padding: 0 2px;
+  font-size: 0.85em;
+  color: #1a56a0 !important;
+  text-decoration: underline !important;
+  border: none;
+  background: none;
+  font-weight: normal;
 }
 
 .news-detail-btn:hover {
-  color: #0d3f80;           /* ホバー時は濃い青 */
-  text-decoration: underline;
+  color: #0d3f80 !important;
+  text-decoration: underline !important;
 }
+
 }
