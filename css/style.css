@@ -1937,20 +1937,56 @@ footer {
         font-size: 20px;
     }
       }
+
+/* ─── News & Announcement 共通リスト ─── */
+#newsList li,
+#announcementList li {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  padding: 6px 0;          /* 上下を詰める（元が大きければ調整） */
+  margin: 0;
+  border-bottom: 1px solid #e8e8e8;
+  line-height: 1.5;
+}
+
+#newsList li:last-child,
+#announcementList li:last-child {
+  border-bottom: none;
+}
+
+/* 日付 */
+.news-date {
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  color: #888;
+  margin-right: 12px;
+  white-space: nowrap;
+}
+
+/* テキスト（ニュース・お知らせ共通） */
+.news-text,
+.announcement-text {
+  flex: 1;
+  font-size: 0.92rem;
+  color: #333;
+}
+
+/* 詳しく→ リンク（ニュース・お知らせ共通） */
 .news-detail-btn {
   display: inline-block;
-  margin-left: 12px;
-  padding: 0 2px;
-  font-size: 0.85em;
+  margin-left: 14px;
   color: #1a56a0 !important;
   text-decoration: underline !important;
-  border: none;
   background: none;
-  font-weight: normal;
+  border: none;
+  cursor: pointer;
+  font-size: 0.88rem;
+  white-space: nowrap;
 }
 
 .news-detail-btn:hover {
-  color: #0d3f80 !important;
-  text-decoration: underline !important;
+  color: #0d3a7a !important;
+  opacity: 0.85;
 }
 
