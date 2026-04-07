@@ -25,19 +25,23 @@ window.siteContent = {
     announcements: [
       {
         date: "2026.03",
-        text: "ビジネスFacebookを立ち上げニュース解説などを開始しました。"
+        text: "ビジネスFacebookを立ち上げニュース解説などを開始しました。",
+        url: ""
       },
       {
         date: "2026.03",
-        text: "指定技能ビザの申請相談を全国対応で受付中"
+        text: "指定技能ビザの申請相談を全国対応で受付中",
+        url: ""
       },
       {
         date: "2026.03",
-        text: "外国人雇用の顧問契約・月額サポートのご相談を承ります"
+        text: "外国人雇用の顧問契約・月額サポートのご相談を承ります",
+        url: ""
       },
       {
         date: "2026.03",
-        text: "フィリピン・インドネシア人材の採用支援を強化しています"
+        text: "フィリピン・インドネシア人材の採用支援を強化しています",
+        url: ""
       }
     ],
     qa: [
@@ -82,19 +86,23 @@ window.siteContent = {
     announcements: [
       {
         date: "2026.03",
-        text: "We have launched our business Facebook page and started providing news analysis."
+        text: "We have launched our business Facebook page and started providing news analysis.",
+        url: ""
       },
       {
         date: "2026.03",
-        text: "Nationwide consultations are available for Specified Skilled Worker visa applications"
+        text: "Nationwide consultations are available for Specified Skilled Worker visa applications",
+        url: ""
       },
       {
         date: "2026.03",
-        text: "We accept consultations for foreign employment advisory contracts and monthly support plans"
+        text: "We accept consultations for foreign employment advisory contracts and monthly support plans",
+        url: ""
       },
       {
         date: "2026.03",
-        text: "We are strengthening recruitment support for Filipino and Indonesian talent"
+        text: "We are strengthening recruitment support for Filipino and Indonesian talent",
+        url: ""
       }
     ],
     qa: [
@@ -139,19 +147,23 @@ window.siteContent = {
     announcements: [
       {
         date: "2026.03",
-        text: "Nag-launch kami ng aming business Facebook page at nagsimula ng pagbibigay ng news analysis."
+        text: "Nag-launch kami ng aming business Facebook page at nagsimula ng pagbibigay ng news analysis.",
+        url: ""
       },
       {
         date: "2026.03",
-        text: "Tumatanggap kami ng konsultasyon sa buong Japan para sa aplikasyon ng Specified Skilled Worker visa"
+        text: "Tumatanggap kami ng konsultasyon sa buong Japan para sa aplikasyon ng Specified Skilled Worker visa",
+        url: ""
       },
       {
         date: "2026.03",
-        text: "Tumatanggap kami ng konsultasyon para sa foreign employment advisory contracts at buwanang support plan"
+        text: "Tumatanggap kami ng konsultasyon para sa foreign employment advisory contracts at buwanang support plan",
+        url: ""
       },
       {
         date: "2026.03",
-        text: "Pinalalakas namin ang recruitment support para sa mga Pilipino at Indonesian na talento"
+        text: "Pinalalakas namin ang recruitment support para sa mga Pilipino at Indonesian na talento",
+        url: ""
       }
     ],
     qa: [
@@ -196,19 +208,23 @@ window.siteContent = {
     announcements: [
       {
         date: "2026.03",
-        text: "Kami telah meluncurkan halaman Facebook bisnis dan mulai membagikan analisis berita."
+        text: "Kami telah meluncurkan halaman Facebook bisnis dan mulai membagikan analisis berita.",
+        url: ""
       },
       {
         date: "2026.03",
-        text: "Konsultasi aplikasi visa Specified Skilled Worker tersedia untuk seluruh Jepang"
+        text: "Konsultasi aplikasi visa Specified Skilled Worker tersedia untuk seluruh Jepang",
+        url: ""
       },
       {
         date: "2026.03",
-        text: "Kami menerima konsultasi untuk kontrak penasihat employment asing dan paket support bulanan"
+        text: "Kami menerima konsultasi untuk kontrak penasihat employment asing dan paket support bulanan",
+        url: ""
       },
       {
         date: "2026.03",
-        text: "Kami memperkuat dukungan rekrutmen untuk talenta Filipina dan Indonesia"
+        text: "Kami memperkuat dukungan rekrutmen untuk talenta Filipina dan Indonesia",
+        url: ""
       }
     ],
     qa: [
@@ -230,7 +246,7 @@ window.siteContent = {
 
 
 /* ============================================
-   ▼ DOMContentLoaded は1回だけ！
+   DOMContentLoaded
    ============================================ */
 document.addEventListener("DOMContentLoaded", () => {
   const lang = document.documentElement.lang || "ja";
@@ -242,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tl: "Detalye→",
     id: "Detail→"
   };
-  const detailLabel = detailLabels[lang] || "詳しく";
+  const detailLabel = detailLabels[lang] || "詳しく→";
 
   // ── News ──
   const newsList = document.getElementById("newsList");
@@ -263,12 +279,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // ── Announcements ──
   const announcementList = document.getElementById("announcementList");
   if (announcementList && Array.isArray(content?.announcements)) {
-    announcementList.innerHTML = content.announcements.map(item => `
-      <li>
-        <span class="news-date">${item.date || ""}</span>
-        <span class="announcement-item">${item.text || ""}</span>
-      </li>
-    `).join("");
+    announcementList.innerHTML = content.announcements.map(item => {
+      const detailBtn = item.url
+        ? ` <a href="${item.url}" class="news-detail-btn">${detailLabel}</a>`
+        : "";
+      return `
+        <li>
+          <span class="news-date">${item.date || ""}</span>
+          <span class="announcement-text">${item.text || ""}${detailBtn}</span>
+        </li>
+      `;
+    }).join("");
   }
 
   // ── Q&A ──
