@@ -2,57 +2,258 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>お知らせ・ニュース一覧</title>
-    <link rel="stylesheet" href="/css/style.css"> </head>
-<body>
-    <header> </header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お知らせ・ニュース一覧 | 徳永行政書士事務所</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* ── ニュース一覧ページ専用スタイル ── */
+        .news-list-page {
+            max-width: 860px;
+            margin: 40px auto 80px;
+            padding: 0 20px;
+        }
 
-    <main class="container">
-        <h2 id="listTitle">一覧</h2>
-        <table border="1" id="listTable" style="width:100%; border-collapse: collapse;">
-            <thead>
-                <tr>
-                    <th style="width:20%;">日付</th>
-                    <th>内容</th>
-                </tr>
-            </thead>
-            <tbody id="listBody">
-                </tbody>
-        </table>
-        <div style="margin-top: 20px;">
-            <a href="/">← トップページへ戻る</a>
+        .news-list-page h1 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .news-list-page .page-lead {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 32px;
+        }
+
+        /* タブ切替 */
+        .tab-bar {
+            display: flex;
+            gap: 0;
+            border-bottom: 2px solid #1f2f3a;
+            margin-bottom: 0;
+        }
+
+        .tab-btn {
+            padding: 10px 28px;
+            background: #e8ecf0;
+            border: none;
+            border-radius: 6px 6px 0 0;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #555;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-right: 4px;
+        }
+
+        .tab-btn.active {
+            background: #1f2f3a;
+            color: #fff;
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: #d0d8e0;
+        }
+
+        /* リスト本体 */
+        .news-panel {
+            background: #fff;
+            border-radius: 0 0 12px 12px;
+            padding: 0 24px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+        }
+
+        .news-panel ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .news-panel li {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0;
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .news-panel li:last-child {
+            border-bottom: none;
+        }
+
+        /* 日付 */
+        .news-panel .item-date {
+            flex-shrink: 0;
+            width: 76px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #b89b5e;
+            white-space: nowrap;
+            margin-right: 14px;
+        }
+
+        /* テキスト */
+        .news-panel .item-text {
+            flex: 1;
+            color: #222;
+            min-width: 0;
+        }
+
+        /* 詳しく→ リンク */
+        .news-panel .item-link {
+            display: inline;
+            margin-left: 12px;
+            color: #1a56a0 !important;
+            text-decoration: underline !important;
+            font-size: 0.88rem;
+            font-weight: 600;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .news-panel .item-link:hover {
+            color: #0d3a7a !important;
+            opacity: 0.85;
+        }
+
+        /* 戻るリンク */
+        .back-link {
+            display: inline-block;
+            margin-top: 32px;
+            color: #1a56a0;
+            text-decoration: underline;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            color: #0d3a7a;
+        }
+
+        @media (max-width: 600px) {
+            .tab-btn {
+                padding: 9px 16px;
+                font-size: 0.88rem;
+            }
+
+            .news-panel {
+                padding: 0 14px;
+            }
+
+            .news-panel li {
+                padding: 12px 0;
+                font-size: 0.9rem;
+            }
+
+            .news-panel .item-date {
+                width: 66px;
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-logo">
+            <img src="/images/行政書士マーク.png" alt="行政書士ロゴ">
+            <span>德永 良雄 行政書士事務所</span>
+        </div>
+        <div class="lang-dropdown">
+            <button class="lang-btn">
+                <i class="fa-solid fa-globe"></i>
+            </button>
+            <div class="lang-menu">
+                <a href="/news/">🇯🇵 日本語</a>
+                <a href="/en/news/">🇺🇸 English</a>
+                <a href="/tl/news/">🇵🇭 Tagalog</a>
+                <a href="/id/news/">🇮🇩 Bahasa Indonesia</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="news-list-page">
+            <h1 id="pageTitle">ニュース・お知らせ一覧</h1>
+            <p class="page-lead">最新の入管ニュースと事務所からのお知らせを掲載しています。</p>
+
+            <!-- タブ -->
+            <div class="tab-bar">
+                <button class="tab-btn active" id="tabNews"    onclick="switchTab('news')">ニュース</button>
+                <button class="tab-btn"        id="tabAnnounce" onclick="switchTab('announcements')">お知らせ</button>
+            </div>
+
+            <!-- リスト表示エリア -->
+            <div class="news-panel">
+                <ul id="listBody"></ul>
+            </div>
+
+            <a href="/" class="back-link">← トップページへ戻る</a>
         </div>
     </main>
 
+    <footer>
+        <p>© 2026 行政書士 サポートオフィス. All rights reserved.</p>
+    </footer>
+
     <script src="/js/content.js"></script>
     <script>
-        // URLパラメータを見て「ニュース」か「お知らせ」か判断する
-        // 例: news-list.html?type=news
-        const params = new URLSearchParams(window.location.search);
-        const type = params.get('type') || 'news'; // 指定がなければnews
+        /* ── 言語・ラベル設定 ── */
         const lang = document.documentElement.lang || 'ja';
+        const content = window.siteContent?.[lang] || window.siteContent?.ja;
 
-        const data = window.siteContent[lang][type];
-        const listBody = document.getElementById('listBody');
-        const listTitle = document.getElementById('listTitle');
+        const detailLabels = {
+            ja: "詳しく→",
+            en: "Details→",
+            tl: "Detalye→",
+            id: "Detail→"
+        };
+        const detailLabel = detailLabels[lang] || "詳しく→";
 
-        // タイトルの切り替え
-        listTitle.innerText = type === 'news' ? 'ニュース一覧' : 'お知らせ一覧';
+        /* ── タブ切替 ── */
+        function switchTab(type) {
+            // ボタンのactive切替
+            document.getElementById('tabNews').classList.toggle('active', type === 'news');
+            document.getElementById('tabAnnounce').classList.toggle('active', type === 'announcements');
 
+            // データ描画
+            renderList(type);
+        }
 
-        // データの流し込み
-        data.forEach(item => {
-            const tr = document.createElement('tr');
-            
-            // お知らせ(announcements)は文字列、ニュース(news)はオブジェクトなので分岐
-            if (typeof item === 'string') {
-                tr.innerHTML = `<td colspan="2">${item}</td>`;
-            } else {
-                const link = item.url ? `<a href="${item.url}">${item.text}</a>` : item.text;
-                tr.innerHTML = `<td>${item.date}</td><td>${link}</td>`;
+        /* ── リスト描画 ── */
+        function renderList(type) {
+            const listBody = document.getElementById('listBody');
+            const items = content?.[type];
+
+            if (!Array.isArray(items) || items.length === 0) {
+                listBody.innerHTML = '<li style="padding:16px 0; color:#888;">データがありません。</li>';
+                return;
             }
-            listBody.appendChild(tr);
-        });
+
+            listBody.innerHTML = items.map(item => {
+                if (typeof item === 'string') {
+                    return `<li><span class="item-text">${item}</span></li>`;
+                }
+                const linkHtml = item.url
+                    ? `<a href="${item.url}" class="item-link">${detailLabel}</a>`
+                    : '';
+                return `
+                    <li>
+                        <span class="item-date">${item.date || ''}</span>
+                        <span class="item-text">${item.text || ''}${linkHtml}</span>
+                    </li>
+                `;
+            }).join('');
+        }
+
+        /* ── 初期表示：URLパラメータで判断 ── */
+        const params = new URLSearchParams(window.location.search);
+        const initType = params.get('type') === 'announcements' ? 'announcements' : 'news';
+        switchTab(initType);
     </script>
 </body>
 </html>
