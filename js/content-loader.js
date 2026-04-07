@@ -2,16 +2,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const lang = document.documentElement.lang || "ja";
   const content = window.siteContent?.[lang] || window.siteContent?.ja;
 
+  // 言語別ボタンラベル
+  const detailLabels = {
+    ja: "詳しく",
+    en: "Details",
+    tl: "Detalye",
+    id: "Detail"
+  };
+  const detailLabel = detailLabels[lang] || "詳しく";
+
   // News
   const newsList = document.getElementById("newsList");
   if (newsList && Array.isArray(content?.news)) {
     newsList.innerHTML = content.news.map(item => {
+      // urlがある場合のみ「詳しく」ボタンを生成
+      const detailBtn = item.url
+        ? ` <a href="${item.url}" class="news-detail-btn">${detailLabel}</a>`
+        : "";
+
       return `
         <li>
-          <a href="${item.url || '#'}" class="news-link">
-            <span class="news-date">${item.date || ""}</span>
-            <span class="news-text">${item.text || ""}</span>
-          </a>
+          <span class="news-date">${item.date || ""}</span>
+          <span class="news-text">${item.text || ""}${detailBtn}</span>
         </li>
       `;
     }).join("");
