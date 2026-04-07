@@ -1989,4 +1989,128 @@ footer {
   color: #0d3a7a !important;
   opacity: 0.85;
 }
+/* ============================================================
+   ヒーローボックス内 詳しく→リンク
+   ============================================================ */
+
+/* hero-list内のリンクを左詰め・折り返し対応に */
+.hero-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 6px;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  border-bottom: 1px solid #eee;
+  padding: 5px 0;
+}
+
+.hero-list li:last-child {
+  border-bottom: none;
+}
+
+/* ヒーローボックス内の日付 */
+.hero-list .news-date {
+  flex-shrink: 0;
+  color: #b89b5e;
+  font-weight: 700;
+  font-size: 0.82rem;
+  margin-right: 6px;
+  white-space: nowrap;
+}
+
+/* ヒーローボックス内のテキスト */
+.hero-list .news-text,
+.hero-list .announcement-text {
+  flex: 1;
+  color: #333;
+  font-size: 0.85rem;
+  min-width: 0;
+}
+
+/* ヒーローボックス内 詳しく→ */
+.hero-list .news-detail-btn {
+  display: inline;
+  margin-left: 8px;
+  color: #1a56a0 !important;
+  text-decoration: underline !important;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.hero-list .news-detail-btn:hover {
+  color: #0d3a7a !important;
+}
+
+/* ============================================================
+   ニュース一覧ページ (#newsList / #announcementList)
+   ============================================================ */
+
+#newsList,
+#announcementList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#newsList li,
+#announcementList li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0;
+  padding: 10px 0;
+  margin: 0;
+  border-bottom: 1px solid #e8e8e8;
+  line-height: 1.5;
+  text-align: left;
+}
+
+#newsList li:last-child,
+#announcementList li:last-child {
+  border-bottom: none;
+}
+
+/* 日付 */
+#newsList .news-date,
+#announcementList .news-date {
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  color: #888;
+  font-weight: 700;
+  margin-right: 14px;
+  white-space: nowrap;
+}
+
+/* テキスト */
+#newsList .news-text,
+#announcementList .announcement-text {
+  flex: 1;
+  font-size: 0.93rem;
+  color: #222;
+  text-align: left;
+  min-width: 0;
+}
+
+/* 詳しく→ リンク */
+#newsList .news-detail-btn,
+#announcementList .news-detail-btn {
+  display: inline;
+  margin-left: 12px;
+  color: #1a56a0 !important;
+  text-decoration: underline !important;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+#newsList .news-detail-btn:hover,
+#announcementList .news-detail-btn:hover {
+  color: #0d3a7a !important;
+  opacity: 0.85;
+}
 
