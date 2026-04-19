@@ -1,1 +1,623 @@
-1
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A よくある質問｜外国人雇用・在留資格・永住申請｜徳永行政書士事務所</title>
+    <meta name="description" content="外国人雇用、在留資格申請、永住・帰化申請に関するよくある質問をまとめました。特定技能、技人国、家族滞在など各種ビザの疑問に行政書士がお答えします。">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="canonical" href="https://tokunaga-gyosei.jp/Q&A/">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/gyosei_logo_192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/gyosei_logo_192.png">
+
+    <style>
+        /* Q&A一覧ページ専用スタイル */
+        .qa-index-hero {
+            background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .qa-index-hero h1 {
+            font-size: 2rem;
+            margin: 0 0 15px;
+        }
+
+        .qa-index-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .qa-index-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .qa-breadcrumb {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .qa-breadcrumb a {
+            color: #1a5276;
+            text-decoration: none;
+        }
+
+        .qa-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* カテゴリフィルター */
+        .qa-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .qa-filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #1a5276;
+            background: white;
+            color: #1a5276;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .qa-filter-btn:hover,
+        .qa-filter-btn.active {
+            background: #1a5276;
+            color: white;
+        }
+
+        /* カテゴリセクション */
+        .qa-category-section {
+            margin-bottom: 50px;
+        }
+
+        .qa-category-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.4rem;
+            color: #1a5276;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1a5276;
+        }
+
+        .qa-category-title i {
+            font-size: 1.2rem;
+        }
+
+        .qa-category-icon {
+            width: 45px;
+            height: 45px;
+            background: #1a5276;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* Q&Aカードリスト */
+        .qa-card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .qa-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 20px 25px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .qa-card:hover {
+            border-color: #1a5276;
+            box-shadow: 0 5px 20px rgba(26, 82, 118, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .qa-card-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .qa-card-content {
+            flex: 1;
+        }
+
+        .qa-card-question {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0 0 8px;
+            line-height: 1.5;
+        }
+
+        .qa-card-summary {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .qa-card-arrow {
+            flex-shrink: 0;
+            color: #1a5276;
+            font-size: 1.2rem;
+            align-self: center;
+        }
+
+        .qa-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .qa-card-tag {
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            background: #e8f4f8;
+            color: #1a5276;
+            border-radius: 15px;
+        }
+
+        /* 検索ボックス */
+        .qa-search-box {
+            margin-bottom: 30px;
+        }
+
+        .qa-search-input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 30px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .qa-search-input:focus {
+            border-color: #1a5276;
+        }
+
+        .qa-search-input::placeholder {
+            color: #999;
+        }
+
+        /* CTAセクション */
+        .qa-cta-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .qa-cta-section h2 {
+            color: #2c3e50;
+            margin: 0 0 15px;
+            font-size: 1.5rem;
+        }
+
+        .qa-cta-section p {
+            color: #666;
+            margin: 0 0 25px;
+            font-size: 1.05rem;
+        }
+
+        .qa-cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .qa-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .qa-cta-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .qa-cta-btn.primary {
+            background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+            color: white;
+        }
+
+        .qa-cta-btn.secondary {
+            background: white;
+            color: #1a5276;
+            border: 2px solid #1a5276;
+        }
+
+        /* 統計セクション */
+        .qa-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .qa-stat-item {
+            text-align: center;
+        }
+
+        .qa-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a5276;
+        }
+
+        .qa-stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .qa-index-hero {
+                padding: 40px 20px;
+            }
+
+            .qa-index-hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .qa-filter {
+                justify-content: center;
+            }
+
+            .qa-filter-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
+            .qa-card {
+                padding: 15px;
+            }
+
+            .qa-card-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 0.95rem;
+            }
+
+            .qa-card-question {
+                font-size: 0.95rem;
+            }
+
+            .qa-cta-section {
+                padding: 30px 20px;
+            }
+
+            .qa-stats {
+                gap: 25px;
+            }
+
+            .qa-stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "永住許可申請を取るためにどのような書類が必要ですか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "技人国ビザから永住権を申請する場合、永住許可申請書、写真、理由書、住民票、在職証明書、課税・納税証明書（5年分）、年金記録、健康保険証、身元保証人関係書類などが必要です。"
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="header-logo">
+            <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                <img src="/images/行政書士マーク.png" alt="行政書士ロゴ">
+                <span>德永 良雄 行政書士事務所</span>
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+
+        <nav class="header-nav" id="nav">
+            <a href="/#company-services">企業様</a>
+            <a href="/#country-services">PH / ID</a>
+            <a href="/#worker-services">外国籍の方</a>
+            <a href="/#office">事務所</a>
+            <a href="/#about">代表</a>
+            <a href="/Q&A/" class="active">Q＆A</a>
+            <a href="/#contact" class="header-contact">お問い合わせ</a>
+        </nav>
+
+        <div class="lang-dropdown">
+            <button class="lang-btn">
+                <i class="fa-solid fa-globe"></i>
+            </button>
+            <div class="lang-menu">
+                <a href="/index.html">🇯🇵 日本語</a>
+                <a href="/en/">🇺🇸 English</a>
+                <a href="/tl/">🇵🇭 Tagalog</a>
+                <a href="/id/">🇮🇩 Bahasa Indonesia</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ヒーローセクション -->
+        <section class="qa-index-hero">
+            <h1><i class="fa-solid fa-circle-question"></i> Q&A よくある質問</h1>
+            <p>外国人雇用・在留資格に関する疑問にお答えします</p>
+        </section>
+
+        <div class="qa-index-container">
+            <!-- パンくずリスト -->
+            <nav class="qa-breadcrumb">
+                <a href="/">ホーム</a> &gt; 
+                <span>Q&A よくある質問</span>
+            </nav>
+
+            <!-- 統計 -->
+            <div class="qa-stats">
+                <div class="qa-stat-item">
+                    <div class="qa-stat-number" id="totalQaCount">1</div>
+                    <div class="qa-stat-label">件のQ&A</div>
+                </div>
+                <div class="qa-stat-item">
+                    <div class="qa-stat-number">5</div>
+                    <div class="qa-stat-label">カテゴリ</div>
+                </div>
+            </div>
+
+            <!-- 検索ボックス -->
+            <div class="qa-search-box">
+                <input type="text" class="qa-search-input" id="qaSearch" placeholder="キーワードで検索（例：永住、特定技能、家族滞在）">
+            </div>
+
+            <!-- カテゴリフィルター -->
+            <div class="qa-filter">
+                <button class="qa-filter-btn active" data-category="all">すべて</button>
+                <button class="qa-filter-btn" data-category="company">企業様向け</button>
+                <button class="qa-filter-btn" data-category="foreign">外国人の方向け</button>
+                <button class="qa-filter-btn" data-category="visa">在留資格全般</button>
+                <button class="qa-filter-btn" data-category="permanent">永住・帰化</button>
+                <button class="qa-filter-btn" data-category="family">家族・結婚</button>
+            </div>
+
+            <!-- 企業様向けQ&A -->
+            <section class="qa-category-section" data-category="company">
+                <h2 class="qa-category-title">
+                    <span class="qa-category-icon"><i class="fa-solid fa-building"></i></span>
+                    企業様向け
+                </h2>
+                <div class="qa-card-list">
+                    <p style="color: #666; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                        <i class="fa-solid fa-info-circle"></i> 企業様向けのQ&Aは準備中です。お問い合わせはお気軽にどうぞ。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 外国人の方向けQ&A -->
+            <section class="qa-category-section" data-category="foreign">
+                <h2 class="qa-category-title">
+                    <span class="qa-category-icon"><i class="fa-solid fa-user-group"></i></span>
+                    外国人の方向け
+                </h2>
+                <div class="qa-card-list">
+                    <a href="/Q&A/f001.html" class="qa-card" data-tags="永住 技人国 書類 10年">
+                        <span class="qa-card-icon">Q</span>
+                        <div class="qa-card-content">
+                            <h3 class="qa-card-question">永住許可申請を取るためにどのような書類が必要ですか？もうすぐ日本で10年目になります。今は技人国在留資格です。</h3>
+                            <p class="qa-card-summary">技人国ビザから永住権を申請する場合の必要書類リスト、審査のポイント、注意点を詳しく解説します。</p>
+                            <div class="qa-card-tags">
+                                <span class="qa-card-tag">永住許可</span>
+                                <span class="qa-card-tag">技人国</span>
+                                <span class="qa-card-tag">必要書類</span>
+                            </div>
+                        </div>
+                        <span class="qa-card-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                    <!-- 追加のQ&Aはここに追加 -->
+                </div>
+            </section>
+
+            <!-- 在留資格全般Q&A -->
+            <section class="qa-category-section" data-category="visa">
+                <h2 class="qa-category-title">
+                    <span class="qa-category-icon"><i class="fa-solid fa-passport"></i></span>
+                    在留資格全般
+                </h2>
+                <div class="qa-card-list">
+                    <p style="color: #666; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                        <i class="fa-solid fa-info-circle"></i> 在留資格全般のQ&Aは準備中です。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 永住・帰化Q&A -->
+            <section class="qa-category-section" data-category="permanent">
+                <h2 class="qa-category-title">
+                    <span class="qa-category-icon"><i class="fa-solid fa-house-flag"></i></span>
+                    永住・帰化
+                </h2>
+                <div class="qa-card-list">
+                    <a href="/Q&A/f001.html" class="qa-card" data-tags="永住 技人国 書類 10年">
+                        <span class="qa-card-icon">Q</span>
+                        <div class="qa-card-content">
+                            <h3 class="qa-card-question">永住許可申請を取るためにどのような書類が必要ですか？もうすぐ日本で10年目になります。今は技人国在留資格です。</h3>
+                            <p class="qa-card-summary">技人国ビザから永住権を申請する場合の必要書類リスト、審査のポイント、注意点を詳しく解説します。</p>
+                            <div class="qa-card-tags">
+                                <span class="qa-card-tag">永住許可</span>
+                                <span class="qa-card-tag">技人国</span>
+                                <span class="qa-card-tag">必要書類</span>
+                            </div>
+                        </div>
+                        <span class="qa-card-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 家族・結婚Q&A -->
+            <section class="qa-category-section" data-category="family">
+                <h2 class="qa-category-title">
+                    <span class="qa-category-icon"><i class="fa-solid fa-heart"></i></span>
+                    家族・結婚
+                </h2>
+                <div class="qa-card-list">
+                    <p style="color: #666; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                        <i class="fa-solid fa-info-circle"></i> 家族・結婚に関するQ&Aは準備中です。
+                    </p>
+                </div>
+            </section>
+
+            <!-- CTAセクション -->
+            <section class="qa-cta-section">
+                <h2>お探しの回答が見つかりませんか？</h2>
+                <p>個別のご質問やご相談は、お気軽にお問い合わせください。<br>初回相談無料で対応いたします。</p>
+                <div class="qa-cta-buttons">
+                    <a href="/#contact" class="qa-cta-btn primary">
+                        <i class="fa-solid fa-envelope"></i> お問い合わせフォーム
+                    </a>
+                    <a href="https://line.me/R/ti/p/@556fihjp/" target="_blank" class="qa-cta-btn secondary">
+                        <i class="fab fa-line"></i> LINEで相談
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- SNS固定ボタン -->
+    <div class="sns-fixed">
+        <a href="https://line.me/R/ti/p/@556fihjp/" target="_blank" rel="noopener noreferrer" class="sns-btn-wide line-btn">
+            <i class="fab fa-line"></i> LINEで無料相談
+        </a>
+        <a href="https://m.me/second.penguin/" target="_blank" class="sns-btn-wide facebook-btn">
+            <i class="fab fa-facebook-f"></i> Messengerで無料相談
+        </a>
+    </div>
+
+    <a href="#" class="back-to-top">TOPへ</a>
+
+    <footer>
+        <div class="footer-contacts">
+            <p>電話: 070-9192-2524 | メール: info@tokunaga-gyosei.jp</p>
+        </div>
+        <p><a href="/private.html" style="color:white; text-decoration:underline;">プライバシーポリシー</a></p>
+        <p>© 2026 德永良雄行政書士事務所. All rights reserved.</p>
+        <div style="margin-top:2rem; font-size:0.8rem; opacity:0.8;">
+            <p>所属：兵庫県行政書士会 | 登録番号：第24303656号</p>
+        </div>
+    </footer>
+
+    <script src="/js/common.js"></script>
+    <script>
+        // カテゴリフィルター機能
+        document.querySelectorAll('.qa-filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // アクティブ状態の切り替え
+                document.querySelectorAll('.qa-filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const category = this.dataset.category;
+                
+                document.querySelectorAll('.qa-category-section').forEach(section => {
+                    if (category === 'all' || section.dataset.category === category) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 検索機能
+        document.getElementById('qaSearch').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            document.querySelectorAll('.qa-card').forEach(card => {
+                const question = card.querySelector('.qa-card-question').textContent.toLowerCase();
+                const summary = card.querySelector('.qa-card-summary').textContent.toLowerCase();
+                const tags = card.dataset.tags ? card.dataset.tags.toLowerCase() : '';
+                
+                if (question.includes(searchTerm) || summary.includes(searchTerm) || tags.includes(searchTerm)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // 全カテゴリ表示に切り替え
+            if (searchTerm) {
+                document.querySelectorAll('.qa-filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelector('.qa-filter-btn[data-category="all"]').classList.add('active');
+                document.querySelectorAll('.qa-category-section').forEach(section => {
+                    section.style.display = 'block';
+                });
+            }
+        });
+
+        // Q&A件数をカウント
+        const totalCount = document.querySelectorAll('.qa-card').length;
+        document.getElementById('totalQaCount').textContent = totalCount;
+    </script>
+</body>
+
+</html>
