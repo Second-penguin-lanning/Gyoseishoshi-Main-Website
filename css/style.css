@@ -2134,3 +2134,40 @@ footer {
 .hero-list .news-detail-btn:hover {
   color: #0d3a7a !important;
 }
+
+/* ===========================================
+   Language Switcher
+=========================================== */
+.lang-switcher {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 0.5rem 2rem;
+    background: #f8f9fa;
+    font-size: 0.85rem;
+}
+
+.lang-switcher a {
+    color: #666;
+    text-decoration: none;
+}
+
+.lang-switcher a:hover {
+    color: #1a56db;
+}
+
+.lang-switcher .current-lang {
+    color: #1a56db;
+    font-weight: 600;
+}
+
+/* Mobile Language Switcher */
+@media (max-width: 768px) {
+    .lang-switcher {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+}
